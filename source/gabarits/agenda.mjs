@@ -50,6 +50,23 @@ export function libelleProchaine(e, n = maintenantParis()) {
   if (statut(e, n) === 'aujourdhui') return `${+e.debut.split(':')[0] >= 18 ? 'Ce soir' : 'Aujourd’hui'}, ${heureFr(e.debut)} · ${e.titre}`;
   return `${q.jour[0].toUpperCase() + q.jour.slice(1)} ${q.num} ${e.mois ? q.moisCourt : MOIS[+e.date.slice(5, 7) - 1]}, ${heureFr(e.debut)} · ${e.titre}`;
 }
+/* Début et fin (minutes, heure de Paris) de la prochaine séance d'une date : pour un mois en ligne, le prochain mardi. */
+export function seanceProchaine(e, n = maintenantParis()) {
+  if (e.mardis) {
+    const j = e.mardis.find((d) => minutes(d, e.fin) >= n.minutes);
+    if (j) return { debut: minutes(j, e.debut), fin: minutes(j, e.fin) };
+  }
+  if (e.mois) { const b = bornes(e); return { debut: Math.max(b.debut, n.minutes), fin: b.fin }; }
+  return bornes(e);
+}
+/* Compte à rebours écrit à la génération (le JavaScript le tient ensuite à jour, à la minute). */
+export function compte(debut, fin, n = maintenantParis()) {
+  const d = debut - n.minutes;
+  if (d <= 0) return fin > n.minutes ? html`<b>en ce moment</b>` : '';
+  const j = Math.floor(d / 1440), h = Math.floor((d % 1440) / 60), m = d % 60;
+  if (j >= 14) return html`dans <b data-u="j">${String(j)}</b> jours`;
+  return html`dans ${j ? html`<b data-u="j">${String(j)}</b> j ` : ''}<b data-u="h">${String(h)}</b> h <b data-u="m">${String(m).padStart(2, '0')}</b>`;
+}
 export const moisDe = (e) => { const [a, m] = e.date.split('-').map(Number); return `${MOIS[m - 1]} ${a}`; };
 
 /* Une ligne de l'agenda. Le bouton ouvre la vraie billetterie dans un nouvel onglet ; data-grille="retour" :
@@ -58,7 +75,7 @@ export function ligne(c, e, { n = maintenantParis(), titreNiveau = 'h3' } = {}) 
   const st = statut(e, n), q = quand(e), b = bornes(e);
   const lieu = c.donnees.lieux[e.lieu];
   const t = c.donnees.types[e.type];
-  return html`<li class="date date--${e.type} date--${st}" data-date data-type="${e.type}" data-debut="${b.debut}" data-fin="${b.fin}" data-jour="${e.date}" data-mardis="${(e.mardis || []).join(' ')}">
+  return html`<li class="date date--${e.type} date--${st}" data-date data-type="${e.type}" data-debut="${b.debut}" data-fin="${b.fin}" data-jour="${e.date}" data-mardis="${(e.mardis || []).join(' ')}" data-heure="${e.debut}" data-heure-fin="${e.fin}" data-depart="${lieu.depart}"${e.mois ? brut(' data-mois="1"') : ''}>
   <p class="date-jour" aria-hidden="true"><span>${q.jourCourt}</span><strong>${q.num || '✦'}</strong><span>${q.moisCourt}</span></p>
   <div class="date-corps">
     ${brut(`<${titreNiveau} class="date-titre">`)}${e.titre}${brut(`</${titreNiveau}>`)}

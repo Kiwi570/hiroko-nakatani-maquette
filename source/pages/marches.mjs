@@ -1,15 +1,16 @@
 /* Marches : ouverture plein cadre sombre (sentier dans la brume), plan rond des points de départ qui se dessine,
    feuilles de la vraie saison qui tombent ; fond mousse ; déroulé, parcours et dates, tarifs, témoignage. */
 import { html } from '../../outils/gabarit.mjs';
-import { prochaines, ligne, libelleProchaine, maintenantParis, quand } from '../gabarits/agenda.mjs';
+import { prochaines, ligne, libelleProchaine, maintenantParis, quand, seanceProchaine, compte } from '../gabarits/agenda.mjs';
 
 export const page = { cle: 'marches', fichier: 'marches', imagePartage: 'grok/marches-ouverture' };
 
+/* Chaque parcours : sa boucle sur le plan rond (dessinée tour à tour, un marcheur la parcourt). */
 const PARCOURS = [
-  { cle: 'floral', image: 'parcours-floral', n: 1, repere: [168, 188] },
-  { cle: 'tropical', image: 'parcours-tropical', n: 2, repere: [318, 168] },
-  { cle: 'eau', image: 'grok/parcours-eau', n: 3, repere: [262, 214] },
-  { cle: 'chateau', image: 'grok/parcours-chateau', n: 4, repere: [150, 122] },
+  { cle: 'floral', image: 'parcours-floral', n: 1, repere: [168, 188], boucle: 'M168 188 C 134 178 112 150 128 128 C 146 104 190 112 204 138 C 216 162 198 194 168 188 Z' },
+  { cle: 'tropical', image: 'parcours-tropical', n: 2, repere: [318, 168], boucle: 'M318 168 C 292 156 286 124 306 112 C 330 98 360 120 354 148 C 350 166 334 174 318 168 Z' },
+  { cle: 'eau', image: 'grok/parcours-eau', n: 3, repere: [262, 214], boucle: 'M262 214 C 240 236 246 272 276 280 C 306 288 326 258 314 232 C 304 210 278 200 262 214 Z' },
+  { cle: 'chateau', image: 'grok/parcours-chateau', n: 4, repere: [150, 122], boucle: 'M150 122 C 120 122 100 104 110 88 C 122 70 160 72 172 92 C 180 108 168 122 150 122 Z' },
 ];
 const LIENS = {
   floral: 'https://www.billetweb.fr/marche-et-meditation-parc-floral-de-paris',
@@ -29,7 +30,7 @@ export default (c) => {
   <div class="m-ouverture-grille conteneur">
     <div class="m-ouverture-texte">
       <p class="surtitre" data-anime="gsap">${c.t('marches.surtitre')}</p>
-      <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">${c.t('marches.titre')}</h1>
+      <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">${c.tb('marches.titre')}</h1>
       <p class="intro masque-ecran-tres-bas" data-anime="gsap">${c.t('marches.texte')}</p>
       <p class="actions" data-anime="gsap">${c.lien('agenda', { params: 'type=marche', classe: 'bouton bouton--clair', texte: c.t('marches.action'), attrs: 'data-action-principale' })}</p>
       <p class="prochaine prochaine--clair" data-info-cle data-anime="gsap"><span>${c.t('marches.info')}</span> <strong data-prochaine-type="marche">${suivante ? libelleProchaine(suivante, n).replace(' · Marche et méditation', '') + ' · ' + c.donnees.lieux[suivante.lieu].nom : c.s('marches.parcoursTerminee')}</strong></p>
@@ -42,8 +43,11 @@ export default (c) => {
         <path class="plan-ruisseau" data-trace d="M228 150 C 244 176 236 198 256 214 C 276 230 300 226 318 242" pathLength="1"/>
         <path class="plan-rer" data-trace d="M30 92 C 120 84 220 76 380 70" pathLength="1"/>
         <circle class="plan-gare" cx="318" cy="72" r="7"/><circle class="plan-gare" cx="104" cy="84" r="7"/>
+        ${PARCOURS.map((p) => html`<path class="plan-parcours" data-parcours-trace="${String(p.n)}" d="${p.boucle}" pathLength="1"/>`)}
+        <circle class="plan-marcheur" data-marcheur cx="168" cy="188" r="6"/>
         ${PARCOURS.map((p) => html`<g class="plan-repere" data-repere><circle cx="${p.repere[0]}" cy="${p.repere[1]}" r="15"/><text x="${p.repere[0]}" y="${p.repere[1] + 5}" text-anchor="middle">${String(p.n)}</text></g>`)}
       </svg>
+      <p class="plan-legende" data-plan-legende aria-hidden="true">${PARCOURS.map((p) => html`<span data-legende="${String(p.n)}">${String(p.n)} · ${c.donnees.lieux[p.cle].nom}</span>`)}</p>
     </div>
   </div>
 </section>
@@ -54,7 +58,7 @@ export default (c) => {
     <h2 data-anime="lignes">${c.t('marches.deroulTitre')}</h2>
     <p data-anime>${c.t('marches.deroulTexte')}</p>
   </div>
-  <ol class="frise" data-anime="cascade" data-effet="frise">
+  <ol class="frise" data-anime="cascade" data-effet="frise" data-frise-eau>
     ${c.donnees.marche.map((s) => html`<li class="frise-pas">
       ${s.image ? c.media({ nom: s.image, alt: '', classe: 'frise-media', sizes: '(max-width: 760px) 40vw, 14vw' }) : html`<span class="frise-point" aria-hidden="true"></span>`}
       <p class="frise-heure">${s.heure}</p><h3>${s.titre}</h3><p>${s.texte}</p>
@@ -77,7 +81,7 @@ export default (c) => {
         <span class="parcours-num" aria-hidden="true">${String(p.n)}</span>
         <h3>${lieu.nom}</h3>
         <p class="parcours-depart"><span>${c.t('marches.parcoursDepart')}</span> ${lieu.depart}</p>
-        <p class="parcours-date" data-parcours="${p.cle}"><span>${c.t('marches.parcoursProchaine')}</span> <strong>${s ? quand(s).ligne.replace(' · 10 h – 12 h', '') : (toutes.length ? c.s('marches.parcoursTerminee') : c.s('marches.parcoursAucune'))}</strong></p>
+        <p class="parcours-date" data-parcours="${p.cle}"><span>${c.t('marches.parcoursProchaine')}</span> <strong>${s ? quand(s).ligne.replace(' · 10 h – 12 h', '') : (toutes.length ? c.s('marches.parcoursTerminee') : c.s('marches.parcoursAucune'))}</strong>${s ? html` <span class="compte" data-compte="${seanceProchaine(s, n).debut}" data-compte-fin="${seanceProchaine(s, n).fin}" aria-hidden="true">${compte(seanceProchaine(s, n).debut, seanceProchaine(s, n).fin, n)}</span>` : ''}</p>
         ${lieu.note ? html`<p class="parcours-note">${lieu.note}</p>` : ''}
         <p><a class="bouton bouton--petit" href="${LIENS[p.cle]}" target="_blank" rel="noopener" data-retour aria-label="${c.s('marches.parcoursReserver')} : ${lieu.nom} (${c.s('commun.nouvelOnglet')})">${c.t('marches.parcoursReserver')}</a></p>
       </li>`;
@@ -88,6 +92,7 @@ export default (c) => {
 
 <section class="m-tarifs" id="tarifs">
   ${c.media({ nom: 'grok/marches-feuilles', alt: '', classe: 'm-tarifs-media', sizes: '100vw', attrs: 'data-fx="parallaxe"' })}
+  <canvas class="saison" data-saison data-effet="feuilles-tarifs" aria-hidden="true" data-audit-ignorer></canvas>
   <div class="conteneur m-tarifs-texte">
     <p class="surtitre" data-anime>${c.t('marches.tarifsSurtitre')}</p>
     <h2 data-anime="lignes">${c.t('marches.tarifsTitre')}</h2>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-v="1" data-page="marches">
+<html lang="fr" data-v="2" data-page="marches">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -40,14 +40,14 @@ if (alt) location.replace(new URL(alt.href).pathname + location.search + locatio
 setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
 })();</script>
 <link rel="preload" href="/assets/fonts/shippori-mincho-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/socle.css?v=1">
-<link rel="stylesheet" href="/assets/css/site.css?v=1">
-<link rel="modulepreload" href="/assets/js/site.js?v=1">
-<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<link rel="stylesheet" href="/assets/css/socle.css?v=2">
+<link rel="stylesheet" href="/assets/css/site.css?v=2">
+<link rel="modulepreload" href="/assets/js/site.js?v=2">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=2">
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
-<script type="module" src="/assets/js/site.js?v=1"></script>
+<script type="module" src="/assets/js/site.js?v=2"></script>
 <meta name="theme-color" content="#f2ede3">
 <link rel="icon" href="/assets/images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -123,7 +123,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   <div class="m-ouverture-grille conteneur">
     <div class="m-ouverture-texte">
       <p class="surtitre" data-anime="gsap">Marche et méditation</p>
-      <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">Marcher en silence dans le bois</h1>
+      <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">Marcher en <em class="mot-encre">silence</em> dans le bois</h1>
       <p class="intro masque-ecran-tres-bas" data-anime="gsap">Le dimanche matin, en petit groupe, dans le bois de Vincennes et ses parcs. Chaque saison, le bois change ; la perception du temps aussi.</p>
       <p class="actions" data-anime="gsap"><a href="/agenda?type=marche" class="bouton bouton--clair" data-libelle="Agenda" data-action-principale>Réserver une marche</a></p>
       <p class="prochaine prochaine--clair" data-info-cle data-anime="gsap"><span>Prochaine marche</span> <strong data-prochaine-type="marche">Dimanche 15 novembre, 10 h · Parc floral de Paris</strong></p>
@@ -136,8 +136,11 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
         <path class="plan-ruisseau" data-trace d="M228 150 C 244 176 236 198 256 214 C 276 230 300 226 318 242" pathLength="1"/>
         <path class="plan-rer" data-trace d="M30 92 C 120 84 220 76 380 70" pathLength="1"/>
         <circle class="plan-gare" cx="318" cy="72" r="7"/><circle class="plan-gare" cx="104" cy="84" r="7"/>
+        <path class="plan-parcours" data-parcours-trace="1" d="M168 188 C 134 178 112 150 128 128 C 146 104 190 112 204 138 C 216 162 198 194 168 188 Z" pathLength="1"/><path class="plan-parcours" data-parcours-trace="2" d="M318 168 C 292 156 286 124 306 112 C 330 98 360 120 354 148 C 350 166 334 174 318 168 Z" pathLength="1"/><path class="plan-parcours" data-parcours-trace="3" d="M262 214 C 240 236 246 272 276 280 C 306 288 326 258 314 232 C 304 210 278 200 262 214 Z" pathLength="1"/><path class="plan-parcours" data-parcours-trace="4" d="M150 122 C 120 122 100 104 110 88 C 122 70 160 72 172 92 C 180 108 168 122 150 122 Z" pathLength="1"/>
+        <circle class="plan-marcheur" data-marcheur cx="168" cy="188" r="6"/>
         <g class="plan-repere" data-repere><circle cx="168" cy="188" r="15"/><text x="168" y="193" text-anchor="middle">1</text></g><g class="plan-repere" data-repere><circle cx="318" cy="168" r="15"/><text x="318" y="173" text-anchor="middle">2</text></g><g class="plan-repere" data-repere><circle cx="262" cy="214" r="15"/><text x="262" y="219" text-anchor="middle">3</text></g><g class="plan-repere" data-repere><circle cx="150" cy="122" r="15"/><text x="150" y="127" text-anchor="middle">4</text></g>
       </svg>
+      <p class="plan-legende" data-plan-legende aria-hidden="true"><span data-legende="1">1 · Parc floral de Paris</span><span data-legende="2">2 · Jardin d’agronomie tropicale</span><span data-legende="3">3 · Le long du cours d’eau</span><span data-legende="4">4 · Château de Vincennes</span></p>
     </div>
   </div>
 </section>
@@ -147,7 +150,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     <h2 data-anime="lignes">De 10 h à midi</h2>
     <p data-anime>Les pratiques se font debout ou assis, selon les besoins : écoute, regard, balayage du corps.</p>
   </div>
-  <ol class="frise" data-anime="cascade" data-effet="frise">
+  <ol class="frise" data-anime="cascade" data-effet="frise" data-frise-eau>
     <li class="frise-pas">
       <figure class="media frise-media" data-grok style="--cadrage:50% 50%">
   <picture>
@@ -200,7 +203,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
         <span class="parcours-num" aria-hidden="true">1</span>
         <h3>Parc floral de Paris</h3>
         <p class="parcours-depart"><span>Départ</span> Entrée du Parc floral, bois de Vincennes (Paris 12e)</p>
-        <p class="parcours-date" data-parcours="floral"><span>Prochaine date</span> <strong>dimanche 15 novembre</strong></p>
+        <p class="parcours-date" data-parcours="floral"><span>Prochaine date</span> <strong>dimanche 15 novembre</strong> <span class="compte" data-compte="29912280" data-compte-fin="29912400" aria-hidden="true">dans <b data-u="j">4</b> j <b data-u="h">12</b> h <b data-u="m">42</b></span></p>
         <p class="parcours-note">Entrée du parc gratuite en automne et en hiver.</p>
         <p><a class="bouton bouton--petit" href="https://www.billetweb.fr/marche-et-meditation-parc-floral-de-paris" target="_blank" rel="noopener" data-retour aria-label="Réserver ce parcours : Parc floral de Paris (s’ouvre dans un nouvel onglet)">Réserver ce parcours</a></p>
       </li><li class="parcours" id="parcours-tropical">
@@ -212,7 +215,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
         <span class="parcours-num" aria-hidden="true">2</span>
         <h3>Jardin d’agronomie tropicale</h3>
         <p class="parcours-depart"><span>Départ</span> Gare de Fontenay-sous-Bois (RER A)</p>
-        <p class="parcours-date" data-parcours="tropical"><span>Prochaine date</span> <strong>dimanche 18 avril</strong></p>
+        <p class="parcours-date" data-parcours="tropical"><span>Prochaine date</span> <strong>dimanche 18 avril</strong> <span class="compte" data-compte="30134040" data-compte-fin="30134160" aria-hidden="true">dans <b data-u="j">158</b> jours</span></p>
         <p><a class="bouton bouton--petit" href="https://www.billetweb.fr/marche-et-meditation-bois-de-vincennes-jardin" target="_blank" rel="noopener" data-retour aria-label="Réserver ce parcours : Jardin d’agronomie tropicale (s’ouvre dans un nouvel onglet)">Réserver ce parcours</a></p>
       </li><li class="parcours" id="parcours-eau">
         <figure class="media parcours-media" data-grok data-fx="parallaxe" data-fx-force="6" style="--cadrage:50% 50%">
@@ -223,7 +226,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
         <span class="parcours-num" aria-hidden="true">3</span>
         <h3>Le long du cours d’eau</h3>
         <p class="parcours-depart"><span>Départ</span> Gare de Fontenay-sous-Bois (RER A)</p>
-        <p class="parcours-date" data-parcours="eau"><span>Prochaine date</span> <strong>dimanche 25 avril</strong></p>
+        <p class="parcours-date" data-parcours="eau"><span>Prochaine date</span> <strong>dimanche 25 avril</strong> <span class="compte" data-compte="30144120" data-compte-fin="30144240" aria-hidden="true">dans <b data-u="j">165</b> jours</span></p>
         <p><a class="bouton bouton--petit" href="https://www.billetweb.fr/marche-et-meditation-bois-de-vincennes-lac" target="_blank" rel="noopener" data-retour aria-label="Réserver ce parcours : Le long du cours d’eau (s’ouvre dans un nouvel onglet)">Réserver ce parcours</a></p>
       </li><li class="parcours" id="parcours-chateau">
         <figure class="media parcours-media" data-grok data-fx="parallaxe" data-fx-force="6" style="--cadrage:50% 50%">
@@ -247,6 +250,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     <img src="/assets/images/grok/marches-feuilles-1280.webp" srcset="/assets/images/grok/marches-feuilles-640.webp 640w, /assets/images/grok/marches-feuilles-1280.webp 1280w" sizes="100vw" alt="" width="1280" height="854" loading="lazy" decoding="async">
   </picture><figcaption class="mention-ia">Illustration générée</figcaption>
 </figure>
+  <canvas class="saison" data-saison data-effet="feuilles-tarifs" aria-hidden="true" data-audit-ignorer></canvas>
   <div class="conteneur m-tarifs-texte">
     <p class="surtitre" data-anime>Tarifs</p>
     <h2 data-anime="lignes">20 € la marche, 38 € à deux</h2>
@@ -296,10 +300,25 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   <a class="bouton bouton--contour" href="/contact" data-libelle="Contact">Écrire</a>
   <a class="bouton" href="/agenda" data-libelle="Agenda">Réserver</a>
 </div>
+<dialog class="recap" data-recap aria-labelledby="recap-titre">
+  <button type="button" class="recap-fermer" data-recap-fermer aria-label="Fermer"><span aria-hidden="true">×</span></button>
+  <p class="surtitre">Avant de réserver</p>
+  <h2 id="recap-titre" class="recap-titre" data-recap-titre></h2>
+  <p class="recap-sous" data-recap-sous></p>
+  <dl class="recap-liste">
+    <div><dt>Quand</dt><dd data-recap-quand></dd></div>
+    <div><dt>Où</dt><dd data-recap-ou></dd></div>
+    <div><dt>À apporter</dt><dd><span data-apporter="marche" hidden>De bonnes chaussures, une tenue selon la météo, de l’eau. Rendez-vous 5 minutes avant.</span><span data-apporter="atelier" hidden>Une tenue souple, des chaussettes chaudes ; tapis et coussins sont sur place.</span><span data-apporter="enligne" hidden>Un endroit calme, un ordinateur ou un téléphone ; le lien arrive par e-mail.</span><span data-apporter="saison" hidden>Une tenue selon la météo et un petit tapis ou un plaid pour s’asseoir dehors.</span></dd></div>
+    <div><dt>Prix</dt><dd class="recap-prix" data-recap-prix></dd></div>
+  </dl>
+  <p class="recap-actions"><a class="bouton" data-recap-lien href="https://www.billetweb.fr/les-formules-annuelles-cartes-fidelites" target="_blank" rel="noopener">Continuer sur Billetweb</a> <button type="button" class="bouton bouton--contour" data-recap-fermer>Choisir une autre date</button></p>
+  <p class="recap-note">La billetterie Billetweb s’ouvre dans un nouvel onglet.</p>
+</dialog>
 <button type="button" class="mini-cloche" data-mini-cloche data-grille="fil" data-effet="mini-cloche" aria-label="Faire sonner la cloche">
   <span class="mini-cloche-bol" aria-hidden="true"><span class="mini-cloche-eau"></span></span>
   <span class="mini-cloche-reperes" aria-hidden="true"></span>
 </button>
 <p class="pastille-son" data-pastille-son hidden aria-live="polite"><span data-son-etat>La cloche sonne</span> <button type="button" class="lien" data-son-bascule data-libelle-couper="Couper le son" data-libelle-remettre="Remettre le son" data-etat-coupe="Son coupé" data-etat-sonne="La cloche sonne">Couper le son</button></p>
+<svg class="defs-svg" width="0" height="0" aria-hidden="true" focusable="false"><filter id="encre-bords" x="-6%" y="-12%" width="112%" height="124%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="8" result="bruit"/><feDisplacementMap in="SourceGraphic" in2="bruit" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
 </body>
 </html>

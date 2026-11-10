@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-v="1" data-page="404">
+<html lang="fr" data-v="2" data-page="404">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -40,14 +40,14 @@ if (alt) location.replace(new URL(alt.href).pathname + location.search + locatio
 setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
 })();</script>
 <link rel="preload" href="/assets/fonts/shippori-mincho-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/socle.css?v=1">
-<link rel="stylesheet" href="/assets/css/site.css?v=1">
-<link rel="modulepreload" href="/assets/js/site.js?v=1">
-<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<link rel="stylesheet" href="/assets/css/socle.css?v=2">
+<link rel="stylesheet" href="/assets/css/site.css?v=2">
+<link rel="modulepreload" href="/assets/js/site.js?v=2">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=2">
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
-<script type="module" src="/assets/js/site.js?v=1"></script>
+<script type="module" src="/assets/js/site.js?v=2"></script>
 <meta name="theme-color" content="#f2ede3">
 <link rel="icon" href="/assets/images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -159,10 +159,25 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   <a class="bouton bouton--contour" href="/contact" data-libelle="Contact">Écrire</a>
   <a class="bouton" href="/agenda" data-libelle="Agenda">Réserver</a>
 </div>
+<dialog class="recap" data-recap aria-labelledby="recap-titre">
+  <button type="button" class="recap-fermer" data-recap-fermer aria-label="Fermer"><span aria-hidden="true">×</span></button>
+  <p class="surtitre">Avant de réserver</p>
+  <h2 id="recap-titre" class="recap-titre" data-recap-titre></h2>
+  <p class="recap-sous" data-recap-sous></p>
+  <dl class="recap-liste">
+    <div><dt>Quand</dt><dd data-recap-quand></dd></div>
+    <div><dt>Où</dt><dd data-recap-ou></dd></div>
+    <div><dt>À apporter</dt><dd><span data-apporter="marche" hidden>De bonnes chaussures, une tenue selon la météo, de l’eau. Rendez-vous 5 minutes avant.</span><span data-apporter="atelier" hidden>Une tenue souple, des chaussettes chaudes ; tapis et coussins sont sur place.</span><span data-apporter="enligne" hidden>Un endroit calme, un ordinateur ou un téléphone ; le lien arrive par e-mail.</span><span data-apporter="saison" hidden>Une tenue selon la météo et un petit tapis ou un plaid pour s’asseoir dehors.</span></dd></div>
+    <div><dt>Prix</dt><dd class="recap-prix" data-recap-prix></dd></div>
+  </dl>
+  <p class="recap-actions"><a class="bouton" data-recap-lien href="https://www.billetweb.fr/les-formules-annuelles-cartes-fidelites" target="_blank" rel="noopener">Continuer sur Billetweb</a> <button type="button" class="bouton bouton--contour" data-recap-fermer>Choisir une autre date</button></p>
+  <p class="recap-note">La billetterie Billetweb s’ouvre dans un nouvel onglet.</p>
+</dialog>
 <button type="button" class="mini-cloche" data-mini-cloche data-grille="fil" data-effet="mini-cloche" aria-label="Faire sonner la cloche">
   <span class="mini-cloche-bol" aria-hidden="true"><span class="mini-cloche-eau"></span></span>
   <span class="mini-cloche-reperes" aria-hidden="true"></span>
 </button>
 <p class="pastille-son" data-pastille-son hidden aria-live="polite"><span data-son-etat>La cloche sonne</span> <button type="button" class="lien" data-son-bascule data-libelle-couper="Couper le son" data-libelle-remettre="Remettre le son" data-etat-coupe="Son coupé" data-etat-sonne="La cloche sonne">Couper le son</button></p>
+<svg class="defs-svg" width="0" height="0" aria-hidden="true" focusable="false"><filter id="encre-bords" x="-6%" y="-12%" width="112%" height="124%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="8" result="bruit"/><feDisplacementMap in="SourceGraphic" in2="bruit" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
 </body>
 </html>

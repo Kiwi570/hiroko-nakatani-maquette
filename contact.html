@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-v="1" data-page="contact">
+<html lang="fr" data-v="2" data-page="contact">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -40,14 +40,14 @@ if (alt) location.replace(new URL(alt.href).pathname + location.search + locatio
 setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
 })();</script>
 <link rel="preload" href="/assets/fonts/shippori-mincho-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/socle.css?v=1">
-<link rel="stylesheet" href="/assets/css/site.css?v=1">
-<link rel="modulepreload" href="/assets/js/site.js?v=1">
-<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<link rel="stylesheet" href="/assets/css/socle.css?v=2">
+<link rel="stylesheet" href="/assets/css/site.css?v=2">
+<link rel="modulepreload" href="/assets/js/site.js?v=2">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=2">
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
-<script type="module" src="/assets/js/site.js?v=1"></script>
+<script type="module" src="/assets/js/site.js?v=2"></script>
 <meta name="theme-color" content="#f2ede3">
 <link rel="icon" href="/assets/images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -114,23 +114,23 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 </div>
 <main id="contenu" tabindex="-1">
 <section class="c-ouverture" id="debut">
-  <div class="c-bandeau" data-iris-centre>
-    <figure class="media c-bandeau-media" data-grok data-fx="zoom" data-fx-force="10" style="--cadrage:58% 60%">
-  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/contact-banc-mobile-640.webp 640w" sizes="100vw">
-    <img src="/assets/images/grok/contact-banc-1280.webp" srcset="/assets/images/grok/contact-banc-640.webp 640w, /assets/images/grok/contact-banc-1280.webp 1280w" sizes="100vw" alt="Banc vide sous un grand arbre au petit matin" width="1280" height="549" fetchpriority="high" loading="eager" decoding="async">
-  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
-</figure>
-  </div>
   <div class="conteneur c-ouverture-grille">
     <div>
       <p class="surtitre" data-anime="gsap">Contact</p>
-      <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">Écrire à Hiroko</h1>
+      <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo"><em class="mot-encre">Écrire</em> à Hiroko</h1>
     </div>
     <div>
       <p class="intro masque-ecran-bas" data-anime="gsap">Une question sur une pratique, une marche pour votre groupe, le prochain cycle MBSR : le formulaire ou l’e-mail de l’association.</p>
       <p class="c-email" data-anime="gsap"><a href="mailto:imakokolo@netc.fr">imakokolo@netc.fr</a></p>
       <p class="actions" data-anime="gsap"><a class="bouton" href="#formulaire" data-action-principale>Écrire un message</a> <span class="prochaine-courte" data-info-cle>Réponse par e-mail</span></p>
     </div>
+  </div>
+  <div class="c-bandeau" data-iris-centre>
+    <figure class="media c-bandeau-media" data-grok data-fx="zoom" data-fx-force="10" style="--cadrage:58% 60%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/contact-banc-mobile-640.webp 640w" sizes="100vw">
+    <img src="/assets/images/grok/contact-banc-1280.webp" srcset="/assets/images/grok/contact-banc-640.webp 640w, /assets/images/grok/contact-banc-1280.webp 1280w" sizes="100vw" alt="Banc vide sous un grand arbre au petit matin" width="1280" height="549" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
   </div>
 </section>
 <section class="c-form conteneur" id="formulaire">
@@ -155,6 +155,10 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
       <p class="rgpd">Vos coordonnées servent seulement à vous répondre. Politique de confidentialité : à compléter.</p>
       <p class="etape-actions"><button type="button" class="bouton bouton--contour" data-precedent>Retour</button> <button type="submit" class="bouton">Envoyer</button></p>
     </fieldset>
+    <div class="enveloppe" data-enveloppe aria-hidden="true" hidden>
+      <svg viewBox="0 0 240 160" focusable="false"><rect class="env-corps" x="6" y="28" width="228" height="126" rx="6"/><path class="env-plis" d="M8 152 L100 92 M232 152 L140 92"/><path class="env-rabat" d="M8 32 L120 108 L232 32 Z"/></svg>
+      <span class="tampon">reçu</span>
+    </div>
     <p class="message-envoi" data-message-envoi hidden role="status">Maquette : rien n’a été envoyé. Sur le vrai site, le message partira vers imakokolo@netc.fr.</p>
   </form>
 </section>
@@ -164,15 +168,29 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
       <p class="surtitre" data-anime>Les lieux</p>
       <h2 data-anime="lignes">Où se retrouver</h2>
       <ol class="lieux" data-anime="cascade">
-        <li><span class="lieu-num" aria-hidden="true">1</span><div><strong>Maison du Citoyen, salle 207</strong><span>16 rue du Révérend Père Lucien Aubry, 94120 Fontenay-sous-Bois</span><span class="lieu-note">À 15 minutes à pied ou 10 minutes en bus 124 de la gare de Fontenay-sous-Bois (RER A).</span></div></li><li><span class="lieu-num" aria-hidden="true">2</span><div><strong>Parc floral de Paris</strong><span>Entrée du Parc floral, bois de Vincennes (Paris 12e)</span><span class="lieu-note">Entrée du parc gratuite en automne et en hiver.</span></div></li><li><span class="lieu-num" aria-hidden="true">3</span><div><strong>Jardin d’agronomie tropicale</strong><span>Gare de Fontenay-sous-Bois (RER A)</span></div></li><li><span class="lieu-num" aria-hidden="true">4</span><div><strong>Le long du cours d’eau</strong><span>Gare de Fontenay-sous-Bois (RER A)</span></div></li><li><span class="lieu-num" aria-hidden="true">5</span><div><strong>Château de Vincennes</strong><span>Mairie de Vincennes</span><span class="lieu-note">Dates à venir.</span></div></li>
+        <li data-lieu="1"><span class="lieu-num" aria-hidden="true">1</span><div><strong>Maison du Citoyen, salle 207</strong><span>16 rue du Révérend Père Lucien Aubry, 94120 Fontenay-sous-Bois</span><span class="lieu-note">À 15 minutes à pied ou 10 minutes en bus 124 de la gare de Fontenay-sous-Bois (RER A).</span><a class="lieu-itineraire" href="https://www.google.com/maps/dir/?api=1&amp;destination=Maison%20du%20Citoyen%2C%2016%20rue%20du%20R%C3%A9v%C3%A9rend%20P%C3%A8re%20Lucien%20Aubry%2C%2094120%20Fontenay-sous-Bois" target="_blank" rel="noopener" aria-label="Itinéraire : Maison du Citoyen, salle 207 (s’ouvre dans un nouvel onglet)">Itinéraire <span aria-hidden="true">↗</span></a></div></li><li data-lieu="2"><span class="lieu-num" aria-hidden="true">2</span><div><strong>Parc floral de Paris</strong><span>Entrée du Parc floral, bois de Vincennes (Paris 12e)</span><span class="lieu-note">Entrée du parc gratuite en automne et en hiver.</span><a class="lieu-itineraire" href="https://www.google.com/maps/dir/?api=1&amp;destination=Parc%20floral%20de%20Paris%2C%20Route%20de%20la%20Pyramide%2C%2075012%20Paris" target="_blank" rel="noopener" aria-label="Itinéraire : Parc floral de Paris (s’ouvre dans un nouvel onglet)">Itinéraire <span aria-hidden="true">↗</span></a></div></li><li data-lieu="3"><span class="lieu-num" aria-hidden="true">3</span><div><strong>Jardin d’agronomie tropicale</strong><span>Gare de Fontenay-sous-Bois (RER A)</span><a class="lieu-itineraire" href="https://www.google.com/maps/dir/?api=1&amp;destination=Jardin%20d%E2%80%99agronomie%20tropicale%2C%2045%20bis%20avenue%20de%20la%20Belle%20Gabrielle%2C%2075012%20Paris" target="_blank" rel="noopener" aria-label="Itinéraire : Jardin d’agronomie tropicale (s’ouvre dans un nouvel onglet)">Itinéraire <span aria-hidden="true">↗</span></a></div></li><li data-lieu="4"><span class="lieu-num" aria-hidden="true">4</span><div><strong>Le long du cours d’eau</strong><span>Gare de Fontenay-sous-Bois (RER A)</span><a class="lieu-itineraire" href="https://www.google.com/maps/dir/?api=1&amp;destination=Gare%20de%20Fontenay-sous-Bois%2C%2094120%20Fontenay-sous-Bois" target="_blank" rel="noopener" aria-label="Itinéraire : Le long du cours d’eau (s’ouvre dans un nouvel onglet)">Itinéraire <span aria-hidden="true">↗</span></a></div></li><li data-lieu="5"><span class="lieu-num" aria-hidden="true">5</span><div><strong>Château de Vincennes</strong><span>Mairie de Vincennes</span><span class="lieu-note">Dates à venir.</span><a class="lieu-itineraire" href="https://www.google.com/maps/dir/?api=1&amp;destination=Mairie%20de%20Vincennes%2C%2053%20bis%20rue%20de%20Fontenay%2C%2094300%20Vincennes" target="_blank" rel="noopener" aria-label="Itinéraire : Château de Vincennes (s’ouvre dans un nouvel onglet)">Itinéraire <span aria-hidden="true">↗</span></a></div></li>
         <li><span class="lieu-num" aria-hidden="true">✦</span><div><strong>En ligne</strong><span>Depuis un ordinateur ou un téléphone, sans application à installer</span></div></li>
       </ol>
     </div>
-    <svg class="c-plan" viewBox="0 0 420 260" data-visuel data-fx="trace" role="img" aria-label="Plan simplifié des lieux de pratique à l’est de Paris">
-      <path data-fx-trait class="plan-bois" d="M60 130 C 80 90 140 80 190 90 C 250 76 320 88 360 120 C 380 150 366 196 330 216 C 280 240 210 246 150 234 C 100 224 56 198 50 162 C 48 150 52 140 60 130 Z"/>
-      <path data-fx-trait class="plan-rer" d="M20 52 C 120 46 240 40 410 34"/>
-      <path data-fx-trait class="plan-ruisseau" d="M232 128 C 244 150 238 168 256 184 C 276 200 300 196 318 210"/>
-      <g class="plan-repere" data-repere><circle cx="300" cy="70" r="13"/><text x="300" y="75" text-anchor="middle">1</text></g><g class="plan-repere" data-repere><circle cx="150" cy="150" r="13"/><text x="150" y="155" text-anchor="middle">2</text></g><g class="plan-repere" data-repere><circle cx="330" cy="150" r="13"/><text x="330" y="155" text-anchor="middle">3</text></g><g class="plan-repere" data-repere><circle cx="255" cy="185" r="13"/><text x="255" y="190" text-anchor="middle">4</text></g><g class="plan-repere" data-repere><circle cx="140" cy="100" r="13"/><text x="140" y="105" text-anchor="middle">5</text></g>
+    <svg class="c-plan c-carte" viewBox="0 0 520 340" data-visuel data-effet="carte-pinceau" data-carte role="img" aria-label="Plan dessiné de l’est parisien : le bois de Vincennes, la Marne, le RER A et les cinq lieux de pratique" data-audit-ignorer>
+      <g filter="url(#encre-bords)">
+        <path class="carte-bois" data-carte-trait d="M108 168 C 120 120 180 98 238 104 C 300 92 372 112 398 152 C 414 190 396 246 350 270 C 292 298 214 300 158 284 C 110 270 84 232 92 196 C 95 184 100 176 108 168 Z" pathLength="1"/>
+        <path class="carte-lac" data-carte-trait d="M128 232 C 136 220 158 222 162 236 C 164 250 146 258 134 252 C 124 248 122 240 128 232 Z" pathLength="1"/>
+        <path class="carte-lac" data-carte-trait d="M318 146 C 326 136 346 138 348 150 C 350 162 334 168 324 162 C 316 158 314 152 318 146 Z" pathLength="1"/>
+        <path class="carte-marne" data-carte-trait d="M520 192 C 474 212 456 258 424 290 C 392 320 330 332 266 330 C 200 328 140 318 70 338" pathLength="1"/>
+        <path class="carte-rer" data-carte-trait d="M0 86 C 60 80 110 74 150 72 C 250 66 360 82 430 118 C 464 140 472 196 452 254" pathLength="1"/>
+      </g>
+      <g class="carte-noms" aria-hidden="true">
+        <text x="226" y="214" class="carte-nom-bois">Bois de Vincennes</text>
+        <text x="300" y="322" class="carte-nom-eau">la Marne</text>
+        <text x="10" y="74" class="carte-nom-rer">RER A</text>
+        <text x="16" y="150">← Paris</text>
+        <text x="126" y="58">Vincennes</text>
+        <text x="442" y="114">Fontenay</text>
+        <text x="464" y="262">Nogent</text>
+      </g>
+      <rect class="carte-gare" x="144" y="66" width="12" height="12" rx="3"/><rect class="carte-gare" x="424" y="112" width="12" height="12" rx="3"/><rect class="carte-gare" x="446" y="248" width="12" height="12" rx="3"/>
+      <g class="plan-repere carte-repere" data-repere="1" style="--x:472px;--y:78px"><circle cx="472" cy="78" r="14"/><text x="472" y="83" text-anchor="middle">1</text></g><g class="plan-repere carte-repere" data-repere="2" style="--x:196px;--y:150px"><circle cx="196" cy="150" r="14"/><text x="196" y="155" text-anchor="middle">2</text></g><g class="plan-repere carte-repere" data-repere="3" style="--x:394px;--y:214px"><circle cx="394" cy="214" r="14"/><text x="394" y="219" text-anchor="middle">3</text></g><g class="plan-repere carte-repere" data-repere="4" style="--x:322px;--y:192px"><circle cx="322" cy="192" r="14"/><text x="322" y="197" text-anchor="middle">4</text></g><g class="plan-repere carte-repere" data-repere="5" style="--x:168px;--y:98px"><circle cx="168" cy="98" r="14"/><text x="168" y="103" text-anchor="middle">5</text></g>
     </svg>
   </div>
 </section>
@@ -215,10 +233,25 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   <a class="bouton bouton--contour" href="/contact" data-libelle="Contact">Écrire</a>
   <a class="bouton" href="/agenda" data-libelle="Agenda">Réserver</a>
 </div>
+<dialog class="recap" data-recap aria-labelledby="recap-titre">
+  <button type="button" class="recap-fermer" data-recap-fermer aria-label="Fermer"><span aria-hidden="true">×</span></button>
+  <p class="surtitre">Avant de réserver</p>
+  <h2 id="recap-titre" class="recap-titre" data-recap-titre></h2>
+  <p class="recap-sous" data-recap-sous></p>
+  <dl class="recap-liste">
+    <div><dt>Quand</dt><dd data-recap-quand></dd></div>
+    <div><dt>Où</dt><dd data-recap-ou></dd></div>
+    <div><dt>À apporter</dt><dd><span data-apporter="marche" hidden>De bonnes chaussures, une tenue selon la météo, de l’eau. Rendez-vous 5 minutes avant.</span><span data-apporter="atelier" hidden>Une tenue souple, des chaussettes chaudes ; tapis et coussins sont sur place.</span><span data-apporter="enligne" hidden>Un endroit calme, un ordinateur ou un téléphone ; le lien arrive par e-mail.</span><span data-apporter="saison" hidden>Une tenue selon la météo et un petit tapis ou un plaid pour s’asseoir dehors.</span></dd></div>
+    <div><dt>Prix</dt><dd class="recap-prix" data-recap-prix></dd></div>
+  </dl>
+  <p class="recap-actions"><a class="bouton" data-recap-lien href="https://www.billetweb.fr/les-formules-annuelles-cartes-fidelites" target="_blank" rel="noopener">Continuer sur Billetweb</a> <button type="button" class="bouton bouton--contour" data-recap-fermer>Choisir une autre date</button></p>
+  <p class="recap-note">La billetterie Billetweb s’ouvre dans un nouvel onglet.</p>
+</dialog>
 <button type="button" class="mini-cloche" data-mini-cloche data-grille="fil" data-effet="mini-cloche" aria-label="Faire sonner la cloche">
   <span class="mini-cloche-bol" aria-hidden="true"><span class="mini-cloche-eau"></span></span>
   <span class="mini-cloche-reperes" aria-hidden="true"></span>
 </button>
 <p class="pastille-son" data-pastille-son hidden aria-live="polite"><span data-son-etat>La cloche sonne</span> <button type="button" class="lien" data-son-bascule data-libelle-couper="Couper le son" data-libelle-remettre="Remettre le son" data-etat-coupe="Son coupé" data-etat-sonne="La cloche sonne">Couper le son</button></p>
+<svg class="defs-svg" width="0" height="0" aria-hidden="true" focusable="false"><filter id="encre-bords" x="-6%" y="-12%" width="112%" height="124%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="8" result="bruit"/><feDisplacementMap in="SourceGraphic" in2="bruit" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
 </body>
 </html>

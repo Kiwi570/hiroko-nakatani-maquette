@@ -117,6 +117,26 @@ function pied(c) {
 
 /* Petite cloche : le fil qui relie les sections et les pages (grille wouahou, point 4).
    Sur téléphone et tablette, elle vit dans la barre du bas ; sur ordinateur, dans la marge gauche. */
+/* Panneau « Avant de réserver » (v2) : au clic sur Réserver d'une date, quoi, quand, où, quoi apporter, le prix,
+   puis « Continuer sur Billetweb ». Sans JavaScript, le bouton Réserver ouvre directement la billetterie. */
+function recap(c) {
+  const types = Object.entries(c.textes?.commun?.recap?.apporterTypes || { marche: 1, atelier: 1, enligne: 1, saison: 1 });
+  return html`<dialog class="recap" data-recap aria-labelledby="recap-titre">
+  <button type="button" class="recap-fermer" data-recap-fermer aria-label="${c.s('commun.recap.fermer')}"><span aria-hidden="true">×</span></button>
+  <p class="surtitre">${c.t('commun.recap.surtitre')}</p>
+  <h2 id="recap-titre" class="recap-titre" data-recap-titre></h2>
+  <p class="recap-sous" data-recap-sous></p>
+  <dl class="recap-liste">
+    <div><dt>${c.t('commun.recap.quand')}</dt><dd data-recap-quand></dd></div>
+    <div><dt>${c.t('commun.recap.ou')}</dt><dd data-recap-ou></dd></div>
+    <div><dt>${c.t('commun.recap.apporter')}</dt><dd>${types.map(([k]) => html`<span data-apporter="${k}" hidden>${c.t(`commun.recap.apporterTypes.${k}`)}</span>`)}</dd></div>
+    <div><dt>${c.t('commun.recap.prix')}</dt><dd class="recap-prix" data-recap-prix></dd></div>
+  </dl>
+  <p class="recap-actions"><a class="bouton" data-recap-lien href="${c.site.billetterie}" target="_blank" rel="noopener">${c.t('commun.recap.continuer')}</a> <button type="button" class="bouton bouton--contour" data-recap-fermer>${c.t('commun.recap.autre')}</button></p>
+  <p class="recap-note">${c.t('commun.recap.note')}</p>
+</dialog>`;
+}
+
 function miniCloche(c) {
   return html`<button type="button" class="mini-cloche" data-mini-cloche data-grille="fil" data-effet="mini-cloche" aria-label="${c.s('commun.miniCloche')}">
   <span class="mini-cloche-bol" aria-hidden="true"><span class="mini-cloche-eau"></span></span>
@@ -162,7 +182,9 @@ ${contenu}
 </main>
 ${pied(c)}
 ${barre(c)}
+${recap(c)}
 ${miniCloche(c)}
+<svg class="defs-svg" width="0" height="0" aria-hidden="true" focusable="false"><filter id="encre-bords" x="-6%" y="-12%" width="112%" height="124%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="8" result="bruit"/><feDisplacementMap in="SourceGraphic" in2="bruit" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
 </body>
 </html>`;
 }

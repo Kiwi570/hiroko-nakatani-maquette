@@ -2,6 +2,7 @@
 
 Maquette du site de Hiroko Nakatani, instructrice MBSR (méditation de pleine conscience, Paris Est et en ligne), et de l'association IMA KOKO-LO.
 Direction « La cloche qui chante » : la cloche de méditation reste à l'écran sur l'accueil (ordinateur) ; on la fait chanter en faisant le tour du bord, on la frappe en touchant l'eau, et son eau reflète chaque pratique.
+Version 2 (« plus vivant ») : voir CHANGELOG.md.
 
 Adresse prévue : https://hiroko-nakatani-maquette.vercel.app (à mettre dans le module Wix « Intégrer un site »).
 
@@ -47,6 +48,9 @@ Les textes sont dans `donnees/textes/fr.json`, l'agenda dans `donnees/agenda.jso
 - Illustrations générées avec Grok (dossier `assets/images/grok/`) : elles portent la mention « Illustration générée », **à garder sur le site final**.
 - Polices : Shippori Mincho et Albert Sans (SIL Open Font License), hébergées avec le site.
 - Son de la cloche : synthétisé dans le navigateur (aucun fichier audio).
+- Bol chantant et coussin (v2) : rendus calculés pour la maquette (`assets/images/cloche-bol-*.webp`, `cloche-coussin-*.webp`), ni photo ni image générée.
+- Textures (v2) : papier washi, reflets d'eau du voile, bord d'encre sèche, calculés pour la maquette.
+- Liens « Itinéraire » de la page Contact : Google Maps (aucune clé, simple lien).
 
 ## À la mise en ligne définitive
 

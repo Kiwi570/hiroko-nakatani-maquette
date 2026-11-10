@@ -2,7 +2,7 @@
    Automne : feuilles de ginkgo et de chêne ; printemps : pétales de cerisier ; été : aigrettes dans la lumière ;
    hiver : quelques flocons. Peu nombreux (16 sur ordinateur, 8 sur téléphone). Une feuille qui tombe dans l'eau
    de la cloche y fait une onde (rappel surEau). Boucle du socle : à l'écran seulement, jamais en mode calme. */
-import { boucle, etat } from './socle/index.js?v=1';
+import { boucle, etat } from './socle/index.js?v=2';
 
 export function saisonDuJour(d = new Date()) {
   const m = +new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Paris', month: 'numeric' }).format(d);

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-v="1" data-page="ateliers">
+<html lang="fr" data-v="2" data-page="ateliers">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -40,14 +40,14 @@ if (alt) location.replace(new URL(alt.href).pathname + location.search + locatio
 setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
 })();</script>
 <link rel="preload" href="/assets/fonts/shippori-mincho-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/socle.css?v=1">
-<link rel="stylesheet" href="/assets/css/site.css?v=1">
-<link rel="modulepreload" href="/assets/js/site.js?v=1">
-<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<link rel="stylesheet" href="/assets/css/socle.css?v=2">
+<link rel="stylesheet" href="/assets/css/site.css?v=2">
+<link rel="modulepreload" href="/assets/js/site.js?v=2">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=2">
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
-<script type="module" src="/assets/js/site.js?v=1"></script>
+<script type="module" src="/assets/js/site.js?v=2"></script>
 <meta name="theme-color" content="#f2ede3">
 <link rel="icon" href="/assets/images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -116,12 +116,12 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 <section class="a-ouverture" id="debut">
   <div class="conteneur a-ouverture-tete">
     <p class="surtitre" data-anime="gsap">Ateliers et méditation en ligne</p>
-    <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">Un thème par mois, toute l’année</h1>
+    <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">Un <em class="mot-encre">thème</em> par mois, toute l’année</h1>
     <p class="intro masque-ecran-bas" data-anime="gsap">Le cycle 2026-2027 s’inspire du programme MBSR : le même thème au samedi en salle et aux mardis soir en ligne.</p>
   </div>
-  <div class="anneau" data-anneau="2" data-effet="anneau-themes" role="img" aria-label="Les thèmes de l’année 2026-2027, celui du mois mis en avant : 3 « Respirer, observer »">
-    <ol class="anneau-themes" aria-hidden="true">
-      <li class="anneau-theme" style="--i:0;--n:10"><span class="anneau-num">1</span><span class="anneau-nom">La pleine conscience</span></li><li class="anneau-theme" style="--i:1;--n:10"><span class="anneau-num">2</span><span class="anneau-nom">Corps et monde</span></li><li class="anneau-theme est-courant" style="--i:2;--n:10"><span class="anneau-num">3</span><span class="anneau-nom">Respirer, observer</span></li><li class="anneau-theme" style="--i:3;--n:10"><span class="anneau-num">✦</span><span class="anneau-nom">Thème spécial de fin d’année</span></li><li class="anneau-theme" style="--i:4;--n:10"><span class="anneau-num">4</span><span class="anneau-nom">Le stress ?</span></li><li class="anneau-theme" style="--i:5;--n:10"><span class="anneau-num">5</span><span class="anneau-nom">Du réflexe à la conscience</span></li><li class="anneau-theme" style="--i:6;--n:10"><span class="anneau-num">6</span><span class="anneau-nom">Présence à soi et aux autres</span></li><li class="anneau-theme" style="--i:7;--n:10"><span class="anneau-num">6,5</span><span class="anneau-nom">Vivre sans parole</span></li><li class="anneau-theme" style="--i:8;--n:10"><span class="anneau-num">7</span><span class="anneau-nom">Prendre soin de soi</span></li><li class="anneau-theme" style="--i:9;--n:10"><span class="anneau-num">8</span><span class="anneau-nom">Intégrer et poursuivre</span></li>
+  <div class="anneau" data-anneau="2" data-effet="anneau-themes" role="group" aria-label="Les thèmes de l’année 2026-2027 : faites tourner l’anneau ou choisissez un numéro pour voir le mois, l’atelier et les mardis en ligne">
+    <ol class="anneau-themes">
+      <li class="anneau-theme" style="--i:0;--n:10"><button type="button" class="anneau-num" data-i="0" data-mois="septembre" data-titre="1 · La pleine conscience" data-detail="Thème 1 · « La pleine conscience » · atelier samedi 12 septembre · en ligne : quatre mardis" aria-pressed="false" aria-label="septembre : Thème 1 · « La pleine conscience » · atelier samedi 12 septembre · en ligne : quatre mardis">1</button></li><li class="anneau-theme" style="--i:1;--n:10"><button type="button" class="anneau-num" data-i="1" data-mois="octobre" data-titre="2 · Corps et monde" data-detail="Thème 2 · « Corps et monde » · atelier samedi 10 octobre · en ligne : mardis 6, 13, 20 et 27" aria-pressed="false" aria-label="octobre : Thème 2 · « Corps et monde » · atelier samedi 10 octobre · en ligne : mardis 6, 13, 20 et 27">2</button></li><li class="anneau-theme est-courant" style="--i:2;--n:10"><button type="button" class="anneau-num" data-i="2" data-mois="novembre" data-titre="3 · Respirer, observer" data-detail="Thème 3 · « Respirer, observer » · atelier samedi 21 novembre · en ligne : mardis 3, 10, 17 et 24" aria-pressed="true" aria-label="novembre : Thème 3 · « Respirer, observer » · atelier samedi 21 novembre · en ligne : mardis 3, 10, 17 et 24">3</button></li><li class="anneau-theme" style="--i:3;--n:10"><button type="button" class="anneau-num" data-i="3" data-mois="décembre" data-titre="Thème spécial de fin d’année" data-detail="« Thème spécial de fin d’année » · pas d’atelier en salle · en ligne : mardis 1, 8, 15 et 22" aria-pressed="false" aria-label="décembre : « Thème spécial de fin d’année » · pas d’atelier en salle · en ligne : mardis 1, 8, 15 et 22">✦</button></li><li class="anneau-theme" style="--i:4;--n:10"><button type="button" class="anneau-num" data-i="4" data-mois="janvier" data-titre="4 · Le stress ?" data-detail="Thème 4 · « Le stress ? » · atelier samedi 16 janvier · en ligne : quatre mardis" aria-pressed="false" aria-label="janvier : Thème 4 · « Le stress ? » · atelier samedi 16 janvier · en ligne : quatre mardis">4</button></li><li class="anneau-theme" style="--i:5;--n:10"><button type="button" class="anneau-num" data-i="5" data-mois="février" data-titre="5 · Du réflexe à la conscience" data-detail="Thème 5 · « Du réflexe à la conscience » · atelier samedi 6 février · en ligne : quatre mardis" aria-pressed="false" aria-label="février : Thème 5 · « Du réflexe à la conscience » · atelier samedi 6 février · en ligne : quatre mardis">5</button></li><li class="anneau-theme" style="--i:6;--n:10"><button type="button" class="anneau-num" data-i="6" data-mois="mars" data-titre="6 · Présence à soi et aux autres" data-detail="Thème 6 · « Présence à soi et aux autres » · atelier samedi 13 mars · en ligne : quatre mardis" aria-pressed="false" aria-label="mars : Thème 6 · « Présence à soi et aux autres » · atelier samedi 13 mars · en ligne : quatre mardis">6</button></li><li class="anneau-theme" style="--i:7;--n:10"><button type="button" class="anneau-num" data-i="7" data-mois="avril" data-titre="6,5 · Vivre sans parole" data-detail="Thème 6,5 · « Vivre sans parole » · atelier samedi 24 avril · en ligne : quatre mardis" aria-pressed="false" aria-label="avril : Thème 6,5 · « Vivre sans parole » · atelier samedi 24 avril · en ligne : quatre mardis">6,5</button></li><li class="anneau-theme" style="--i:8;--n:10"><button type="button" class="anneau-num" data-i="8" data-mois="mai" data-titre="7 · Prendre soin de soi" data-detail="Thème 7 · « Prendre soin de soi » · atelier samedi 22 mai · en ligne : quatre mardis" aria-pressed="false" aria-label="mai : Thème 7 · « Prendre soin de soi » · atelier samedi 22 mai · en ligne : quatre mardis">7</button></li><li class="anneau-theme" style="--i:9;--n:10"><button type="button" class="anneau-num" data-i="9" data-mois="juin" data-titre="8 · Intégrer et poursuivre" data-detail="Thème 8 · « Intégrer et poursuivre » · atelier samedi 12 juin · en ligne : quatre mardis" aria-pressed="false" aria-label="juin : Thème 8 · « Intégrer et poursuivre » · atelier samedi 12 juin · en ligne : quatre mardis">8</button></li>
     </ol>
     <div class="anneau-centre" data-iris-centre="disque">
       <figure class="media anneau-media" data-grok style="--cadrage:50% 62%">
@@ -129,10 +129,12 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     <img src="/assets/images/grok/ateliers-ouverture-1280.webp" srcset="/assets/images/grok/ateliers-ouverture-640.webp 640w, /assets/images/grok/ateliers-ouverture-1280.webp 1280w" sizes="(max-width: 760px) 70vw, 34vw" alt="Salle d’atelier lumineuse, coussins en cercle" width="1280" height="720" fetchpriority="high" loading="eager" decoding="async">
   </picture><figcaption class="mention-ia">Illustration générée</figcaption>
 </figure>
+      <p class="anneau-info" aria-hidden="true"><span class="anneau-mois" data-anneau-mois>novembre</span><span class="anneau-titre" data-anneau-titre>3 · Respirer, observer</span></p>
     </div>
+    <p class="anneau-aide" aria-hidden="true">Faites tourner l’anneau</p>
   </div>
   <div class="conteneur a-ouverture-pied">
-    <p class="prochaine" data-info-cle data-anime="gsap"><span>Ce mois-ci · novembre</span> <strong>Thème 3 · « Respirer, observer » · atelier le samedi 21 novembre</strong></p>
+    <p class="prochaine" data-info-cle data-anime="gsap"><span data-anneau-label data-courant="Ce mois-ci · novembre">Ce mois-ci · novembre</span> <strong data-anneau-detail aria-live="polite">Thème 3 · « Respirer, observer » · atelier samedi 21 novembre · en ligne : mardis 3, 10, 17 et 24</strong></p>
     <p class="actions" data-anime="gsap"><a href="/agenda?type=atelier" class="bouton" data-libelle="Agenda" data-action-principale>Réserver un atelier</a> <a class="bouton bouton--contour" href="#en-ligne">Méditation du soir en ligne</a></p>
   </div>
 </section>
@@ -172,7 +174,8 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     </div>
   </div>
 </section>
-<section class="a-enligne" id="en-ligne">
+<section class="a-enligne" id="en-ligne" data-effet="nuit-tombe">
+  <div class="a-nuit" aria-hidden="true"></div>
   <div class="conteneur a-enligne-grille">
     <div>
       <p class="surtitre" data-anime>Méditation du soir en ligne</p>
@@ -182,11 +185,14 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
       <p class="a-prix" data-anime><span data-prix>20,50 €</span> le mois, quatre mardis</p>
       <p data-anime><a class="bouton bouton--clair" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver un mois (s’ouvre dans un nouvel onglet)">Réserver un mois</a></p>
     </div>
-    <figure class="media a-enligne-media" data-grok data-fx="parallaxe" style="--cadrage:50% 50%">
+    <div class="a-lampe-cadre">
+      <figure class="media a-enligne-media" data-grok style="--cadrage:50% 50%">
   <picture>
     <img src="/assets/images/grok/ateliers-soir-960.webp" srcset="/assets/images/grok/ateliers-soir-480.webp 480w, /assets/images/grok/ateliers-soir-640.webp 640w, /assets/images/grok/ateliers-soir-960.webp 960w" sizes="(max-width: 760px) 92vw, 46vw" alt="" width="960" height="540" loading="lazy" decoding="async">
   </picture><figcaption class="mention-ia">Illustration générée</figcaption>
 </figure>
+      <span class="a-lampe" aria-hidden="true"></span>
+    </div>
   </div>
 </section>
 <section class="a-saison" id="saison">
@@ -235,10 +241,25 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   <a class="bouton bouton--contour" href="/contact" data-libelle="Contact">Écrire</a>
   <a class="bouton" href="/agenda" data-libelle="Agenda">Réserver</a>
 </div>
+<dialog class="recap" data-recap aria-labelledby="recap-titre">
+  <button type="button" class="recap-fermer" data-recap-fermer aria-label="Fermer"><span aria-hidden="true">×</span></button>
+  <p class="surtitre">Avant de réserver</p>
+  <h2 id="recap-titre" class="recap-titre" data-recap-titre></h2>
+  <p class="recap-sous" data-recap-sous></p>
+  <dl class="recap-liste">
+    <div><dt>Quand</dt><dd data-recap-quand></dd></div>
+    <div><dt>Où</dt><dd data-recap-ou></dd></div>
+    <div><dt>À apporter</dt><dd><span data-apporter="marche" hidden>De bonnes chaussures, une tenue selon la météo, de l’eau. Rendez-vous 5 minutes avant.</span><span data-apporter="atelier" hidden>Une tenue souple, des chaussettes chaudes ; tapis et coussins sont sur place.</span><span data-apporter="enligne" hidden>Un endroit calme, un ordinateur ou un téléphone ; le lien arrive par e-mail.</span><span data-apporter="saison" hidden>Une tenue selon la météo et un petit tapis ou un plaid pour s’asseoir dehors.</span></dd></div>
+    <div><dt>Prix</dt><dd class="recap-prix" data-recap-prix></dd></div>
+  </dl>
+  <p class="recap-actions"><a class="bouton" data-recap-lien href="https://www.billetweb.fr/les-formules-annuelles-cartes-fidelites" target="_blank" rel="noopener">Continuer sur Billetweb</a> <button type="button" class="bouton bouton--contour" data-recap-fermer>Choisir une autre date</button></p>
+  <p class="recap-note">La billetterie Billetweb s’ouvre dans un nouvel onglet.</p>
+</dialog>
 <button type="button" class="mini-cloche" data-mini-cloche data-grille="fil" data-effet="mini-cloche" aria-label="Faire sonner la cloche">
   <span class="mini-cloche-bol" aria-hidden="true"><span class="mini-cloche-eau"></span></span>
   <span class="mini-cloche-reperes" aria-hidden="true"></span>
 </button>
 <p class="pastille-son" data-pastille-son hidden aria-live="polite"><span data-son-etat>La cloche sonne</span> <button type="button" class="lien" data-son-bascule data-libelle-couper="Couper le son" data-libelle-remettre="Remettre le son" data-etat-coupe="Son coupé" data-etat-sonne="La cloche sonne">Couper le son</button></p>
+<svg class="defs-svg" width="0" height="0" aria-hidden="true" focusable="false"><filter id="encre-bords" x="-6%" y="-12%" width="112%" height="124%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="8" result="bruit"/><feDisplacementMap in="SourceGraphic" in2="bruit" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
 </body>
 </html>

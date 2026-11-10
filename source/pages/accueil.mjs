@@ -2,7 +2,8 @@
    Chaque section porte data-eau : l'image que l'eau de la cloche reflète quand la section est lue. */
 import { html, brut } from '../../outils/gabarit.mjs';
 import { IMA, KOKORO, NEN, TRAITS_IMA, TRAITS_KOKORO, TRAITS_NEN } from '../gabarits/kanji.mjs';
-import { prochaines, ligne, libelleProchaine, maintenantParis } from '../gabarits/agenda.mjs';
+import { prochaines, ligne, libelleProchaine, maintenantParis, seanceProchaine, compte } from '../gabarits/agenda.mjs';
+import { ensoPinceau } from '../gabarits/enso-pinceau.mjs';
 
 export const page = { cle: 'accueil', fichier: 'index', imagePartage: 'grok/plongee-bois' };
 
@@ -17,19 +18,20 @@ export default (c) => {
   const agenda = c.donnees.agenda;
   const suivante = prochaines(agenda, n, 1)[0];
   const liste = prochaines(agenda, n, 8);
+  const seance = suivante ? seanceProchaine(suivante, n) : null;
   return html`
 <section class="accueil-ouverture duo" id="debut" data-eau="grok/eau-bois">
   <canvas class="saison" data-saison aria-hidden="true" data-audit-ignorer></canvas>
   <div class="duo-texte">
     <p class="surtitre" data-anime="gsap">${c.t('accueil.surtitre')}</p>
-    <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">${c.t('accueil.titre')}</h1>
+    <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">${c.tb('accueil.titre')}</h1>
     <p class="intro" data-anime="gsap">${c.t('accueil.texte')}</p>
     <p class="pour-qui" data-anime="gsap">${c.t('accueil.pourQui')}</p>
     <p class="actions" data-anime="gsap">
       ${c.lien('agenda', { classe: 'bouton', texte: c.t('accueil.action'), attrs: 'data-action-principale data-survol="magnetique"' })}
       <a class="bouton bouton--contour" href="#pratiques">${c.t('accueil.actionDeux')}</a>
     </p>
-    <p class="prochaine" data-info-cle data-anime="gsap"><span>${c.t('accueil.prochaine')}</span> <a href="${c.url('agenda')}" data-libelle="${c.libelle('agenda')}" data-prochaine>${suivante ? libelleProchaine(suivante, n) : c.s('accueil.prochaineDefaut')}</a></p>
+    <p class="prochaine" data-info-cle data-anime="gsap"><span>${c.t('accueil.prochaine')}${seance ? html` <span class="compte" data-compte="${seance.debut}" data-compte-fin="${seance.fin}" aria-hidden="true">${compte(seance.debut, seance.fin, n)}</span>` : ''}</span> <a href="${c.url('agenda')}" data-libelle="${c.libelle('agenda')}" data-prochaine>${suivante ? libelleProchaine(suivante, n) : c.s('accueil.prochaineDefaut')}</a></p>
   </div>
   <div class="cloche" data-cloche data-grille="manipuler fil" data-effet="cloche" data-superpose>
     <span class="cloche-coussin" aria-hidden="true"></span>
@@ -115,7 +117,10 @@ export default (c) => {
 
 <section class="qui duo" id="hiroko" data-eau="eau-cerisier">
   <div class="duo-texte qui-grille">
-    ${c.media({ nom: 'hiroko-aquarelle', alt: c.s('accueil.quiAlt'), classe: 'qui-media', sizes: '(max-width: 760px) 60vw, 22vw', attrs: 'data-fx="zoom"' })}
+    <div class="qui-cadre" data-effet="enso-qui">
+      ${c.media({ nom: 'hiroko-aquarelle', alt: c.s('accueil.quiAlt'), classe: 'qui-media', sizes: '(max-width: 760px) 60vw, 22vw' })}
+      <svg class="qui-enso" viewBox="0 0 400 400" aria-hidden="true" focusable="false" data-audit-ignorer>${brut(ensoPinceau('qui'))}</svg>
+    </div>
     <div>
       <p class="surtitre" data-anime>${c.t('accueil.quiSurtitre')}</p>
       <h2 data-anime="lignes">${c.t('accueil.quiTitre')}</h2>
@@ -127,18 +132,22 @@ export default (c) => {
 </section>
 
 <section class="plongee" id="plongee" data-effet="plongee" data-eau="grok/eau-plongee">
-  ${c.media({ nom: 'grok/plongee-bois', alt: c.s('accueil.plongeeAlt'), classe: 'plongee-media', sizes: '100vw' })}
-  <div class="plongee-plans" aria-hidden="true" data-effet="plongee-profondeur" data-superpose>
-    ${['hg', 'hd', 'bd'].map((k, i) => html`<svg class="plan plan--${k}" viewBox="0 0 400 400" focusable="false">${brut(feuillage(i))}</svg>`)}
-  </div>
-  <div class="plongee-texte conteneur">
-    <p class="surtitre" data-anime>${c.t('accueil.plongeeSurtitre')}</p>
-    <h2 data-anime="lignes">${c.t('accueil.plongeeTitre')}</h2>
-    <p data-anime>${c.t('accueil.plongeeTexte')}</p>
-    <p class="actions" data-anime>
-      ${c.lien('agenda', { params: 'type=marche', classe: 'bouton bouton--clair', texte: c.t('accueil.plongeeAction'), attrs: 'data-survol="magnetique"' })}
-      ${c.lien('contact', { classe: 'bouton bouton--contour-clair', texte: c.t('accueil.plongeeDeux') })}
-    </p>
+  <div class="plongee-cadre">
+    ${c.media({ nom: 'grok/plongee-bois', alt: c.s('accueil.plongeeAlt'), classe: 'plongee-media', sizes: '100vw' })}
+    <div class="plongee-plans" aria-hidden="true" data-effet="plongee-profondeur" data-superpose>
+      <svg class="plan plan--milieu" viewBox="0 0 400 400" focusable="false">${brut(feuillage(3))}</svg>
+      <canvas class="plongee-poussiere" data-poussiere data-effet="poussiere-or" data-audit-ignorer></canvas>
+      ${['hg', 'hd', 'bd'].map((k, i) => html`<svg class="plan plan--${k}" viewBox="0 0 400 400" focusable="false">${brut(feuillage(i))}</svg>`)}
+    </div>
+    <div class="plongee-texte conteneur">
+      <p class="surtitre" data-plongee-suite>${c.t('accueil.plongeeSurtitre')}</p>
+      <h2 class="plongee-titre" data-plongee-titre data-effet="titre-onde">${c.t('accueil.plongeeTitre')}</h2>
+      <p data-plongee-suite>${c.t('accueil.plongeeTexte')}</p>
+      <p class="actions" data-plongee-suite>
+        ${c.lien('agenda', { params: 'type=marche', classe: 'bouton bouton--clair', texte: c.t('accueil.plongeeAction'), attrs: 'data-survol="magnetique"' })}
+        ${c.lien('contact', { classe: 'bouton bouton--contour-clair', texte: c.t('accueil.plongeeDeux') })}
+      </p>
+    </div>
   </div>
 </section>
 `;

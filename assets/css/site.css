@@ -790,3 +790,310 @@ html.cloche-fixe .accueil-ouverture .cloche, .plan { will-change: transform; }
   html:not(.js) .accueil-ouverture .cloche-consigne { display: none; }
 }
 @media (max-height: 500px) { html:not(.js) { --barres-h: 0px; } html:not(.js) [data-barre-fixe], html:not(.js) .mini-cloche { display: none; } }
+
+/* =====================================================================================================
+   v2 · plus vivant. Commun : papier washi, voile d'eau, mot-clé à l'encre, petite cloche qui reflète la section.
+   ===================================================================================================== */
+body { background-image: url('/assets/images/washi.png'); background-size: 360px 360px; }
+.defs-svg { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* Voile des changements de page : de l'eau, avec des reflets (caustiques) qui glissent. */
+[data-voile] { background: radial-gradient(130% 90% at 30% 15%, #36596b 0%, var(--eau) 55%, #132330 100%); overflow: hidden; }
+[data-voile]::before, [data-voile]::after { content: ''; position: absolute; inset: -30%; pointer-events: none; background: url('/assets/images/caustiques.webp') 0 0 / 460px 460px; mix-blend-mode: screen; }
+[data-voile]::before { opacity: .3; filter: blur(.6px); }
+[data-voile]::after { opacity: .16; background-size: 700px 700px; transform: rotate(18deg); }
+html:not(.voile-leve) [data-voile]::before { animation: caustiques 6s linear infinite; }
+html:not(.voile-leve) [data-voile]::after { animation: caustiques-2 9s linear infinite; }
+@keyframes caustiques { to { translate: 115px 58px; } }
+@keyframes caustiques-2 { to { translate: -175px 70px; } }
+.voile-contenu { position: relative; z-index: 1; }
+
+/* Mot-clé de chaque titre : posé au pinceau (bord sec, fibres), l'encre bave un instant puis sèche. */
+.mot-encre {
+  font-style: normal; font-weight: 700; display: inline-block; filter: url(#encre-bords);
+  -webkit-mask-image: url('/assets/images/encre-seche.webp'), linear-gradient(90deg, #000 42%, transparent 58%);
+  -webkit-mask-size: 100% 100%, 320% 100%; -webkit-mask-repeat: no-repeat; -webkit-mask-position: 0 0, 0 0; -webkit-mask-composite: source-in;
+          mask-image: url('/assets/images/encre-seche.webp'), linear-gradient(90deg, #000 42%, transparent 58%);
+          mask-size: 100% 100%, 320% 100%; mask-repeat: no-repeat; mask-position: 0 0, 0 0; mask-composite: intersect;
+}
+.mot-encre.encre-attente { -webkit-mask-position: 0 0, 100% 0; mask-position: 0 0, 100% 0; }
+.mot-encre.encre-pose { animation: encre-trace 1.05s cubic-bezier(.55, 0, .25, 1) both, encre-bave 1.9s ease-out both; }
+@keyframes encre-trace { from { -webkit-mask-position: 0 0, 100% 0; mask-position: 0 0, 100% 0; } to { -webkit-mask-position: 0 0, 0 0; mask-position: 0 0, 0 0; } }
+@keyframes encre-bave { 0% { text-shadow: 0 0 .16em currentColor, 0 0 .03em currentColor; } 60% { text-shadow: 0 0 .05em currentColor; } 100% { text-shadow: none; } }
+
+/* Petite cloche : le bol martelé, son eau montre la section lue. */
+.mini-cloche-bol { background: url('/assets/images/cloche-bol-560.webp') center / 100% 100% no-repeat; box-shadow: 0 8px 18px -8px rgba(16, 26, 30, .7); }
+.mini-cloche-eau { inset: 14%; }
+.mini-reflet { position: absolute; inset: -6%; border-radius: 50%; background: center / cover no-repeat; filter: blur(1.2px) saturate(.75) brightness(.9); opacity: 0; transition: opacity .7s; }
+.mini-reflet::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 38% 30%, rgba(255, 255, 255, .28), transparent 40%), linear-gradient(180deg, rgba(31, 51, 64, .1), rgba(31, 51, 64, .4)); }
+.mini-reflet.est-visible { opacity: 1; }
+.mini-cloche-eau::after { z-index: 1; }
+@media (min-width: 1000px) {
+  .mini-cloche { width: 74px; height: 74px; left: max(8px, calc((100vw - var(--largeur)) / 2 - 96px)); }
+  .mini-cloche-bol { width: 66px; height: 66px; }
+  .mini-cloche-reperes { -webkit-mask: radial-gradient(circle, transparent 0 34px, #000 35px); mask: radial-gradient(circle, transparent 0 34px, #000 35px); }
+}
+@media (min-width: 1000px) and (max-width: 1380px) {
+  html:not([data-page="accueil"]) .conteneur { width: min(100% - 2 * var(--gouttiere) - 2 * 84px, var(--largeur)); }
+}
+
+/* Compte à rebours de la prochaine séance : les chiffres qui changent roulent, le point respire à chaque minute. */
+.compte { display: inline-flex; align-items: baseline; gap: .22em; margin-left: .55em; padding: 1px 10px 1px 8px; border-radius: 999px; background: color-mix(in srgb, var(--sauge) 22%, #fbf8f1); color: var(--accent); font-size: .78rem; letter-spacing: .04em; text-transform: none; font-variant-numeric: tabular-nums; white-space: nowrap; vertical-align: 1px; }
+.compte::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); align-self: center; margin-right: 3px; }
+.compte b { display: inline-block; font-weight: 700; }
+.compte b.tic { animation: tic .55s cubic-bezier(.2, .8, .2, 1); }
+.compte:has(b.tic)::before { animation: respire 1.6s ease-in-out 2; }
+@keyframes tic { from { transform: translateY(-70%); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes respire { 0%, 100% { transform: scale(.7); opacity: .55; } 50% { transform: scale(1.2); opacity: 1; } }
+.prochaine--clair .compte, .g-prochaine .compte { background: rgba(242, 237, 227, .14); color: var(--washi); }
+.prochaine--clair .compte::before, .g-prochaine .compte::before { background: var(--accent-clair); }
+html.calme .compte b.tic, html.calme .compte::before { animation: none; }
+
+/* ---------- Accueil v2 ---------- */
+/* Bol chantant en bronze martelé (rendu), pente intérieure jusqu'à l'eau, coussin zafu plissé, ombre au sol. */
+.cloche-coussin { inset: -12%; border-radius: 0; background: url('/assets/images/cloche-coussin-1000.webp') center / 100% 100% no-repeat; box-shadow: none; }
+.cloche-coussin::after { content: none; }
+.cloche-bol { inset: 2%; background: url('/assets/images/cloche-bol-1000.webp') center / 100% 100% no-repeat; box-shadow: none; }
+.cloche-bol::after {
+  inset: 0; border-radius: 50%; box-shadow: none;
+  background: conic-gradient(from calc(var(--reflet, 0deg) + 140deg), transparent 0 7%, rgba(255, 238, 205, calc(.1 + var(--chant, 0) * .28)) 12%, transparent 19% 57%, rgba(255, 238, 205, calc(.06 + var(--chant, 0) * .22)) 63%, transparent 70%);
+  -webkit-mask: radial-gradient(circle, transparent 0 71%, #000 74% 98%, transparent 100%); mask: radial-gradient(circle, transparent 0 71%, #000 74% 98%, transparent 100%);
+}
+.cloche-eau { inset: 15%; }
+.cloche-eau::after { content: ''; position: absolute; inset: 0; z-index: 3; border-radius: 50%; pointer-events: none; box-shadow: inset 0 0 0 1px rgba(40, 24, 8, .55), inset 0 0 20px 5px rgba(18, 11, 4, .5), inset 0 -8px 16px rgba(255, 220, 170, .1); }
+.cloche-frapper { inset: 15%; }
+@media (max-width: 999px) {
+  .cloche-coussin { background-image: url('/assets/images/cloche-coussin-560.webp'); }
+  .cloche-bol { background-image: url('/assets/images/cloche-bol-560.webp'); }
+}
+/* Médaillon (pratiques et dates) : la consigne et la mention se retirent, le contenu prend la largeur. */
+.cloche-consigne, .cloche-eau .mention-ia { transition: opacity .45s; }
+html:is(.cloche-medaillon, .cloche-plonge) .cloche-consigne { opacity: 0 !important; visibility: hidden; pointer-events: none; transition: opacity .3s, visibility 0s .3s; }
+html.cloche-fixe :is(.pratiques, .dates) .duo-texte { margin-right: calc(max(var(--gouttiere), calc((100vw - var(--largeur)) / 2)) + 200px); }
+@media (min-width: 1200px) { html.cloche-fixe .pratiques-grille { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 1280px) {
+  html.cloche-fixe .dates .dates-liste { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  html.cloche-fixe .dates-bandeau { aspect-ratio: 4 / 1; }
+}
+/* Qui suis-je : l'aquarelle dans un ensō tracé au pinceau. */
+.qui-cadre { position: relative; display: grid; place-items: center; aspect-ratio: 1; }
+.qui-cadre .qui-media { width: 76%; }
+.qui-enso { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.enso-encre { fill: var(--encre); opacity: .9; }
+@media (max-width: 760px) { .qui-cadre { width: 78%; margin-inline: auto; } .qui-cadre .qui-media { width: 76%; } }
+/* Plongée : cadre collant, trois plans (photo, feuillage flou, feuillage net), poussière d'or, titre né d'une onde. */
+.plongee { display: block; overflow: clip; }
+.plongee::after { content: none; }
+.plongee-cadre { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; }
+.plongee-cadre::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(16, 26, 30, 0) 30%, rgba(16, 26, 30, .8) 100%); pointer-events: none; }
+html.js:not(.calme):not(.secours) .plongee { height: 200svh; }
+html.js:not(.calme):not(.secours) .plongee-cadre { position: sticky; top: 0; height: 100svh; min-height: 0; }
+.plongee-plans { z-index: 2; }
+.plongee-texte { z-index: 3; }
+.plongee .mention-ia { z-index: 4; }
+.plongee-media img { transform-origin: 50% 40%; }
+.plongee-poussiere { position: absolute; inset: 0; width: 100%; height: 100%; }
+.plan--milieu { left: -14%; top: 14%; width: min(56vw, 680px); fill: #2a4031; stroke: #2a4031; filter: blur(3px); opacity: .55; }
+html.js:not(.calme):not(.secours) .plan { opacity: 0; }
+.plongee-titre { transform-origin: 30% 60%; }
+
+.insecable { white-space: nowrap; }
+
+/* ---------- Marches v2 ---------- */
+.plan-parcours { fill: none; stroke: var(--bronze-clair); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; opacity: .55; transition: opacity .4s, stroke-width .4s; }
+.plan-parcours.est-actif { opacity: 1; stroke-width: 3.5; stroke: #f0c98c; }
+.plan-marcheur { fill: #fff; stroke: var(--bronze); stroke-width: 2.5; filter: drop-shadow(0 0 6px rgba(255, 220, 160, .9)); }
+:is(html.calme, html.secours, html:not(.js)) .plan-marcheur { display: none; }
+.plan-repere { transition: transform .4s; transform-box: fill-box; transform-origin: center; }
+.plan-repere.est-actif circle { fill: #f0c98c; }
+.plan-rond { display: grid; justify-items: center; align-content: center; gap: 10px; }
+.plan-legende { position: relative; margin: 0; min-height: 1.6em; width: 100%; text-align: center; font-family: var(--police-titres); font-size: 1.05rem; color: var(--washi); }
+.plan-legende span { position: absolute; inset: 0; opacity: 0; visibility: hidden; translate: 0 6px; transition: opacity .4s, translate .4s, visibility 0s .4s; }
+.plan-legende span.est-visible { opacity: 1; visibility: visible; translate: 0 0; transition: opacity .4s .5s, translate .4s .5s, visibility 0s .45s; }
+.plan-rond svg { width: 100%; height: auto; aspect-ratio: 1; }
+@media (max-width: 760px) { .plan-legende { font-size: .95rem; } }
+/* Déroulé : l'eau qui monte découvre la photo (bord en vague, reflet clair sur la ligne d'eau). */
+.frise-media picture {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' preserveAspectRatio='none'%3E%3Cpath d='M0 100 Q 25 90 50 100 T 100 100 T 150 100 T 200 100 V200 H0Z'/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' preserveAspectRatio='none'%3E%3Cpath d='M0 100 Q 25 90 50 100 T 100 100 T 150 100 T 200 100 V200 H0Z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 200% 200%; mask-size: 200% 200%; -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x;
+  -webkit-mask-position: 0 calc(var(--niveau, 1) * 100%); mask-position: 0 calc(var(--niveau, 1) * 100%);
+}
+.frise-media.monte picture { animation: vague 1.6s linear infinite; }
+@keyframes vague { to { -webkit-mask-position: -100% calc(var(--niveau, 1) * 100%); mask-position: -100% calc(var(--niveau, 1) * 100%); } }
+.frise-media { position: relative; background: radial-gradient(circle at 50% 70%, #9fc0cf, #5f8597); border-radius: 50%; }
+/* Tarifs : des feuilles tombent devant la photo. */
+.m-tarifs .saison { z-index: 1; }
+
+/* ---------- Ateliers v2 : l'anneau se fait tourner ---------- */
+.anneau { touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
+.anneau.glisse { cursor: grabbing; }
+.anneau-themes { z-index: 2; }
+button.anneau-num { border: 0; padding: 0; color: var(--encre); cursor: pointer; width: 44px; height: 44px; left: -22px; font: 700 .9rem var(--police-texte); transition: background-color .3s, color .3s, box-shadow .3s, scale .3s; }
+button.anneau-num:hover { box-shadow: inset 0 0 0 2px var(--accent); }
+.anneau-theme.est-courant button.anneau-num { scale: 1.12; }
+.anneau-centre { z-index: 1; }
+.anneau-info { position: absolute; inset: auto 0 0; z-index: 2; margin: 0; padding: 30% 12% 14%; display: grid; justify-items: center; gap: 2px; text-align: center; color: var(--washi); background: linear-gradient(180deg, transparent, rgba(16, 24, 20, .82) 55%); pointer-events: none; }
+.anneau-mois { font-family: var(--police-titres); font-size: clamp(1.3rem, 1rem + 1.4vw, 2rem); font-weight: 600; line-height: 1.1; text-transform: capitalize; }
+.anneau-titre { font-size: .9rem; font-weight: 600; line-height: 1.3; }
+.anneau-centre .mention-ia { z-index: 3; top: 12%; bottom: auto; }
+.anneau-aide { position: absolute; left: 50%; bottom: -30px; translate: -50% 0; margin: 0; font-size: .85rem; color: var(--texte-doux); white-space: nowrap; }
+.anneau-aide::before, .anneau-aide::after { content: '↻'; margin: 0 .4em; color: var(--sauge); }
+.anneau { margin-bottom: 44px; }
+@media (max-width: 760px) { .anneau-info { padding: 26% 10% 12%; } }
+:is(html.calme, html.secours, html:not(.js)) .anneau-aide { display: none; }
+/* La nuit tombe sur la méditation en ligne ; la lampe s'allume. */
+.a-enligne { background: #46597a; overflow: hidden; }
+.a-nuit { position: absolute; inset: 0; pointer-events: none; opacity: var(--nuit, 1);
+  background: radial-gradient(1.5px 1.5px at 12% 18%, rgba(255, 255, 255, .8), transparent), radial-gradient(1px 1px at 28% 8%, rgba(255, 255, 255, .7), transparent), radial-gradient(1.5px 1.5px at 46% 22%, rgba(255, 255, 255, .6), transparent), radial-gradient(1px 1px at 64% 12%, rgba(255, 255, 255, .8), transparent), radial-gradient(1.5px 1.5px at 82% 26%, rgba(255, 255, 255, .7), transparent), radial-gradient(1px 1px at 92% 6%, rgba(255, 255, 255, .7), transparent), radial-gradient(1px 1px at 6% 40%, rgba(255, 255, 255, .5), transparent), linear-gradient(180deg, #0f1c26, var(--eau) 70%); }
+.a-enligne-grille { position: relative; z-index: 1; }
+.a-enligne-grille > div:first-child { position: relative; }
+.a-enligne-grille > div:first-child::before { content: ''; position: absolute; inset: -18% -12%; z-index: -1; pointer-events: none; background: radial-gradient(closest-side, rgba(255, 196, 120, .16), transparent); opacity: var(--lampe, 1); }
+.a-lampe-cadre { position: relative; }
+.a-enligne-media img { filter: brightness(calc(1.06 - var(--nuit, 1) * .2)) saturate(calc(.8 + var(--lampe, 1) * .3)); }
+.a-lampe { position: absolute; left: 16.5%; top: 51%; width: 70%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; pointer-events: none; mix-blend-mode: screen; opacity: var(--lampe, 1); background: radial-gradient(closest-side, rgba(255, 214, 150, .75), rgba(255, 170, 90, .25) 45%, transparent 75%); }
+.a-enligne.lampe-allumee .a-lampe { animation: vacille 1.1s steps(1) 1; }
+@keyframes vacille { 0% { filter: brightness(.3); } 18% { filter: brightness(1.2); } 30% { filter: brightness(.5); } 46% { filter: brightness(1); } }
+html.calme .a-enligne.lampe-allumee .a-lampe { animation: none; }
+
+/* ---------- MBSR v2 ---------- */
+.annee { display: block; width: min(100%, 340px); height: auto; margin: 0 0 6px; overflow: visible; }
+.annee-texte { font-family: var(--police-titres); font-size: 172px; font-weight: 700; fill: color-mix(in srgb, var(--bronze) 28%, var(--washi)); stroke: var(--bronze); stroke-width: 2; paint-order: stroke; letter-spacing: -2px; }
+.b-profondeurs { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+html.js:not(.calme):not(.secours) .b-profondeurs { position: sticky; top: 0; height: 100svh; margin-bottom: -100svh; }
+.b-rayons { position: absolute; inset: -20% -10% 30%; background: repeating-linear-gradient(104deg, transparent 0 46px, rgba(220, 240, 255, .09) 46px 84px, transparent 84px 150px, rgba(220, 240, 255, .05) 150px 170px, transparent 170px 230px); filter: blur(7px); -webkit-mask: linear-gradient(180deg, #000, transparent 80%); mask: linear-gradient(180deg, #000, transparent 80%); opacity: calc(1 - var(--profondeur, 0) * .85); transform: translateX(calc(var(--profondeur, 0) * -80px)) skewX(-6deg); }
+.b-bulles { position: absolute; inset: 0; width: 100%; height: 100%; }
+@media (max-width: 760px), (max-height: 600px) { html.js:not(.calme):not(.secours) .b-profondeurs { position: absolute; height: auto; margin: 0; } }
+
+/* ---------- Agenda v2 : la rangée des dix feuilles ---------- */
+.mois-feuilles { margin: 0 0 18px; }
+.mois-feuilles ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 4px; max-width: 760px; }
+.mf a, .mf > span { display: grid; justify-items: center; gap: 4px; padding: 6px 0 4px; min-height: 44px; border-radius: 10px; text-decoration: none; color: var(--encre); }
+.mf a:hover, .mf a:focus-visible { background: color-mix(in srgb, var(--c) 14%, transparent); }
+.mf svg { width: 30px; height: 38px; overflow: visible; transform-origin: 50% 0; transition: rotate .5s var(--courbe), scale .4s var(--courbe); }
+.mf svg path:first-child { fill: var(--c); }
+.mf-nervure { fill: none; stroke: rgba(0, 0, 0, .22); stroke-width: 1.4; }
+.mf a:hover svg { rotate: -8deg; }
+.mf-nom { font-size: .78rem; font-weight: 600; color: var(--texte-doux); }
+.mf--passe svg path:first-child, .mf--vide svg path:first-child { fill: color-mix(in srgb, var(--c) 30%, var(--washi-2)); }
+.mf--passe .mf-nom, .mf--vide .mf-nom { color: color-mix(in srgb, var(--texte-doux) 70%, var(--washi)); }
+.mf--filtre svg { opacity: .35; }
+.mf--courant svg { scale: 1.18; filter: drop-shadow(0 0 8px color-mix(in srgb, var(--c) 70%, transparent)); }
+.mf--courant .mf-nom { color: var(--encre); }
+.mf--lu a { background: color-mix(in srgb, var(--c) 18%, transparent); }
+.mf--lu .mf-nom { color: var(--encre); }
+@media (max-width: 560px) { .mf svg { width: 22px; height: 30px; } .mf-nom { font-size: .72rem; } .mois-feuilles ol { gap: 0; } }
+.mois { scroll-margin-top: calc(var(--entete-h) + 80px); }
+.g-prochaine-compte { margin: -4px 0 12px; }
+.g-prochaine-compte .compte { margin-left: 0; font-size: .85rem; }
+
+/* Panneau « Avant de réserver ». */
+.recap { width: min(560px, calc(100vw - 2 * var(--gouttiere))); max-height: calc(100svh - 32px); padding: clamp(20px, 4vw, 34px); border: 0; border-radius: 20px; background: #fbf8f1 url('/assets/images/washi.png'); color: var(--encre); box-shadow: 0 40px 80px -30px rgba(16, 26, 30, .55); overflow: auto; }
+.recap::backdrop { background: rgba(20, 32, 40, .55); backdrop-filter: blur(3px); }
+.recap-fermer { position: absolute; right: 10px; top: 10px; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; font-size: 1.6rem; line-height: 1; color: var(--encre); cursor: pointer; }
+.recap-fermer:hover { background: var(--washi-2); }
+.recap-titre { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem); margin: 0 0 4px; padding-right: 40px; }
+.recap-sous { margin: 0 0 16px; color: var(--texte-doux); }
+.recap-liste { margin: 0 0 18px; display: grid; gap: 10px; }
+.recap-liste > div { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 12px; padding: 10px 0; border-top: 1px solid var(--ligne); }
+.recap-liste dt { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); padding-top: 3px; }
+.recap-liste dd { margin: 0; }
+.recap-prix { font-family: var(--police-titres); font-size: 1.3rem; font-weight: 700; color: var(--bronze-fonce); }
+.recap-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 8px; }
+.recap-note { margin: 0; font-size: .88rem; color: var(--texte-doux); }
+@media (max-width: 560px) { .recap-liste > div { grid-template-columns: minmax(0, 1fr); gap: 2px; } }
+
+/* ---------- Contact v2 ---------- */
+.c-ouverture { padding-top: calc(var(--entete-h) + clamp(16px, 3vw, 36px)); }
+.c-ouverture-grille { padding-block: 0 clamp(20px, 3vw, 36px); }
+.c-carte { width: 100%; height: auto; overflow: visible; }
+.carte-bois { fill: rgba(127, 156, 107, .3); stroke: var(--accent); stroke-width: 3; stroke-linejoin: round; }
+.carte-lac { fill: rgba(95, 133, 151, .45); stroke: #5f8597; stroke-width: 2; }
+.carte-marne { fill: none; stroke: #5f8597; stroke-width: 10; stroke-linecap: round; opacity: .85; }
+.carte-rer { fill: none; stroke: #b5352b; stroke-width: 3.5; stroke-linecap: round; }
+.carte-gare { fill: #fbf8f1; stroke: #b5352b; stroke-width: 2.5; }
+.carte-noms text { font: 500 14px var(--police-texte); fill: var(--texte-doux); }
+.carte-noms .carte-nom-bois { font: 600 17px var(--police-titres); fill: #2f4527; text-anchor: middle; }
+.carte-noms .carte-nom-eau { font: italic 600 15px var(--police-titres); fill: #3d6273; }
+.carte-noms .carte-nom-rer { font-weight: 700; fill: #b5352b; }
+.carte-repere { transform-box: fill-box; transform-origin: center; cursor: default; }
+.carte-repere circle { fill: var(--washi); stroke: var(--bronze); stroke-width: 3; transition: fill .3s; }
+.carte-repere text { font: 700 15px var(--police-texte); fill: var(--encre); }
+.carte-repere.est-vise circle { fill: #f0c98c; animation: battre .9s ease-in-out infinite alternate; }
+@keyframes battre { from { stroke-width: 3; } to { stroke-width: 7; } }
+html.calme .carte-repere.est-vise circle { animation: none; }
+.lieu-itineraire { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; font-weight: 600; color: var(--accent); width: max-content; }
+.lieux li { transition: background-color .3s; border-radius: 10px; }
+.lieux li:hover { background: color-mix(in srgb, var(--sauge) 10%, transparent); }
+/* Le message envoyé : plié en lettre, puis tamponné « reçu ». */
+.etapes.est-plie > .etapes-fil, .etapes.est-plie > .etape { display: none; }
+.enveloppe { position: relative; width: min(100%, 300px); margin: 6px auto 6px; }
+.enveloppe svg { width: 100%; height: auto; overflow: visible; filter: drop-shadow(0 14px 18px rgba(29, 33, 31, .18)); }
+.env-corps { fill: #fffdf7; stroke: var(--ligne); stroke-width: 2; }
+.env-plis { fill: none; stroke: color-mix(in srgb, var(--encre) 18%, transparent); stroke-width: 2; }
+.env-rabat { fill: #f5efe2; stroke: color-mix(in srgb, var(--encre) 22%, transparent); stroke-width: 2; stroke-linejoin: round; transform-box: fill-box; transform-origin: 50% 0; }
+.enveloppe:not([hidden]) .env-rabat { animation: rabat .7s .25s cubic-bezier(.3, .7, .2, 1) both; }
+@keyframes rabat { from { transform: scaleY(-1); } to { transform: none; } }
+.tampon { position: absolute; right: 6%; top: 4%; display: grid; place-items: center; width: 86px; height: 86px; border-radius: 50%; border: 3px solid #b5352b; color: #b5352b; font: 700 1.25rem var(--police-titres); letter-spacing: .06em; rotate: -14deg; opacity: 0; box-shadow: inset 0 0 0 4px #fffdf7, inset 0 0 0 5.5px #b5352b; }
+.enveloppe.tamponne .tampon { animation: tampon .5s cubic-bezier(.3, 1.6, .5, 1) forwards; }
+@keyframes tampon { from { opacity: 0; transform: scale(2.2); } to { opacity: .92; transform: none; } }
+:is(html.calme) .enveloppe .tampon { opacity: .92; }
+:is(html.calme) .enveloppe .env-rabat { animation: none; }
+.etapes.est-plie .message-envoi { text-align: center; font-family: var(--police-titres); font-size: 1.15rem; }
+
+.parcours-date .compte { display: inline-flex; margin: 4px 0 0; font-size: .78rem; font-weight: 500; letter-spacing: .04em; text-transform: none; color: var(--accent); }
+.b-rayons { background: repeating-linear-gradient(104deg, transparent 0 46px, rgba(220, 240, 255, .16) 46px 84px, transparent 84px 150px, rgba(220, 240, 255, .1) 150px 170px, transparent 170px 230px); filter: blur(6px); }
+@media (min-width: 1000px) and (min-height: 700px) {
+  .mois-feuilles { position: sticky; top: calc(var(--entete-h) + 4px); z-index: 6; margin: 0; padding: 4px 0 0; background: var(--washi); }
+  html.entete-cache .mois-feuilles { top: 0; }
+  .filtres { top: calc(var(--entete-h) + 72px); }
+  html.entete-cache .filtres { top: 68px; }
+  .mois { scroll-margin-top: calc(var(--entete-h) + 140px); }
+}
+
+.mois-feuilles ol { max-width: none; }
+.mf svg { width: 36px; height: 46px; }
+.anneau-centre .mention-ia { top: 7%; left: 50%; right: auto; translate: -50% 0; }
+
+/* Relance 1 de l'audit v2. */
+.mf-nom { font-size: max(.78rem, 12px); }
+.mf--passe .mf-nom, .mf--vide .mf-nom { color: #62665f; }
+@media (max-width: 560px) {
+  .mois-feuilles ol { grid-template-columns: repeat(5, minmax(0, 1fr)); row-gap: 2px; }
+  .mf svg { width: 26px; height: 34px; }
+  .mf-nom { font-size: 12px; }
+}
+.a-enligne { background: #3b4c6a; }
+.a-enligne .surtitre { color: #d3e3c4; }
+/* Anneau des thèmes : une seule taille (--aw) pour l'anneau et la place des numéros. */
+.anneau { --aw: min(84vw, 46svh, 440px); width: var(--aw); }
+button.anneau-num { top: calc(var(--aw) * -.5 + 2px); }
+@media (max-width: 760px) { .anneau { --aw: min(78vw, 42svh); } }
+@media (max-height: 820px) and (min-width: 761px) { .anneau { --aw: min(44svh, 360px); } }
+@media (max-height: 500px) and (min-width: 761px) { .anneau { --aw: min(56svh, 260px); } }
+@media (max-width: 760px) and (max-height: 700px) { .anneau { --aw: min(78vw, 36svh); } }
+@media (max-height: 500px), (max-width: 760px) and (max-height: 700px), (max-width: 340px) { .anneau-info { display: none; } .anneau-centre .mention-ia { top: auto; bottom: 8%; } }
+@media (max-height: 500px) {
+  .a-ouverture .intro, .a-ouverture .surtitre { display: none; }
+  .a-ouverture .prochaine strong { font-size: .92rem; line-height: 1.3; }
+  .a-ouverture .titre-pinceau { font-size: clamp(1.6rem, 7vh, 2.2rem); }
+  .m-ouverture .titre-pinceau { font-size: clamp(1.6rem, 6vh + .8rem, 2.2rem); }
+  html.js:not(.calme):not(.secours) .plongee { height: auto; }
+  html.js:not(.calme):not(.secours) .plongee-cadre { position: relative; height: auto; min-height: 100svh; }
+  .plongee h2 { font-size: clamp(1.6rem, 8vh, 2.4rem); }
+  .plongee-texte { padding-top: calc(var(--entete-h) + 12px); padding-bottom: calc(var(--barres-h) + 16px); }
+}
+button.anneau-num { width: 44px; height: 44px; left: -22px; font-size: .88rem; }
+@media (max-height: 500px) and (min-width: 600px) {
+  .plan-legende { display: none; }
+  .plan-rond { width: min(54svh, 240px); }
+}
+
+/* Audit complet v2 : la mention reste lisible quand la cloche passe en médaillon (contre-échelle). */
+.cloche-eau .mention-ia { scale: var(--inv, 1); transform-origin: 50% 0; }
+html:not(.js) .compte { display: none; }
+@media (min-width: 1000px) { html:not(.js) .accueil-ouverture h1 { font-size: clamp(2.4rem, min(4.8vw, 7.4vh), 4.8rem); } }
+
+/* Fluidité : couches promues (le flou n'est calculé qu'une fois). */
+.b-rayons { will-change: transform, opacity; }
+.plan--milieu, .plongee-poussiere, .b-bulles { will-change: transform; }

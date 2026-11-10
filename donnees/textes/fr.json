@@ -38,7 +38,24 @@
     "ensoReussi": "Voici votre ensō de l’instant.",
     "ensoEncore": "Presque : recommencez d’un seul geste, en tournant.",
     "ensoAuto": "Tracer pour moi",
-    "ensoAria": "Zone pour tracer un cercle au pinceau"
+    "ensoAria": "Zone pour tracer un cercle au pinceau",
+    "recap": {
+      "surtitre": "Avant de réserver",
+      "quand": "Quand",
+      "ou": "Où",
+      "apporter": "À apporter",
+      "prix": "Prix",
+      "continuer": "Continuer sur Billetweb",
+      "autre": "Choisir une autre date",
+      "note": "La billetterie Billetweb s’ouvre dans un nouvel onglet.",
+      "fermer": "Fermer",
+      "apporterTypes": {
+        "marche": "De bonnes chaussures, une tenue selon la météo, de l’eau. Rendez-vous 5 minutes avant.",
+        "atelier": "Une tenue souple, des chaussettes chaudes ; tapis et coussins sont sur place.",
+        "enligne": "Un endroit calme, un ordinateur ou un téléphone ; le lien arrive par e-mail.",
+        "saison": "Une tenue selon la météo et un petit tapis ou un plaid pour s’asseoir dehors."
+      }
+    }
   },
   "pages": {
     "accueil": {
@@ -93,7 +110,7 @@
   },
   "accueil": {
     "surtitre": "Méditation de pleine conscience · Paris Est et en ligne",
-    "titre": "Revenir à l’instant, en marchant, ensemble.",
+    "titre": "Revenir à <span class=\"insecable\">l’<em class=\"mot-encre\">instant</em>,</span> en marchant, ensemble.",
     "texte": "Marches en silence dans le bois de Vincennes, ateliers à Fontenay-sous-Bois, méditation du mardi soir en ligne et programme MBSR, avec Hiroko Nakatani, instructrice MBSR et neurobiologiste de formation.",
     "action": "Réserver une séance",
     "actionDeux": "Voir les pratiques",
@@ -145,7 +162,7 @@
   },
   "marches": {
     "surtitre": "Marche et méditation",
-    "titre": "Marcher en silence dans le bois",
+    "titre": "Marcher en <em class=\"mot-encre\">silence</em> dans le bois",
     "texte": "Le dimanche matin, en petit groupe, dans le bois de Vincennes et ses parcs. Chaque saison, le bois change ; la perception du temps aussi.",
     "action": "Réserver une marche",
     "info": "Prochaine marche",
@@ -172,11 +189,11 @@
   },
   "ateliers": {
     "surtitre": "Ateliers et méditation en ligne",
-    "titre": "Un thème par mois, toute l’année",
+    "titre": "Un <em class=\"mot-encre\">thème</em> par mois, toute l’année",
     "texte": "Le cycle 2026-2027 s’inspire du programme MBSR : le même thème au samedi en salle et aux mardis soir en ligne.",
     "action": "Réserver un atelier",
     "info": "Ce mois-ci",
-    "anneauAria": "Les thèmes de l’année 2026-2027, celui du mois mis en avant",
+    "anneauAria": "Les thèmes de l’année 2026-2027 : faites tourner l’anneau ou choisissez un numéro pour voir le mois, l’atelier et les mardis en ligne",
     "moisCourant": "Thème du mois",
     "atelierSurtitre": "L’atelier mensuel",
     "atelierTitre": "Un samedi par mois, de 14 h à 16 h",
@@ -198,11 +215,12 @@
     "tableAtelier": "Atelier (samedi)",
     "tableEnLigne": "En ligne (mardis)",
     "tableEnLigneSeul": "En ligne seulement",
-    "tableQuatre": "4 mardis, 20 h"
+    "tableQuatre": "4 mardis, 20 h",
+    "anneauAide": "Faites tourner l’anneau"
   },
   "mbsr": {
     "surtitre": "Programme MBSR",
-    "titre": "Huit semaines pour installer une pratique",
+    "titre": "<em class=\"mot-encre\">Huit semaines</em> pour installer une pratique",
     "texte": "MBSR : réduction du stress basée sur la pleine conscience. Un programme intensif, en groupe, pour débutants comme pour pratiquants.",
     "chiffreSemaines": "8 semaines",
     "chiffrePrix": "450 €",
@@ -232,7 +250,7 @@
   },
   "agenda": {
     "surtitre": "Agenda 2026-2027",
-    "titre": "Toutes les dates",
+    "titre": "Toutes les <em class=\"mot-encre\">dates</em>",
     "texte": "Les dates passées restent visibles, grisées. Les réservations ouvrent la billetterie Billetweb dans un nouvel onglet.",
     "info": "Prochaine séance",
     "action": "Réserver la prochaine",
@@ -249,11 +267,12 @@
     "formulesPrix": "Prix sur demande ou sur la billetterie.",
     "formulesLien": "Voir les formules sur Billetweb",
     "mbsrLigne": "Programme MBSR : 450 € le programme complet.",
-    "infoFiltre": "Prochaine date"
+    "infoFiltre": "Prochaine date",
+    "moisNav": "Aller au mois"
   },
   "contact": {
     "surtitre": "Contact",
-    "titre": "Écrire à Hiroko",
+    "titre": "<em class=\"mot-encre\">Écrire</em> à Hiroko",
     "texte": "Une question sur une pratique, une marche pour votre groupe, le prochain cycle MBSR : le formulaire ou l’e-mail de l’association.",
     "action": "Écrire un message",
     "info": "Réponse par e-mail",
@@ -278,11 +297,12 @@
     "envoyer": "Envoyer",
     "rgpd": "Vos coordonnées servent seulement à vous répondre. Politique de confidentialité : à compléter.",
     "simule": "Maquette : rien n’a été envoyé. Sur le vrai site, le message partira vers imakokolo@netc.fr.",
-    "recu": "Message prêt",
+    "recu": "reçu",
     "recap": "Récapitulatif",
     "lieuxSurtitre": "Les lieux",
     "lieuxTitre": "Où se retrouver",
-    "planAria": "Plan simplifié des lieux de pratique à l’est de Paris"
+    "planAria": "Plan dessiné de l’est parisien : le bois de Vincennes, la Marne, le RER A et les cinq lieux de pratique",
+    "itineraire": "Itinéraire"
   },
   "introuvable": {
     "titre": "Le sentier se perd ici",

@@ -17,23 +17,34 @@ export default (c) => {
   const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
   const nomMois = (m) => MOIS[+m.slice(5, 7) - 1];
   const salle = c.donnees.lieux.salle, jardin = c.donnees.lieux.jardin;
+  const enligne = c.donnees.agenda.filter((e) => e.type === 'enligne');
+  /* Ce que l'anneau montre pour chaque thème : le mois, la date de l'atelier, les mardis en ligne. */
+  const infos = themes.map((t) => {
+    const a = ateliers.find((e) => e.date.startsWith(t.mois));
+    const l = enligne.find((e) => e.date.startsWith(t.mois) && e.mois);
+    const mardis = l && l.mardis ? 'mardis ' + l.mardis.map((d) => String(+d.slice(8, 10))).join(', ').replace(/, (\d+)$/, ' et $1') : 'quatre mardis';
+    return { mois: nomMois(t.mois), atelier: a ? `atelier ${quand(a).jour} ${quand(a).num} ${nomMois(a.date)}` : 'pas d’atelier en salle', mardis: `en ligne : ${mardis}` };
+  });
+  const detail = (i) => `${themes[i].num === '✦' ? '' : `Thème ${themes[i].num} · `}« ${themes[i].titre} » · ${infos[i].atelier} · ${infos[i].mardis}`;
   return html`
 <section class="a-ouverture" id="debut">
   <div class="conteneur a-ouverture-tete">
     <p class="surtitre" data-anime="gsap">${c.t('ateliers.surtitre')}</p>
-    <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">${c.t('ateliers.titre')}</h1>
+    <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">${c.tb('ateliers.titre')}</h1>
     <p class="intro masque-ecran-bas" data-anime="gsap">${c.t('ateliers.texte')}</p>
   </div>
-  <div class="anneau" data-anneau="${iCourant}" data-effet="anneau-themes" role="img" aria-label="${c.s('ateliers.anneauAria')} : ${courant.num} « ${courant.titre} »">
-    <ol class="anneau-themes" aria-hidden="true">
-      ${themes.map((t, i) => html`<li class="anneau-theme${i === iCourant ? ' est-courant' : ''}" style="--i:${i};--n:${themes.length}"><span class="anneau-num">${t.num}</span><span class="anneau-nom">${t.titre}</span></li>`)}
+  <div class="anneau" data-anneau="${iCourant}" data-effet="anneau-themes" role="group" aria-label="${c.s('ateliers.anneauAria')}">
+    <ol class="anneau-themes">
+      ${themes.map((t, i) => html`<li class="anneau-theme${i === iCourant ? ' est-courant' : ''}" style="--i:${i};--n:${themes.length}"><button type="button" class="anneau-num" data-i="${i}" data-mois="${infos[i].mois}" data-titre="${t.num === '✦' ? '' : t.num + ' · '}${t.titre}" data-detail="${detail(i)}" aria-pressed="${i === iCourant ? 'true' : 'false'}" aria-label="${infos[i].mois} : ${detail(i)}">${t.num}</button></li>`)}
     </ol>
     <div class="anneau-centre" data-iris-centre="disque">
       ${c.media({ nom: 'grok/ateliers-ouverture', alt: c.s('pages.ateliers.partageAlt'), classe: 'anneau-media', priorite: true, sizes: '(max-width: 760px) 70vw, 34vw', cadrage: '50% 62%' })}
+      <p class="anneau-info" aria-hidden="true"><span class="anneau-mois" data-anneau-mois>${infos[iCourant].mois}</span><span class="anneau-titre" data-anneau-titre>${courant.num === '✦' ? '' : courant.num + ' · '}${courant.titre}</span></p>
     </div>
+    <p class="anneau-aide" aria-hidden="true">${c.t('ateliers.anneauAide')}</p>
   </div>
   <div class="conteneur a-ouverture-pied">
-    <p class="prochaine" data-info-cle data-anime="gsap"><span>${c.t('ateliers.info')} · ${nomMois(courant.mois)}</span> <strong>${courant.num === '✦' ? '' : `Thème ${courant.num} · `}« ${courant.titre} »${atelierMois ? ` · atelier le ${quand(atelierMois).jour} ${quand(atelierMois).num} ${nomMois(atelierMois.date)}` : ''}</strong></p>
+    <p class="prochaine" data-info-cle data-anime="gsap"><span data-anneau-label data-courant="${c.s('ateliers.info')} · ${nomMois(courant.mois)}">${c.t('ateliers.info')} · ${nomMois(courant.mois)}</span> <strong data-anneau-detail aria-live="polite">${detail(iCourant)}</strong></p>
     <p class="actions" data-anime="gsap">${c.lien('agenda', { params: 'type=atelier', classe: 'bouton', texte: c.t('ateliers.action'), attrs: 'data-action-principale' })} <a class="bouton bouton--contour" href="#en-ligne">${c.t('ateliers.enligneSurtitre')}</a></p>
   </div>
 </section>
@@ -72,7 +83,8 @@ export default (c) => {
   </div>
 </section>
 
-<section class="a-enligne" id="en-ligne">
+<section class="a-enligne" id="en-ligne" data-effet="nuit-tombe">
+  <div class="a-nuit" aria-hidden="true"></div>
   <div class="conteneur a-enligne-grille">
     <div>
       <p class="surtitre" data-anime>${c.t('ateliers.enligneSurtitre')}</p>
@@ -82,7 +94,10 @@ export default (c) => {
       <p class="a-prix" data-anime><span data-prix>20,50 €</span> le mois, quatre mardis</p>
       <p data-anime><a class="bouton bouton--clair" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="${c.s('ateliers.enligneAction')} (${c.s('commun.nouvelOnglet')})">${c.t('ateliers.enligneAction')}</a></p>
     </div>
-    ${c.media({ nom: 'grok/ateliers-soir', alt: '', classe: 'a-enligne-media', sizes: '(max-width: 760px) 92vw, 46vw', attrs: 'data-fx="parallaxe"' })}
+    <div class="a-lampe-cadre">
+      ${c.media({ nom: 'grok/ateliers-soir', alt: '', classe: 'a-enligne-media', sizes: '(max-width: 760px) 92vw, 46vw' })}
+      <span class="a-lampe" aria-hidden="true"></span>
+    </div>
   </div>
 </section>
 

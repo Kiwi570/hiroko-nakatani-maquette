@@ -2,7 +2,7 @@
    - pinceau mouillé : sur ordinateur (souris), le pointeur laisse une trace d'eau sur le washi, sèche en 1,2 s ;
    - ensō à tracer : le visiteur trace son cercle d'un seul geste (souris ou doigt), « Tracer pour moi » au clavier ;
    - plongée en profondeur : des plans du bois découpés s'écartent pendant la plongée finale (dans site.js). */
-import { etat } from './socle/index.js?v=1';
+import { etat } from './socle/index.js?v=2';
 
 export function pinceauMouille() {
   if (etat.calme || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;

@@ -5,7 +5,7 @@
    - versEau(nom) : l'eau se transforme en un autre reflet, depuis le centre, avec une onde au front (morphing).
    Textures carrées (images grok/eau-*). Densité de pixels limitée (1,25 sur ordinateur, 1 sur téléphone),
    rendu seulement à l'écran (boucle du socle), rien en mode calme : l'image de repli reste affichée. */
-import { boucle, etat } from './socle/index.js?v=1';
+import { boucle, etat } from './socle/index.js?v=2';
 
 const VS = `attribute vec2 p; varying vec2 v; void main(){ v = p * .5 + .5; gl_Position = vec4(p, 0., 1.); }`;
 const FS = `precision mediump float;

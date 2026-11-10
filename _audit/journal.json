@@ -116,6 +116,78 @@
       "effetsRetires": [],
       "grilleDispenses": {},
       "notes": "Construction du socle, des données et de la cloche commencée pendant l'attente des images (travail indépendant des images)."
+    },
+    {
+      "version": 2,
+      "skill": "v10.9",
+      "perimetre": [
+        "accueil",
+        "marches",
+        "ateliers",
+        "mbsr",
+        "agenda",
+        "contact",
+        "404"
+      ],
+      "etapes": [
+        {
+          "etape": "analyse complète et plan de la v2",
+          "budget": 15,
+          "debut": "2026-11-10T19:42:00+01:00",
+          "fin": "2026-11-10T19:52:00+01:00"
+        },
+        {
+          "etape": "construction v2 : commun et accueil",
+          "budget": 40,
+          "debut": "2026-11-10T19:53:00+01:00",
+          "fin": "2026-11-10T20:10:00+01:00"
+        },
+        {
+          "etape": "construction v2 : pages intérieures",
+          "budget": 50,
+          "debut": "2026-11-10T20:10:00+01:00",
+          "fin": "2026-11-10T20:21:00+01:00"
+        },
+        {
+          "etape": "audit complet et corrections",
+          "budget": 50,
+          "debut": "2026-11-10T20:21:00+01:00",
+          "fin": "2026-11-10T21:22:00+01:00"
+        },
+        {
+          "etape": "livraison",
+          "budget": 5,
+          "debut": "2026-11-10T21:22:00+01:00",
+          "fin": "2026-11-10T21:28:00+01:00"
+        }
+      ],
+      "attentes": [
+        {
+          "pour": "choix du périmètre de la v2",
+          "debut": "2026-11-10T19:50:00+01:00",
+          "fin": "2026-11-10T19:52:00+01:00"
+        }
+      ],
+      "allersRetours": 1,
+      "modules": [],
+      "audit": {
+        "niveau": "complet",
+        "echecsPremierPassage": 70,
+        "relances": 5,
+        "corrections": [
+          "mention « Illustration générée » : la petite cloche montre un reflet d'eau stylisé (flou, teinté) au lieu de l'image ; la mention de la grande cloche reste lisible en médaillon (contre-échelle)",
+          "anneau des thèmes : une seule taille (--aw) pour l'anneau et les numéros, boutons de 44 px, information du centre retirée sur les petits anneaux",
+          "rangée des feuilles : deux rangs de cinq sur téléphone, noms à 12 px, mois passés plus contrastés",
+          "méditation en ligne : crépuscule plus sombre, surtitre plus clair (contraste)",
+          "écrans bas (844 × 390) : plongée non collante, plan rond plus petit sans légende, titres réduits",
+          "légende du plan rond : fondu sans chevauchement",
+          "fluidité : reflet du bol sans mode de fusion, ensō sans filtre de turbulence, rayons et plans promus",
+          "sans JavaScript : compte à rebours masqué, titre de l'accueil un peu plus petit"
+        ]
+      },
+      "effetsRetires": [],
+      "grilleDispenses": {},
+      "notes": "v2 demandée par l'utilisateur après validation de la v1 : plus d'effet wouahou, chaque page plus vivante. Compte à rebours retiré de la liste des effets (information, pas effet de section). Prochaine séance recalculée à l'ouverture (la page générée peut vieillir)."
     }
   ]
 }
