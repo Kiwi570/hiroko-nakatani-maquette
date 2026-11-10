@@ -1,0 +1,81 @@
+{
+  "client": "Hiroko Nakatani — Méditation de pleine conscience",
+  "depot": "hiroko-nakatani-maquette",
+  "site_actuel": "https://hirokoo8.wixsite.com/website-1",
+  "activite": "méditation de pleine conscience et programme MBSR (association IMA KOKO-LO)",
+  "constat": "Le site actuel éparpille les dates sur quatre pages, cache les prix sur Billetweb et repose sur des photos de banque d'images (moines sur un pont) sans jamais montrer Hiroko ni le bois de Vincennes. Rien ne dit en un regard ce qui se passe, où, quand, pour combien, ni que c'est ouvert aux débutants et laïque.",
+  "directions": [
+    {
+      "nom": "A · La cloche qui chante",
+      "idee": "Un seul objet reste à l'écran de bout en bout : la cloche de méditation (le bol qui ouvre chaque séance). Le visiteur la fait chanter en tournant le doigt sur son bord ou la frappe d'un toucher ; l'eau qu'elle contient reflète tour à tour chaque pratique — le bois le dimanche matin, la salle 207 le samedi, l'écran du mardi soir, le jardin à l'équinoxe. Papier washi, encre, bronze : calme, mais vivant à chaque geste.",
+      "plan": "objet-unique",
+      "palette": ["#f2ede3", "#1d211f", "#9c6b34", "#2f4a5a"],
+      "polices": ["Shippori Mincho", "Albert Sans"],
+      "grille": {
+        "objet": "cloche (bol) qu'on fait chanter en tournant sur son bord, ou qu'on frappe d'un toucher : ondes qui s'élargissent puis s'éteignent avec élan",
+        "fil": "la cloche elle-même descend avec la lecture et change d'état à chaque section (eau du bois, de la salle, de la nuit, de la saison)",
+        "voile": "onde concentrique qui part du clic comme une goutte dans l'eau",
+        "forme_voile": "propre",
+        "familles": ["morphing", "particules", "plongee"],
+        "signature": "morphing",
+        "modernes": ["l'onde de l'eau se transforme en photo du lieu suivant", "feuilles de ginkgo ou pétales selon la vraie saison, qui tombent dans l'eau", "plongée dans le bol jusqu'à la page suivante"]
+      },
+      "modules": ["agenda-des-dates", "formulaire-par-etapes"],
+      "sections": [
+        { "role": "ouverture", "reprend": "ateliersources-maquette/ouverture", "plus": "L'eau n'est plus un fond : elle est dans la cloche, au centre, et c'est le visiteur qui la fait vibrer ; le kanji 念 (今 « maintenant » sur 心 « cœur ») se pose à sa surface." },
+        { "role": "offre", "reprend": "sensoria-maquette/domaines", "plus": "Les quatre pratiques (marche, atelier, en ligne, MBSR) gravitent autour de la cloche ; chacune change l'eau et la lumière, avec jour, heure, lieu et prix au recto." },
+        { "role": "étapes", "reprend": "tonchemindevie-maquette/seance", "plus": "Scène épinglée « Une marche, deux heures » : on avance pas à pas de 10 h à 12 h (méditation d'ouverture, pause, clôture, partage), une sonnerie à chaque étape." },
+        { "role": "agenda", "reprend": "la-voie-du-sensible-maquette/ateliers-et-stages-agenda", "plus": "Les vraies dates 2026-2027 triées seules (passées grisées) ; réserver fait tomber une goutte dans la cloche avant d'ouvrir Billetweb." }
+      ],
+      "invente": ["cloche qu'on fait chanter (frottement circulaire avec élan)", "eau-miroir qui change de lieu", "saison réelle en particules", "goutte de réservation"]
+    },
+    {
+      "nom": "B · Le bois, saison après saison",
+      "idee": "L'accueil est une carte aquarelle de l'est parisien — bois de Vincennes, Parc Floral, Jardin d'agronomie tropicale, cours d'eau, Fontenay-sous-Bois — qui sert de sommaire. Chaque lieu de pratique est un point du chemin ; la séance en ligne est une lanterne posée hors de la carte. La carte prend la couleur de la vraie saison (ginkgo doré en novembre).",
+      "plan": "territoire",
+      "palette": ["#eceee2", "#22362b", "#d9a62e", "#9fb0a2"],
+      "polices": ["Newsreader", "Karla"],
+      "grille": {
+        "objet": "petit promeneur qu'on fait avancer du doigt sur le sentier : trop vite, il s'arrête et attend ; lentement, les lieux s'ouvrent",
+        "fil": "le sentier de la carte, qui relie les sections et les pages (chemin sur une carte)",
+        "voile": "brume qui monte du sol et se déchire autour du lieu choisi",
+        "forme_voile": "propre",
+        "familles": ["profondeur", "defilement-horizontal", "ambiance-qui-change"],
+        "signature": "profondeur",
+        "modernes": ["plans du bois découpés en profondeur, on avance entre les arbres", "la marche de deux heures défile de côté", "la carte et la lumière suivent la saison réelle"]
+      },
+      "modules": ["carte-itineraire-collante", "agenda-des-dates"],
+      "sections": [
+        { "role": "ouverture", "reprend": "les-plus-hautes-eaux-maquette/haut", "plus": "Titre sur une forêt en cinq plans d'aquarelle qui s'écartent au défilement ; la date du prochain dimanche de marche dans le premier écran." },
+        { "role": "carte", "reprend": "aquafit-maquette/piscines", "plus": "Les quatre parcours de marche et la salle 207, avec point de départ (RER A, Mairie de Vincennes), prochaines dates et accès." },
+        { "role": "étapes", "reprend": "tonchemindevie-maquette/seance", "plus": "La marche avance à l'horizontale : départ, pause, clôture, partage, avec la lumière qui monte de 10 h à midi." },
+        { "role": "agenda", "reprend": "la-voie-du-sensible-maquette/ateliers-et-stages-agenda", "plus": "Les dates posées sur la carte et dans une liste filtrable par lieu et par pratique." }
+      ],
+      "invente": ["promeneur qui récompense la lenteur", "carte de la saison réelle", "brume de transition", "lanterne de la séance en ligne"]
+    },
+    {
+      "nom": "C · 念, le carnet de pratique",
+      "idee": "Un carnet de papier washi qu'on feuillette : chaque section est un folio, les titres s'écrivent au pinceau, un tampon vermillon signe chaque page. L'intro raconte le kanji de la pleine conscience : 今 (maintenant) descend sur 心 (cœur) et ils deviennent 念. Le visiteur respire avec la page : appuyer, c'est inspirer ; relâcher, expirer.",
+      "plan": "carnet",
+      "palette": ["#f6f3ec", "#171717", "#c8402a", "#8a8a83"],
+      "polices": ["Zen Old Mincho", "Zen Kaku Gothic New"],
+      "grille": {
+        "objet": "goutte d'encre qui respire : on appuie pour inspirer, elle s'étend sur le papier ; on relâche, elle se retire",
+        "fil": "le folio et le ruban marque-page qui avancent d'une page à l'autre",
+        "voile": "la page du carnet qui tourne depuis le coin cliqué",
+        "forme_voile": "propre",
+        "familles": ["curseur-vivant", "morphing", "recomposition"],
+        "signature": "curseur-vivant",
+        "modernes": ["pinceau mouillé qui suit le pointeur et laisse une trace qui sèche", "今 et 心 qui se fondent en 念", "les thèmes de l'année qui se recomposent en programme du mois"]
+      },
+      "modules": ["revelation-a-l-encre", "agenda-des-dates"],
+      "sections": [
+        { "role": "ouverture", "reprend": "la-voie-du-sensible-maquette/debut", "plus": "Le kanji 念 se construit au pinceau, puis se pose en tampon à côté du nom ; la prochaine séance s'inscrit à l'encre dessous." },
+        { "role": "outil-interactif", "reprend": "elka-maquette/respirer", "plus": "Ici pas d'arche : une goutte d'encre sur le washi qui s'étend et se retire au rythme qu'on donne, avec le compte des souffles." },
+        { "role": "offre", "reprend": "iprof-maquette/tarifs-prices", "plus": "Chaque pratique est une fiche de carnet avec son jour, son heure, son lieu et son prix réels, tamponnée au survol." },
+        { "role": "témoignages", "reprend": "esaie-55-1-maquette/histoires", "plus": "Le témoignage réel de Laure S. comme une page manuscrite glissée dans le carnet." }
+      ],
+      "invente": ["kanji 今 + 心 = 念", "goutte d'encre qui respire", "pinceau-curseur", "page qui tourne en transition"]
+    }
+  ]
+}

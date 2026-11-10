@@ -1,0 +1,221 @@
+{
+  "avertissements": [],
+  "cartes": [
+    {
+      "page": "accueil",
+      "langue": "fr",
+      "fichier": "assets/partage/accueil-fr.jpg",
+      "gabarit": "droite",
+      "image": "bois-lumiere-1280.webp",
+      "poids": 136248,
+      "sujet": {
+        "x": 737,
+        "y": 118,
+        "l": 329,
+        "h": 268
+      },
+      "textes": [
+        {
+          "x": 64,
+          "y": 56,
+          "l": 280,
+          "h": 64
+        },
+        {
+          "x": 64,
+          "y": 202,
+          "l": 480,
+          "h": 258
+        },
+        {
+          "x": 64,
+          "y": 543,
+          "l": 480,
+          "h": 35
+        },
+        {
+          "x": 600,
+          "y": 0,
+          "l": 90,
+          "h": 630
+        }
+      ],
+      "recouvrement": 0
+    },
+    {
+      "page": "agenda",
+      "langue": "fr",
+      "fichier": "assets/partage/agenda-fr.jpg",
+      "gabarit": "droite",
+      "image": "grok/agenda-feuilles-1280.webp",
+      "poids": 68793,
+      "sujet": {
+        "x": 600,
+        "y": 207,
+        "l": 600,
+        "h": 423
+      },
+      "textes": [
+        {
+          "x": 64,
+          "y": 56,
+          "l": 280,
+          "h": 64
+        },
+        {
+          "x": 64,
+          "y": 235,
+          "l": 480,
+          "h": 193
+        },
+        {
+          "x": 64,
+          "y": 543,
+          "l": 480,
+          "h": 35
+        }
+      ],
+      "recouvrement": 0
+    },
+    {
+      "page": "ateliers",
+      "langue": "fr",
+      "fichier": "assets/partage/ateliers-fr.jpg",
+      "gabarit": "droite",
+      "image": "grok/ateliers-ouverture-1280.webp",
+      "poids": 82285,
+      "sujet": {
+        "x": 600,
+        "y": 0,
+        "l": 600,
+        "h": 622
+      },
+      "textes": [
+        {
+          "x": 64,
+          "y": 56,
+          "l": 280,
+          "h": 64
+        },
+        {
+          "x": 64,
+          "y": 202,
+          "l": 480,
+          "h": 258
+        },
+        {
+          "x": 64,
+          "y": 543,
+          "l": 480,
+          "h": 35
+        }
+      ],
+      "recouvrement": 0
+    },
+    {
+      "page": "contact",
+      "langue": "fr",
+      "fichier": "assets/partage/contact-fr.jpg",
+      "gabarit": "droite",
+      "image": "grok/contact-banc-1280.webp",
+      "poids": 85343,
+      "sujet": {
+        "x": 600,
+        "y": 0,
+        "l": 600,
+        "h": 630
+      },
+      "textes": [
+        {
+          "x": 64,
+          "y": 56,
+          "l": 280,
+          "h": 64
+        },
+        {
+          "x": 64,
+          "y": 267,
+          "l": 480,
+          "h": 129
+        },
+        {
+          "x": 64,
+          "y": 543,
+          "l": 480,
+          "h": 35
+        }
+      ],
+      "recouvrement": 0
+    },
+    {
+      "page": "marches",
+      "langue": "fr",
+      "fichier": "assets/partage/marches-fr.jpg",
+      "gabarit": "droite",
+      "image": "grok/marches-ouverture-1280.webp",
+      "poids": 118906,
+      "sujet": {
+        "x": 600,
+        "y": 0,
+        "l": 600,
+        "h": 547
+      },
+      "textes": [
+        {
+          "x": 64,
+          "y": 56,
+          "l": 280,
+          "h": 64
+        },
+        {
+          "x": 64,
+          "y": 170,
+          "l": 480,
+          "h": 322
+        },
+        {
+          "x": 64,
+          "y": 543,
+          "l": 480,
+          "h": 35
+        }
+      ],
+      "recouvrement": 0
+    },
+    {
+      "page": "mbsr",
+      "langue": "fr",
+      "fichier": "assets/partage/mbsr-fr.jpg",
+      "gabarit": "droite",
+      "image": "grok/mbsr-ouverture-1280.webp",
+      "poids": 41416,
+      "sujet": {
+        "x": 600,
+        "y": 0,
+        "l": 600,
+        "h": 626
+      },
+      "textes": [
+        {
+          "x": 64,
+          "y": 56,
+          "l": 280,
+          "h": 64
+        },
+        {
+          "x": 64,
+          "y": 235,
+          "l": 480,
+          "h": 193
+        },
+        {
+          "x": 64,
+          "y": 543,
+          "l": 480,
+          "h": 35
+        }
+      ],
+      "recouvrement": 0
+    }
+  ]
+}

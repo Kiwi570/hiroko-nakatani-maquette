@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-page="agenda">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agenda et réservation · Hiroko Nakatani</title>
+<meta name="description" content="Toutes les dates 2026-2027 : marches, ateliers, méditation en ligne et ateliers de saison, avec les tarifs et les formules.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://hiroko-nakatani-maquette.vercel.app/agenda">
+<style>:root{--fond:#f2ede3;--texte:#1d211f;--voile-fond:#1f3340;--ouverture-fond:#f2ede3;--menu-fond:#1f3340}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/fonts/shippori-mincho-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f2ede3">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hiroko Nakatani">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Agenda et réservation · Hiroko Nakatani">
+<meta property="og:description" content="Toutes les dates 2026-2027 : marches, ateliers, méditation en ligne et ateliers de saison, avec les tarifs et les formules.">
+<meta property="og:url" content="https://hiroko-nakatani-maquette.vercel.app/agenda">
+<meta property="og:image" content="https://hiroko-nakatani-maquette.vercel.app/assets/partage/agenda-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Feuilles alignées du vert au rouge">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Hiroko Nakatani — Méditation de pleine conscience","url":"https://hiroko-nakatani-maquette.vercel.app/","email":"imakokolo@netc.fr","description":"Marches méditatives dans le bois de Vincennes, ateliers de pleine conscience à Fontenay-sous-Bois, méditation du soir en ligne et programme MBSR, avec Hiroko Nakatani, instructrice MBSR.","areaServed":"Paris et Val-de-Marne","founder":{"@type":"Person","name":"Hiroko Nakatani","jobTitle":"Instructrice MBSR"}}</script>
+</head>
+<body id="haut">
+<div data-voile data-forme="onde" data-grille="voile" aria-hidden="true"><div class="voile-contenu"><img src="/assets/images/logo-imakokolo-clair.png" alt="" width="64" height="66"><span data-voile-libelle>Agenda</span></div></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <div class="ouverture-logo" data-ouverture-objet>
+    <img class="ouverture-enso" src="/assets/images/logo-imakokolo.png" alt="" width="256" height="262">
+    <img class="ouverture-kanji" src="/assets/images/logo-imakokolo.png" alt="" width="256" height="262">
+  </div>
+  <p class="ouverture-nom">Hiroko Nakatani</p>
+  <p class="ouverture-ligne">Méditation de pleine conscience</p>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil">
+      <img src="/assets/images/logo-imakokolo.png" alt="" width="44" height="45"><span class="entete-nom"><span>Hiroko Nakatani</span><small>Méditation de pleine conscience</small></span>
+    </a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/marches" data-libelle="Marches">Marches</a></li><li><a href="/ateliers" data-libelle="Ateliers et en ligne">Ateliers et en ligne</a></li><li><a href="/mbsr" data-libelle="MBSR">MBSR</a></li><li><a href="/agenda" data-libelle="Agenda" aria-current="page">Agenda</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton" href="/agenda" data-libelle="Agenda">Réserver</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+      <a class="menu-sansjs" href="#menu" data-menu-lien>Menu</a>
+    </div>
+  </div>
+</header>
+<script>/* Avant le premier affichage : rangées de la navigation (même règle que ajusterNav dans assets/js/socle/entete.js)
+   et hauteur réelle de l'en-tête, pour que rien ne saute quand le JavaScript du site prend la main. */
+(function () {
+  var h = document.documentElement, u = document.querySelector('[data-nav] ul'), e = document.querySelector('[data-entete]');
+  if (u) {
+    var deborde = function () { return u.scrollWidth > u.clientWidth + 1; }, c = deborde();
+    if (c && window.matchMedia('(min-width: 900px)').matches) {
+      h.classList.add('nav-deux-rangees'); c = deborde();
+      if (c) { h.classList.add('nav-deux-lignes'); var a = u.querySelector('a'); c = !a || u.getBoundingClientRect().height > a.getBoundingClientRect().height * 2.5; }
+      if (c) h.classList.remove('nav-deux-rangees', 'nav-deux-lignes');
+    }
+    if (c) h.classList.add('nav-compacte');
+  }
+  if (e) h.style.setProperty('--entete-h', Math.round(e.getBoundingClientRect().height) + 'px');
+})();</script>
+<span id="menu-ferme" aria-hidden="true"></span>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <p class="menu-sansjs-fermer"><a href="#menu-ferme">Fermer</a></p>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/marches" class="menu-lien" data-libelle="Marches">Marches</a></li><li style="--i:2"><a href="/ateliers" class="menu-lien" data-libelle="Ateliers et en ligne">Ateliers et en ligne</a></li><li style="--i:3"><a href="/mbsr" class="menu-lien" data-libelle="MBSR">MBSR</a></li><li style="--i:4"><a href="/agenda" class="menu-lien" data-libelle="Agenda" aria-current="page">Agenda</a></li><li style="--i:5"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+  <p class="menu-actions"><a class="bouton" href="/agenda" data-libelle="Agenda">Réserver une séance</a> <a class="bouton bouton--contour" href="mailto:imakokolo@netc.fr">imakokolo@netc.fr</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+</div>
+<main id="contenu" tabindex="-1">
+<section class="g-ouverture" id="debut">
+  <div class="conteneur g-ouverture-grille">
+    <div>
+      <p class="surtitre" data-anime="gsap">Agenda 2026-2027</p>
+      <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">Toutes les dates</h1>
+      <p class="intro masque-ecran-tres-bas" data-anime="gsap">Les dates passées restent visibles, grisées. Les réservations ouvrent la billetterie Billetweb dans un nouvel onglet.</p>
+    </div>
+    <div class="g-prochaine" data-info-cle data-anime="gsap">
+      <p class="g-prochaine-label" data-prochaine-label data-tout="Prochaine séance" data-filtre-label="Prochaine date">Prochaine séance</p>
+      <p class="g-prochaine-texte" data-prochaine>Ce soir, 20 h · Méditation du soir en ligne</p>
+      <p><a class="bouton" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-action-principale data-retour data-prochaine-lien aria-label="Réserver la prochaine (s’ouvre dans un nouvel onglet)">Réserver la prochaine</a></p>
+    </div>
+  </div>
+  <div class="g-feuilles" data-iris-centre>
+    <figure class="media g-feuilles-media" data-grok data-fx="parallaxe" data-fx-force="8" style="--cadrage:50% 38%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/agenda-feuilles-mobile-640.webp 640w" sizes="100vw">
+    <img src="/assets/images/grok/agenda-feuilles-1280.webp" srcset="/assets/images/grok/agenda-feuilles-640.webp 640w, /assets/images/grok/agenda-feuilles-1280.webp 1280w" sizes="100vw" alt="Feuilles alignées du vert au rouge" width="1280" height="640" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+</section>
+<section class="g-liste conteneur" id="dates">
+  <svg class="anneaux-deco anneaux-deco--petit" viewBox="0 0 200 200" data-visuel aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="30"/><circle cx="100" cy="100" r="56"/><circle cx="100" cy="100" r="82"/></svg>
+  <div class="filtres" role="group" aria-label="Filtrer les dates" data-filtres data-anime>
+    <button type="button" class="filtre" data-filtre="tout" aria-pressed="true">Tout</button>
+    <button type="button" class="filtre filtre--marche" data-filtre="marche" aria-pressed="false">Marches</button><button type="button" class="filtre filtre--atelier" data-filtre="atelier" aria-pressed="false">Ateliers</button><button type="button" class="filtre filtre--enligne" data-filtre="enligne" aria-pressed="false">En ligne</button><button type="button" class="filtre filtre--saison" data-filtre="saison" aria-pressed="false">De saison</button>
+  </div>
+  <p class="filtres-vide" data-filtres-vide hidden>Aucune date à venir pour ce choix.</p>
+  <div class="mois-liste" data-agenda data-grille="retour">
+    <div class="mois" data-mois-groupe>
+      <h2 class="mois-titre">novembre 2026</h2>
+      <ol class="dates-liste" data-anime="cascade"><li class="date date--enligne date--aujourdhui" data-date data-type="enligne" data-debut="29891520" data-fin="29934525" data-jour="2026-11-01" data-mardis="2026-11-03 2026-11-10 2026-11-17 2026-11-24">
+  <p class="date-jour" aria-hidden="true"><span>nov.</span><strong>✦</strong><span>2026</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Mardis 3, 10, 17, 24 · thème 3 « Respirer, observer »</p>
+    <p class="date-meta">novembre 2026 · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20,50 € le mois</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, novembre 2026 · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--avenir" data-date data-type="marche" data-debut="29912280" data-fin="29912400" data-jour="2026-11-15" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>15</strong><span>nov.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Parc floral de Paris</p>
+    <p class="date-meta">dimanche 15 novembre · 10 h – 12 h · Parc floral de Paris</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-parc-floral-de-paris" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 15 novembre · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--atelier date--avenir" data-date data-type="atelier" data-debut="29921160" data-fin="29921280" data-jour="2026-11-21" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>21</strong><span>nov.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de pleine conscience n° 3</h3>
+    <p class="date-sous">« Respirer, observer »</p>
+    <p class="date-meta">samedi 21 novembre · 14 h – 16 h · Maison du Citoyen, salle 207</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Atelier</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-ima-koko-lo" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de pleine conscience n° 3, samedi 21 novembre · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li></ol>
+    </div><div class="mois" data-mois-groupe>
+      <h2 class="mois-titre">décembre 2026</h2>
+      <ol class="dates-liste" data-anime="cascade"><li class="date date--enligne date--avenir" data-date data-type="enligne" data-debut="29934720" data-fin="29979165" data-jour="2026-12-01" data-mardis="2026-12-01 2026-12-08 2026-12-15 2026-12-22">
+  <p class="date-jour" aria-hidden="true"><span>déc.</span><strong>✦</strong><span>2026</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Mardis 1, 8, 15, 22 · thème spécial de fin d’année</p>
+    <p class="date-meta">décembre 2026 · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20,50 € le mois</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, décembre 2026 · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li></ol>
+    </div><div class="mois" data-mois-groupe>
+      <h2 class="mois-titre">janvier 2027</h2>
+      <ol class="dates-liste" data-anime="cascade"><li class="date date--enligne date--avenir" data-date data-type="enligne" data-debut="29979360" data-fin="30023805" data-jour="2027-01-01" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>janv.</span><strong>✦</strong><span>2027</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Quatre mardis (dates sur la billetterie) · thème 4 « Le stress ? »</p>
+    <p class="date-meta">janvier 2027 · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20,50 € le mois</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, janvier 2027 · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--atelier date--avenir" data-date data-type="atelier" data-debut="30001800" data-fin="30001920" data-jour="2027-01-16" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>16</strong><span>janv.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de pleine conscience n° 4</h3>
+    <p class="date-sous">« Le stress ? »</p>
+    <p class="date-meta">samedi 16 janvier · 14 h – 16 h · Maison du Citoyen, salle 207</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Atelier</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-ima-koko-lo" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de pleine conscience n° 4, samedi 16 janvier · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li></ol>
+    </div><div class="mois" data-mois-groupe>
+      <h2 class="mois-titre">février 2027</h2>
+      <ol class="dates-liste" data-anime="cascade"><li class="date date--enligne date--avenir" data-date data-type="enligne" data-debut="30024000" data-fin="30064125" data-jour="2027-02-01" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>févr.</span><strong>✦</strong><span>2027</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Quatre mardis (dates sur la billetterie) · thème 5 « Du réflexe à la conscience »</p>
+    <p class="date-meta">février 2027 · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20,50 € le mois</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, février 2027 · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--atelier date--avenir" data-date data-type="atelier" data-debut="30032040" data-fin="30032160" data-jour="2027-02-06" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>6</strong><span>févr.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de pleine conscience n° 5</h3>
+    <p class="date-sous">« Du réflexe à la conscience »</p>
+    <p class="date-meta">samedi 6 février · 14 h – 16 h · Maison du Citoyen, salle 207</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Atelier</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-ima-koko-lo" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de pleine conscience n° 5, samedi 6 février · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li></ol>
+    </div><div class="mois" data-mois-groupe>
+      <h2 class="mois-titre">mars 2027</h2>
+      <ol class="dates-liste" data-anime="cascade"><li class="date date--enligne date--avenir" data-date data-type="enligne" data-debut="30064320" data-fin="30108765" data-jour="2027-03-01" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>mars</span><strong>✦</strong><span>2027</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Quatre mardis (dates sur la billetterie) · thème 6 « Présence à soi et aux autres »</p>
+    <p class="date-meta">mars 2027 · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20,50 € le mois</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, mars 2027 · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--atelier date--avenir" data-date data-type="atelier" data-debut="30082440" data-fin="30082560" data-jour="2027-03-13" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>13</strong><span>mars</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de pleine conscience n° 6</h3>
+    <p class="date-sous">« Présence à soi et aux autres »</p>
+    <p class="date-meta">samedi 13 mars · 14 h – 16 h · Maison du Citoyen, salle 207</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Atelier</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-ima-koko-lo" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de pleine conscience n° 6, samedi 13 mars · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--avenir" data-date data-type="marche" data-debut="30083640" data-fin="30083760" data-jour="2027-03-14" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>14</strong><span>mars</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Parc floral de Paris</p>
+    <p class="date-meta">dimanche 14 mars · 10 h – 12 h · Parc floral de Paris</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-parc-floral-de-paris" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 14 mars · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--saison date--avenir" data-date data-type="saison" data-debut="30092520" data-fin="30092640" data-jour="2027-03-20" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>20</strong><span>mars</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de saison en plein air</h3>
+    <p class="date-sous">Après-midi de l’équinoxe de printemps</p>
+    <p class="date-meta">samedi 20 mars · 14 h – 16 h · Jardin d’agronomie tropicale</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>Participation libre (20 € indicatif)</span><span class="date-type">Saison</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-en-plein-air-jardin-dagronomie-tropicale" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de saison en plein air, samedi 20 mars · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--avenir" data-date data-type="marche" data-debut="30103800" data-fin="30103920" data-jour="2027-03-28" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>28</strong><span>mars</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Parc floral de Paris</p>
+    <p class="date-meta">dimanche 28 mars · 10 h – 12 h · Parc floral de Paris</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-parc-floral-de-paris" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 28 mars · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li></ol>
+    </div><div class="mois" data-mois-groupe>
+      <h2 class="mois-titre">avril 2027</h2>
+      <ol class="dates-liste" data-anime="cascade"><li class="date date--enligne date--avenir" data-date data-type="enligne" data-debut="30108960" data-fin="30151965" data-jour="2027-04-01" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>avr.</span><strong>✦</strong><span>2027</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Quatre mardis (dates sur la billetterie) · thème 6,5 « Vivre sans parole »</p>
+    <p class="date-meta">avril 2027 · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20,50 € le mois</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, avril 2027 · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--avenir" data-date data-type="marche" data-debut="30134040" data-fin="30134160" data-jour="2027-04-18" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>18</strong><span>avr.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Jardin d’agronomie tropicale</p>
+    <p class="date-meta">dimanche 18 avril · 10 h – 12 h · Jardin d’agronomie tropicale</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-bois-de-vincennes-jardin" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 18 avril · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--atelier date--avenir" data-date data-type="atelier" data-debut="30142920" data-fin="30143040" data-jour="2027-04-24" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>24</strong><span>avr.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de pleine conscience n° 6,5</h3>
+    <p class="date-sous">« Vivre sans parole »</p>
+    <p class="date-meta">samedi 24 avril · 14 h – 16 h · Maison du Citoyen, salle 207</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Atelier</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-ima-koko-lo" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de pleine conscience n° 6,5, samedi 24 avril · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--avenir" data-date data-type="marche" data-debut="30144120" data-fin="30144240" data-jour="2027-04-25" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>25</strong><span>avr.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Le long du cours d’eau</p>
+    <p class="date-meta">dimanche 25 avril · 10 h – 12 h · Le long du cours d’eau</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-bois-de-vincennes-lac" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 25 avril · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li></ol>
+    </div><div class="mois" data-mois-groupe>
+      <h2 class="mois-titre">mai 2027</h2>
+      <ol class="dates-liste" data-anime="cascade"><li class="date date--enligne date--avenir" data-date data-type="enligne" data-debut="30152160" data-fin="30196605" data-jour="2027-05-01" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>mai</span><strong>✦</strong><span>2027</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Quatre mardis (dates sur la billetterie) · thème 7 « Prendre soin de soi »</p>
+    <p class="date-meta">mai 2027 · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20,50 € le mois</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, mai 2027 · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--avenir" data-date data-type="marche" data-debut="30174360" data-fin="30174480" data-jour="2027-05-16" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>16</strong><span>mai</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Jardin d’agronomie tropicale</p>
+    <p class="date-meta">dimanche 16 mai · 10 h – 12 h · Jardin d’agronomie tropicale</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-bois-de-vincennes-jardin" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 16 mai · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--atelier date--avenir" data-date data-type="atelier" data-debut="30183240" data-fin="30183360" data-jour="2027-05-22" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>22</strong><span>mai</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de pleine conscience n° 7</h3>
+    <p class="date-sous">« Prendre soin de soi »</p>
+    <p class="date-meta">samedi 22 mai · 14 h – 16 h · Maison du Citoyen, salle 207</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Atelier</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-ima-koko-lo" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de pleine conscience n° 7, samedi 22 mai · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--avenir" data-date data-type="marche" data-debut="30194520" data-fin="30194640" data-jour="2027-05-30" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>30</strong><span>mai</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Le long du cours d’eau</p>
+    <p class="date-meta">dimanche 30 mai · 10 h – 12 h · Le long du cours d’eau</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-bois-de-vincennes-lac" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 30 mai · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li></ol>
+    </div><div class="mois" data-mois-groupe>
+      <h2 class="mois-titre">juin 2027</h2>
+      <ol class="dates-liste" data-anime="cascade"><li class="date date--enligne date--avenir" data-date data-type="enligne" data-debut="30196800" data-fin="30239805" data-jour="2027-06-01" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>juin</span><strong>✦</strong><span>2027</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Quatre mardis (dates sur la billetterie) · thème 8 « Intégrer et poursuivre »</p>
+    <p class="date-meta">juin 2027 · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20,50 € le mois</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, juin 2027 · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--avenir" data-date data-type="marche" data-debut="30204600" data-fin="30204720" data-jour="2027-06-06" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>6</strong><span>juin</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Jardin d’agronomie tropicale</p>
+    <p class="date-meta">dimanche 6 juin · 10 h – 12 h · Jardin d’agronomie tropicale</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-bois-de-vincennes-jardin" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 6 juin · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--atelier date--avenir" data-date data-type="atelier" data-debut="30213480" data-fin="30213600" data-jour="2027-06-12" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>12</strong><span>juin</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de pleine conscience n° 8</h3>
+    <p class="date-sous">« Intégrer et poursuivre »</p>
+    <p class="date-meta">samedi 12 juin · 14 h – 16 h · Maison du Citoyen, salle 207</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Atelier</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-ima-koko-lo" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de pleine conscience n° 8, samedi 12 juin · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--saison date--avenir" data-date data-type="saison" data-debut="30223320" data-fin="30223440" data-jour="2027-06-19" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>19</strong><span>juin</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de saison en plein air</h3>
+    <p class="date-sous">Matinée du solstice d’été</p>
+    <p class="date-meta">samedi 19 juin · 10 h – 12 h · Jardin d’agronomie tropicale</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>Participation libre (20 € indicatif)</span><span class="date-type">Saison</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-en-plein-air-jardin-dagronomie-tropicale" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de saison en plein air, samedi 19 juin · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--avenir" data-date data-type="marche" data-debut="30234840" data-fin="30234960" data-jour="2027-06-27" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>27</strong><span>juin</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Le long du cours d’eau</p>
+    <p class="date-meta">dimanche 27 juin · 10 h – 12 h · Le long du cours d’eau</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-bois-de-vincennes-lac" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 27 juin · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li></ol>
+    </div>
+  </div>
+  <details class="passees" data-anime>
+    <summary>Dates passées (11)</summary>
+    <ol class="dates-liste dates-liste--passees"><li class="date date--atelier date--passe" data-date data-type="atelier" data-debut="29820360" data-fin="29820480" data-jour="2026-09-12" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>12</strong><span>sept.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de pleine conscience n° 1</h3>
+    <p class="date-sous">« La pleine conscience »</p>
+    <p class="date-meta">samedi 12 septembre · 14 h – 16 h · Maison du Citoyen, salle 207</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Atelier</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-ima-koko-lo" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de pleine conscience n° 1, samedi 12 septembre · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--passe" data-date data-type="marche" data-debut="29821560" data-fin="29821680" data-jour="2026-09-13" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>13</strong><span>sept.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Jardin d’agronomie tropicale</p>
+    <p class="date-meta">dimanche 13 septembre · 10 h – 12 h · Jardin d’agronomie tropicale</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-bois-de-vincennes-jardin" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 13 septembre · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--saison date--passe" data-date data-type="saison" data-debut="29830440" data-fin="29830560" data-jour="2026-09-19" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>19</strong><span>sept.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de saison en plein air</h3>
+    <p class="date-sous">Après-midi de l’équinoxe d’automne</p>
+    <p class="date-meta">samedi 19 septembre · 14 h – 16 h · Jardin d’agronomie tropicale</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>Participation libre (20 € indicatif)</span><span class="date-type">Saison</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-en-plein-air-jardin-dagronomie-tropicale" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de saison en plein air, samedi 19 septembre · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--enligne date--passe" data-date data-type="enligne" data-debut="29835120" data-fin="29835165" data-jour="2026-09-22" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>mar.</span><strong>22</strong><span>sept.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Séance d’essai gratuite · thème 1</p>
+    <p class="date-meta">mardi 22 septembre · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>Gratuit</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, mardi 22 septembre · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--passe" data-date data-type="marche" data-debut="29841720" data-fin="29841840" data-jour="2026-09-27" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>27</strong><span>sept.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Le long du cours d’eau</p>
+    <p class="date-meta">dimanche 27 septembre · 10 h – 12 h · Le long du cours d’eau</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-bois-de-vincennes-lac" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 27 septembre · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--enligne date--passe" data-date data-type="enligne" data-debut="29845200" data-fin="29845245" data-jour="2026-09-29" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>mar.</span><strong>29</strong><span>sept.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Séance d’essai gratuite · thème 1</p>
+    <p class="date-meta">mardi 29 septembre · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>Gratuit</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, mardi 29 septembre · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--enligne date--passe" data-date data-type="enligne" data-debut="29846880" data-fin="29891325" data-jour="2026-10-01" data-mardis="2026-10-06 2026-10-13 2026-10-20 2026-10-27">
+  <p class="date-jour" aria-hidden="true"><span>oct.</span><strong>✦</strong><span>2026</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Mardis 6, 13, 20, 27 · thème 2 « Corps et monde »</p>
+    <p class="date-meta">octobre 2026 · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20,50 € le mois</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, octobre 2026 · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--passe" data-date data-type="marche" data-debut="29851800" data-fin="29851920" data-jour="2026-10-04" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>4</strong><span>oct.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Jardin d’agronomie tropicale</p>
+    <p class="date-meta">dimanche 4 octobre · 10 h – 12 h · Jardin d’agronomie tropicale</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-bois-de-vincennes-jardin" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 4 octobre · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--atelier date--passe" data-date data-type="atelier" data-debut="29860680" data-fin="29860800" data-jour="2026-10-10" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>10</strong><span>oct.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de pleine conscience n° 2</h3>
+    <p class="date-sous">« Corps et monde »</p>
+    <p class="date-meta">samedi 10 octobre · 14 h – 16 h · Maison du Citoyen, salle 207</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Atelier</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-ima-koko-lo" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de pleine conscience n° 2, samedi 10 octobre · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--passe" data-date data-type="marche" data-debut="29871960" data-fin="29872080" data-jour="2026-10-18" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>18</strong><span>oct.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Parc floral de Paris</p>
+    <p class="date-meta">dimanche 18 octobre · 10 h – 12 h · Parc floral de Paris</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-parc-floral-de-paris" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 18 octobre · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--passe" data-date data-type="marche" data-debut="29902200" data-fin="29902320" data-jour="2026-11-08" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>8</strong><span>nov.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Jardin d’agronomie tropicale</p>
+    <p class="date-meta">dimanche 8 novembre · 10 h – 12 h · Jardin d’agronomie tropicale</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-bois-de-vincennes-jardin" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 8 novembre · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li></ol>
+  </details>
+</section>
+<section class="g-tarifs" id="tarifs">
+  <div class="conteneur g-tarifs-grille">
+    <div>
+      <p class="surtitre" data-anime>Tarifs et formules</p>
+      <h2 data-anime="lignes">À l’unité, ou à l’année</h2>
+      <h3 data-anime>À l’unité</h3>
+      <ul class="tarifs-unite tarifs-unite--sombre" data-anime="cascade"><li><span class="tarif-prix" data-prix>20 €</span><span class="tarif-libelle">La séance de marche ou d’atelier</span><span class="tarif-detail">sur place, sur demande par e-mail ; 20,50 € en paiement en ligne</span></li><li><span class="tarif-prix" data-prix>20,50 €</span><span class="tarif-libelle">Le mois de méditation en ligne</span><span class="tarif-detail">quatre mardis soir, réservation en ligne</span></li><li><span class="tarif-prix" data-prix>38 €</span><span class="tarif-libelle">Offre duo</span><span class="tarif-detail">venir à deux à une même séance</span></li></ul>
+      <p data-anime>Programme MBSR : 450 € le programme complet.</p>
+    </div>
+    <div>
+      <h3 data-anime>Formules et cartes, valables un an</h3>
+      <ul class="formules" data-anime="cascade"><li><strong>Formule Complète</strong><span>Un an d’accès à toutes les activités : en ligne, marches et ateliers.</span></li><li><strong>Formule Nature</strong><span>Un an de marches du dimanche matin dans le bois, de mars à novembre.</span></li><li><strong>Formule En ligne</strong><span>Un an de méditation du soir en ligne, quatre mardis par mois, sauf juillet et août.</span></li><li><strong>Cartes 5 et 10 séances</strong><span>Valables un an, au choix entre marche, atelier et en ligne (un mois en ligne compte pour une séance). Carte remise à la première séance sur place.</span></li></ul>
+      <p data-anime>Prix sur demande ou sur la billetterie.</p>
+      <p data-anime><a class="bouton bouton--contour" href="https://www.billetweb.fr/les-formules-annuelles-cartes-fidelites" target="_blank" rel="noopener" aria-label="Voir les formules sur Billetweb (s’ouvre dans un nouvel onglet)">Voir les formules sur Billetweb</a></p>
+      <figure class="media g-tarifs-media" data-grok data-fx="zoom" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/marches-feuilles-1280.webp" srcset="/assets/images/grok/marches-feuilles-640.webp 640w, /assets/images/grok/marches-feuilles-1280.webp 1280w" sizes="(max-width: 760px) 92vw, 40vw" alt="" width="1280" height="854" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="pied" id="pied" data-masque-barre>
+  <div class="conteneur pied-grille">
+    <div class="pied-marque">
+      <img src="/assets/images/logo-imakokolo-clair.png" alt="" width="44" height="45">
+      <p><strong>Hiroko Nakatani</strong><br>Méditation de pleine conscience<br>Association IMA KOKO-LO</p>
+      <p><a href="mailto:imakokolo@netc.fr">imakokolo@netc.fr</a><br><a href="https://www.billetweb.fr/les-formules-annuelles-cartes-fidelites" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">Billetterie (Billetweb)</a></p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p><strong>Sommaire</strong></p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/marches" data-libelle="Marches">Marches</a></li><li><a href="/ateliers" data-libelle="Ateliers et en ligne">Ateliers et en ligne</a></li><li><a href="/mbsr" data-libelle="MBSR">MBSR</a></li><li><a href="/agenda" data-libelle="Agenda" aria-current="page">Agenda</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div>
+      <p><strong>Confort de lecture</strong></p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><p>Mentions légales et politique de confidentialité : à compléter</p><p>Maquette de démonstration : réservations et formulaires simulés.</p><p>© 2026 Hiroko Nakatani</p></div>
+  <span id="nouvel-onglet" hidden>s’ouvre dans un nouvel onglet</span>
+</footer>
+<div data-barre-fixe>
+  <span class="barre-place-cloche" aria-hidden="true"></span>
+  <a class="bouton bouton--contour" href="/contact" data-libelle="Contact">Écrire</a>
+  <a class="bouton" href="/agenda" data-libelle="Agenda">Réserver</a>
+</div>
+<button type="button" class="mini-cloche" data-mini-cloche data-grille="fil" data-effet="mini-cloche" aria-label="Faire sonner la cloche">
+  <span class="mini-cloche-bol" aria-hidden="true"><span class="mini-cloche-eau"></span></span>
+  <span class="mini-cloche-reperes" aria-hidden="true"></span>
+</button>
+<p class="pastille-son" data-pastille-son hidden aria-live="polite"><span data-son-etat>La cloche sonne</span> <button type="button" class="lien" data-son-bascule data-libelle-couper="Couper le son" data-libelle-remettre="Remettre le son" data-etat-coupe="Son coupé" data-etat-sonne="La cloche sonne">Couper le son</button></p>
+</body>
+</html>

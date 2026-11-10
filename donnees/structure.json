@@ -1,0 +1,14 @@
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Hiroko Nakatani — Méditation de pleine conscience",
+ "url": "https://hiroko-nakatani-maquette.vercel.app/",
+ "email": "imakokolo@netc.fr",
+ "description": "Marches méditatives dans le bois de Vincennes, ateliers de pleine conscience à Fontenay-sous-Bois, méditation du soir en ligne et programme MBSR, avec Hiroko Nakatani, instructrice MBSR.",
+ "areaServed": "Paris et Val-de-Marne",
+ "founder": {
+  "@type": "Person",
+  "name": "Hiroko Nakatani",
+  "jobTitle": "Instructrice MBSR"
+ }
+}

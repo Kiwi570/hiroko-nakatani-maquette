@@ -1,0 +1,28 @@
+{
+  "siteActuel": "hirokoo8.wixsite.com",
+  "pagesTypes": [
+    "/",
+    "/marches",
+    "/ateliers",
+    "/mbsr",
+    "/agenda",
+    "/contact"
+  ],
+  "effets": [
+    "cloche",
+    "kanji-pinceau",
+    "marche-pas",
+    "plongee",
+    "mini-cloche",
+    "plan-trace",
+    "frise",
+    "anneau-themes",
+    "cycle",
+    "plongee-semaines",
+    "enso",
+    "plongee-profondeur"
+  ],
+  "grille": {
+    "dispenses": {}
+  }
+}

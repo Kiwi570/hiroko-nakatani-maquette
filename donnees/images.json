@@ -1,0 +1,2647 @@
+{
+  "grok/eau-bois": {
+    "nom": "grok/eau-bois",
+    "source": "recu/grok/eau-bois.jpg",
+    "role": "galerie",
+    "alt": "Reflet des arbres d'automne dans une eau calme",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "8fe53a4ad7f2549a",
+    "ratio": "1:1",
+    "largeurs": [
+      640,
+      1024
+    ],
+    "mobile": null,
+    "cadrage": "50% 28%",
+    "sujet": {
+      "x": 11.2,
+      "y": 4.5,
+      "l": 74.5,
+      "h": 77.3
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.71,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.45,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.37,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.13,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 204,
+      "top": 0,
+      "width": 784,
+      "height": 784,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,31 fois (source de 784 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/eau-bois-640.webp",
+      "grok/eau-bois-1024.webp"
+    ],
+    "poids": {
+      "grok/eau-bois-640.webp": 84212,
+      "grok/eau-bois-1024.webp": 147346
+    },
+    "media": "c.media({ nom: 'grok/eau-bois', alt: \"Reflet des arbres d'automne dans une eau calme\", cadrage: '50% 28%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '1 / 1' })"
+  },
+  "grok/eau-salle": {
+    "nom": "grok/eau-salle",
+    "source": "recu/grok/eau-salle.jpg",
+    "role": "galerie",
+    "alt": "Reflet d'une salle lumineuse dans l'eau",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "7b0f5c158d283ac4",
+    "ratio": "1:1",
+    "largeurs": [
+      640,
+      1024
+    ],
+    "mobile": null,
+    "cadrage": "50% 40%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 95.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.53,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.28,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.24,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.15,
+        "ton": "clair"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 180,
+      "top": 0,
+      "width": 784,
+      "height": 784,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,31 fois (source de 784 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/eau-salle-640.webp",
+      "grok/eau-salle-1024.webp"
+    ],
+    "poids": {
+      "grok/eau-salle-640.webp": 17322,
+      "grok/eau-salle-1024.webp": 32172
+    },
+    "media": "c.media({ nom: 'grok/eau-salle', alt: \"Reflet d'une salle lumineuse dans l'eau\", cadrage: '50% 40%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '1 / 1' })"
+  },
+  "grok/eau-soir": {
+    "nom": "grok/eau-soir",
+    "source": "recu/grok/eau-soir.jpg",
+    "role": "galerie",
+    "alt": "Reflet d'une lampe et du ciel du soir dans l'eau",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "4b5ebfdbb7ca2c11",
+    "ratio": "1:1",
+    "largeurs": [
+      640,
+      1024
+    ],
+    "mobile": null,
+    "cadrage": "50% 50%",
+    "sujet": {
+      "x": 40.8,
+      "y": 40.9,
+      "l": 18.6,
+      "h": 22.7
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.93,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.89,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.89,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.87,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 192,
+      "top": 0,
+      "width": 784,
+      "height": 784,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large",
+      "floue",
+      "compression visible"
+    ],
+    "avertissements": [
+      "agrandie 1,31 fois (source de 784 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/eau-soir-640.webp",
+      "grok/eau-soir-1024.webp"
+    ],
+    "poids": {
+      "grok/eau-soir-640.webp": 7542,
+      "grok/eau-soir-1024.webp": 15856
+    },
+    "media": "c.media({ nom: 'grok/eau-soir', alt: \"Reflet d'une lampe et du ciel du soir dans l'eau\", sizes: '(max-width: 760px) 100vw, 50vw', ratio: '1 / 1' })"
+  },
+  "grok/eau-matin": {
+    "nom": "grok/eau-matin",
+    "source": "recu/grok/eau-matin.jpg",
+    "role": "galerie",
+    "alt": "Reflet d'une branche et du ciel du matin dans l'eau",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "0cf65e09e7fc8b22",
+    "ratio": "1:1",
+    "largeurs": [
+      640,
+      1024
+    ],
+    "mobile": null,
+    "cadrage": "50% 56%",
+    "sujet": {
+      "x": 0,
+      "y": 4.5,
+      "l": 100,
+      "h": 90.9
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.64,
+        "ton": "clair"
+      },
+      {
+        "cote": "bas",
+        "score": 0.44,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.38,
+        "ton": "clair"
+      },
+      {
+        "cote": "droite",
+        "score": 0.37,
+        "ton": "clair"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 192,
+      "top": 0,
+      "width": 784,
+      "height": 784,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,31 fois (source de 784 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/eau-matin-640.webp",
+      "grok/eau-matin-1024.webp"
+    ],
+    "poids": {
+      "grok/eau-matin-640.webp": 16372,
+      "grok/eau-matin-1024.webp": 31612
+    },
+    "media": "c.media({ nom: 'grok/eau-matin', alt: \"Reflet d'une branche et du ciel du matin dans l'eau\", cadrage: '50% 56%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '1 / 1' })"
+  },
+  "grok/carte-marche": {
+    "nom": "grok/carte-marche",
+    "source": "recu/grok/carte-marche.jpg",
+    "role": "carte-service",
+    "alt": "Petit groupe qui marche en silence sur un sentier du bois",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "6f2c6bcf15da1e0f",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "41% 26%",
+    "sujet": {
+      "x": 4.5,
+      "y": 0,
+      "l": 59.5,
+      "h": 56.3
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.38,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.33,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.08,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 779,
+      "height": 1168,
+      "source": [
+        784,
+        1168
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "784 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "grok/carte-marche-480.webp",
+      "grok/carte-marche-640.webp",
+      "grok/carte-marche-784.webp"
+    ],
+    "poids": {
+      "grok/carte-marche-480.webp": 103796,
+      "grok/carte-marche-640.webp": 169434,
+      "grok/carte-marche-784.webp": 213896
+    },
+    "media": "c.media({ nom: 'grok/carte-marche', alt: \"Petit groupe qui marche en silence sur un sentier du bois\", cadrage: '41% 26%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "grok/carte-atelier": {
+    "nom": "grok/carte-atelier",
+    "source": "recu/grok/carte-atelier.jpg",
+    "role": "carte-service",
+    "alt": "Coussins disposés en cercle dans une salle claire",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "63c9130ae922f4e1",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "47% 50%",
+    "sujet": {
+      "x": 0,
+      "y": 6.3,
+      "l": 96.1,
+      "h": 93.7
+    },
+    "zones_calmes": [
+      {
+        "cote": "droite",
+        "score": 0.05,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.04,
+        "ton": "clair"
+      },
+      {
+        "cote": "gauche",
+        "score": 0,
+        "ton": "clair"
+      },
+      {
+        "cote": "bas",
+        "score": 0,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 779,
+      "height": 1168,
+      "source": [
+        784,
+        1168
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "784 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "grok/carte-atelier-480.webp",
+      "grok/carte-atelier-640.webp",
+      "grok/carte-atelier-784.webp"
+    ],
+    "poids": {
+      "grok/carte-atelier-480.webp": 48790,
+      "grok/carte-atelier-640.webp": 75384,
+      "grok/carte-atelier-784.webp": 96502
+    },
+    "media": "c.media({ nom: 'grok/carte-atelier', alt: \"Coussins disposés en cercle dans une salle claire\", cadrage: '47% 50%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "grok/carte-en-ligne": {
+    "nom": "grok/carte-en-ligne",
+    "source": "recu/grok/carte-en-ligne.jpg",
+    "role": "carte-service",
+    "alt": "Coin de méditation éclairé par une lampe, le soir",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "2679054348ba237f",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "47% 50%",
+    "sujet": {
+      "x": 0,
+      "y": 3.1,
+      "l": 91.5,
+      "h": 75
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.41,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.37,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.36,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.32,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 779,
+      "height": 1168,
+      "source": [
+        784,
+        1168
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "784 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "grok/carte-en-ligne-480.webp",
+      "grok/carte-en-ligne-640.webp",
+      "grok/carte-en-ligne-784.webp"
+    ],
+    "poids": {
+      "grok/carte-en-ligne-480.webp": 30812,
+      "grok/carte-en-ligne-640.webp": 47412,
+      "grok/carte-en-ligne-784.webp": 61102
+    },
+    "media": "c.media({ nom: 'grok/carte-en-ligne', alt: \"Coin de méditation éclairé par une lampe, le soir\", cadrage: '47% 50%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "grok/carte-mbsr": {
+    "nom": "grok/carte-mbsr",
+    "source": "recu/grok/carte-mbsr.jpg",
+    "role": "carte-service",
+    "alt": "Cloche de méditation, carnet et coussin dans la lumière du matin",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "844857f7253f17cd",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "41% 58%",
+    "sujet": {
+      "x": 4.5,
+      "y": 3.1,
+      "l": 91.5,
+      "h": 87.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.41,
+        "ton": "clair"
+      },
+      {
+        "cote": "droite",
+        "score": 0.28,
+        "ton": "clair"
+      },
+      {
+        "cote": "bas",
+        "score": 0.26,
+        "ton": "clair"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.22,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 779,
+      "height": 1168,
+      "source": [
+        784,
+        1168
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "784 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "grok/carte-mbsr-480.webp",
+      "grok/carte-mbsr-640.webp",
+      "grok/carte-mbsr-784.webp"
+    ],
+    "poids": {
+      "grok/carte-mbsr-480.webp": 26360,
+      "grok/carte-mbsr-640.webp": 41776,
+      "grok/carte-mbsr-784.webp": 53980
+    },
+    "media": "c.media({ nom: 'grok/carte-mbsr', alt: \"Cloche de méditation, carnet et coussin dans la lumière du matin\", cadrage: '41% 58%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "grok/pas-depart": {
+    "nom": "grok/pas-depart",
+    "source": "recu/grok/pas-depart.jpg",
+    "role": "galerie",
+    "alt": "Allée du bois au matin, lieu du rendez-vous",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "6ea28dd368bd38d1",
+    "ratio": "1:1",
+    "largeurs": [
+      640,
+      1024
+    ],
+    "mobile": null,
+    "cadrage": "50% 38%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 95.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.05,
+        "ton": "clair"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 250,
+      "top": 0,
+      "width": 784,
+      "height": 784,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,31 fois (source de 784 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/pas-depart-640.webp",
+      "grok/pas-depart-1024.webp"
+    ],
+    "poids": {
+      "grok/pas-depart-640.webp": 109202,
+      "grok/pas-depart-1024.webp": 184038
+    },
+    "media": "c.media({ nom: 'grok/pas-depart', alt: \"Allée du bois au matin, lieu du rendez-vous\", cadrage: '50% 38%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '1 / 1' })"
+  },
+  "grok/pas-silence": {
+    "nom": "grok/pas-silence",
+    "source": "recu/grok/pas-silence.jpg",
+    "role": "galerie",
+    "alt": "Sentier couvert de feuilles d'or dans la brume",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "583daa930b44da67",
+    "ratio": "1:1",
+    "largeurs": [
+      640,
+      1024
+    ],
+    "mobile": null,
+    "cadrage": "50% 47%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 95.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.09,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 192,
+      "top": 0,
+      "width": 784,
+      "height": 784,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,31 fois (source de 784 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/pas-silence-640.webp",
+      "grok/pas-silence-1024.webp"
+    ],
+    "poids": {
+      "grok/pas-silence-640.webp": 86526,
+      "grok/pas-silence-1024.webp": 146404
+    },
+    "media": "c.media({ nom: 'grok/pas-silence', alt: \"Sentier couvert de feuilles d'or dans la brume\", cadrage: '50% 47%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '1 / 1' })"
+  },
+  "grok/pas-pause": {
+    "nom": "grok/pas-pause",
+    "source": "recu/grok/pas-pause.jpg",
+    "role": "galerie",
+    "alt": "Méandre d'un ruisseau calme dans le bois",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "489ac2a9b72b9d7f",
+    "ratio": "1:1",
+    "largeurs": [
+      640,
+      1024
+    ],
+    "mobile": null,
+    "cadrage": "50% 43%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 95.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.37,
+        "ton": "clair"
+      },
+      {
+        "cote": "bas",
+        "score": 0.31,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.14,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.05,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 227,
+      "top": 0,
+      "width": 784,
+      "height": 784,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,31 fois (source de 784 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/pas-pause-640.webp",
+      "grok/pas-pause-1024.webp"
+    ],
+    "poids": {
+      "grok/pas-pause-640.webp": 66224,
+      "grok/pas-pause-1024.webp": 116960
+    },
+    "media": "c.media({ nom: 'grok/pas-pause', alt: \"Méandre d'un ruisseau calme dans le bois\", cadrage: '50% 43%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '1 / 1' })"
+  },
+  "grok/pas-cloture": {
+    "nom": "grok/pas-cloture",
+    "source": "recu/grok/pas-cloture.jpg",
+    "role": "galerie",
+    "alt": "Clairière éclairée à midi",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "7f9a6cca358eb03e",
+    "ratio": "1:1",
+    "largeurs": [
+      640,
+      1024
+    ],
+    "mobile": null,
+    "cadrage": "50% 41%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 95.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.01,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0,
+        "ton": "clair"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 239,
+      "top": 0,
+      "width": 784,
+      "height": 784,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,31 fois (source de 784 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/pas-cloture-640.webp",
+      "grok/pas-cloture-1024.webp"
+    ],
+    "poids": {
+      "grok/pas-cloture-640.webp": 102136,
+      "grok/pas-cloture-1024.webp": 175422
+    },
+    "media": "c.media({ nom: 'grok/pas-cloture', alt: \"Clairière éclairée à midi\", cadrage: '50% 41%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '1 / 1' })"
+  },
+  "grok/plongee-bois": {
+    "nom": "grok/plongee-bois",
+    "source": "recu/grok/plongee-bois.jpg",
+    "role": "ouverture",
+    "alt": "Cime des arbres d'automne vue d'en bas",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "2cdb139793c2de5e",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640
+      ],
+      "cadrage": "50% 27%"
+    },
+    "cadrage": "38% 32%",
+    "sujet": {
+      "x": 6.3,
+      "y": 0,
+      "l": 59.4,
+      "h": 75.9
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.71,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.47,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.07,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.05,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "bas",
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1168,
+      "height": 657,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "largeurs retirées (source trop petite) : 1920",
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "version téléphone sans 1080 px (source trop petite)",
+      "agrandie 1,1 fois (source de 1168 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/plongee-bois-640.webp",
+      "grok/plongee-bois-1280.webp",
+      "grok/plongee-bois-mobile-640.webp"
+    ],
+    "poids": {
+      "grok/plongee-bois-640.webp": 66330,
+      "grok/plongee-bois-1280.webp": 184450,
+      "grok/plongee-bois-mobile-640.webp": 104668
+    },
+    "media": "c.media({ nom: 'grok/plongee-bois', alt: \"Cime des arbres d'automne vue d'en bas\", cadrage: '38% 32%', cadrageMobile: '50% 27%', sizes: '100vw', priorite: true })"
+  },
+  "grok/marches-ouverture": {
+    "nom": "grok/marches-ouverture",
+    "source": "recu/grok/marches-ouverture.jpg",
+    "role": "ouverture",
+    "alt": "Sentier du bois dans la brume du matin",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "650bf083efb5322f",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640
+      ],
+      "cadrage": "50% 32%"
+    },
+    "cadrage": "61% 38%",
+    "sujet": {
+      "x": 28.1,
+      "y": 0,
+      "l": 71.9,
+      "h": 86.8
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.33,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.27,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.01,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1168,
+      "height": 657,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "largeurs retirées (source trop petite) : 1920",
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "version téléphone sans 1080 px (source trop petite)",
+      "agrandie 1,1 fois (source de 1168 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/marches-ouverture-640.webp",
+      "grok/marches-ouverture-1280.webp",
+      "grok/marches-ouverture-mobile-640.webp"
+    ],
+    "poids": {
+      "grok/marches-ouverture-640.webp": 65116,
+      "grok/marches-ouverture-1280.webp": 177948,
+      "grok/marches-ouverture-mobile-640.webp": 118708
+    },
+    "media": "c.media({ nom: 'grok/marches-ouverture', alt: \"Sentier du bois dans la brume du matin\", cadrage: '61% 38%', cadrageMobile: '50% 32%', sizes: '100vw', priorite: true })"
+  },
+  "grok/parcours-eau": {
+    "nom": "grok/parcours-eau",
+    "source": "recu/grok/parcours-eau.jpg",
+    "role": "carte-service",
+    "alt": "Ruisseau bordé d'arbres et chemin le long de la rive",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "5fbf55cda24aedfd",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "55% 41%",
+    "sujet": {
+      "x": 3.9,
+      "y": 0,
+      "l": 91.5,
+      "h": 96.9
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.03,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 5,
+      "top": 0,
+      "width": 779,
+      "height": 1168,
+      "source": [
+        784,
+        1168
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "784 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "grok/parcours-eau-480.webp",
+      "grok/parcours-eau-640.webp",
+      "grok/parcours-eau-784.webp"
+    ],
+    "poids": {
+      "grok/parcours-eau-480.webp": 103786,
+      "grok/parcours-eau-640.webp": 168964,
+      "grok/parcours-eau-784.webp": 215816
+    },
+    "media": "c.media({ nom: 'grok/parcours-eau', alt: \"Ruisseau bordé d'arbres et chemin le long de la rive\", cadrage: '55% 41%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "grok/parcours-chateau": {
+    "nom": "grok/parcours-chateau",
+    "source": "recu/grok/parcours-chateau.jpg",
+    "role": "carte-service",
+    "alt": "Vieux murs de pierre aperçus entre les arbres",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "626b6e9a37f90a5f",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "47% 21%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 91.5,
+      "h": 96.9
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.15,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 779,
+      "height": 1168,
+      "source": [
+        784,
+        1168
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "784 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "grok/parcours-chateau-480.webp",
+      "grok/parcours-chateau-640.webp",
+      "grok/parcours-chateau-784.webp"
+    ],
+    "poids": {
+      "grok/parcours-chateau-480.webp": 99874,
+      "grok/parcours-chateau-640.webp": 157356,
+      "grok/parcours-chateau-784.webp": 197962
+    },
+    "media": "c.media({ nom: 'grok/parcours-chateau', alt: \"Vieux murs de pierre aperçus entre les arbres\", cadrage: '47% 21%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "grok/marches-feuilles": {
+    "nom": "grok/marches-feuilles",
+    "source": "recu/grok/marches-feuilles.jpg",
+    "role": "section-fond",
+    "alt": "Feuilles de ginkgo sur une pierre mouillée",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "d9f3ae25e2559e37",
+    "ratio": "3:2",
+    "largeurs": [
+      640,
+      1280
+    ],
+    "mobile": null,
+    "cadrage": "38% 72%",
+    "sujet": {
+      "x": 0,
+      "y": 3.9,
+      "l": 100,
+      "h": 91.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.3,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.11,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 5,
+      "width": 1168,
+      "height": 779,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "largeurs retirées (source trop petite) : 1920",
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,1 fois (source de 1168 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/marches-feuilles-640.webp",
+      "grok/marches-feuilles-1280.webp"
+    ],
+    "poids": {
+      "grok/marches-feuilles-640.webp": 68298,
+      "grok/marches-feuilles-1280.webp": 196046
+    },
+    "media": "c.media({ nom: 'grok/marches-feuilles', alt: \"Feuilles de ginkgo sur une pierre mouillée\", cadrage: '38% 72%', sizes: '100vw' })"
+  },
+  "grok/ateliers-ouverture": {
+    "nom": "grok/ateliers-ouverture",
+    "source": "recu/grok/ateliers-ouverture.jpg",
+    "role": "ouverture",
+    "alt": "Salle d'atelier lumineuse, coussins en cercle",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "03e046b1f462a9ca",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640
+      ],
+      "cadrage": "50% 50%"
+    },
+    "cadrage": "60% 50%",
+    "sujet": {
+      "x": 25,
+      "y": 0,
+      "l": 71.9,
+      "h": 98.7
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.56,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.18,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.09,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 64,
+      "width": 1168,
+      "height": 657,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "largeurs retirées (source trop petite) : 1920",
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "version téléphone sans 1080 px (source trop petite)",
+      "agrandie 1,1 fois (source de 1168 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/ateliers-ouverture-640.webp",
+      "grok/ateliers-ouverture-1280.webp",
+      "grok/ateliers-ouverture-mobile-640.webp"
+    ],
+    "poids": {
+      "grok/ateliers-ouverture-640.webp": 24462,
+      "grok/ateliers-ouverture-1280.webp": 62704,
+      "grok/ateliers-ouverture-mobile-640.webp": 48564
+    },
+    "media": "c.media({ nom: 'grok/ateliers-ouverture', alt: \"Salle d'atelier lumineuse, coussins en cercle\", cadrage: '60% 50%', cadrageMobile: '50% 50%', sizes: '100vw', priorite: true })"
+  },
+  "grok/ateliers-soir": {
+    "nom": "grok/ateliers-soir",
+    "source": "recu/grok/ateliers-soir.jpg",
+    "role": "galerie",
+    "alt": "Fenêtre à l'heure bleue et lampe allumée",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "a51b54ea7dcbb9c3",
+    "ratio": "16:9",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "14% 50%",
+    "sujet": {
+      "x": 3.1,
+      "y": 34.3,
+      "l": 21.9,
+      "h": 27.1
+    },
+    "zones_calmes": [
+      {
+        "cote": "droite",
+        "score": 0.78,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.74,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.7,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.51,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "droite",
+    "recadrage": {
+      "left": 0,
+      "top": 24,
+      "width": 1168,
+      "height": 657,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "grok/ateliers-soir-480.webp",
+      "grok/ateliers-soir-640.webp",
+      "grok/ateliers-soir-960.webp"
+    ],
+    "poids": {
+      "grok/ateliers-soir-480.webp": 6532,
+      "grok/ateliers-soir-640.webp": 10990,
+      "grok/ateliers-soir-960.webp": 23756
+    },
+    "media": "c.media({ nom: 'grok/ateliers-soir', alt: \"Fenêtre à l'heure bleue et lampe allumée\", cadrage: '14% 50%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '16 / 9' })"
+  },
+  "grok/ateliers-saison": {
+    "nom": "grok/ateliers-saison",
+    "source": "recu/grok/ateliers-saison.jpg",
+    "role": "galerie",
+    "alt": "Vieux jardin au printemps, jeunes feuilles",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "f9953d59a13decfd",
+    "ratio": "16:9",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "48% 45%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 100
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.03,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1168,
+      "height": 657,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "grok/ateliers-saison-480.webp",
+      "grok/ateliers-saison-640.webp",
+      "grok/ateliers-saison-960.webp"
+    ],
+    "poids": {
+      "grok/ateliers-saison-480.webp": 40808,
+      "grok/ateliers-saison-640.webp": 71088,
+      "grok/ateliers-saison-960.webp": 138648
+    },
+    "media": "c.media({ nom: 'grok/ateliers-saison', alt: \"Vieux jardin au printemps, jeunes feuilles\", cadrage: '48% 45%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '16 / 9' })"
+  },
+  "grok/ateliers-tapis": {
+    "nom": "grok/ateliers-tapis",
+    "source": "recu/grok/ateliers-tapis.jpg",
+    "role": "carte-service",
+    "alt": "Couvertures, coussins et tapis empilés",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "500c6a58ba74d5ce",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "50% 67%",
+    "sujet": {
+      "x": 0,
+      "y": 46.9,
+      "l": 96.1,
+      "h": 50
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.83,
+        "ton": "clair"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.35,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.2,
+        "ton": "clair"
+      },
+      {
+        "cote": "bas",
+        "score": 0.02,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 779,
+      "height": 1168,
+      "source": [
+        784,
+        1168
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "784 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "grok/ateliers-tapis-480.webp",
+      "grok/ateliers-tapis-640.webp",
+      "grok/ateliers-tapis-784.webp"
+    ],
+    "poids": {
+      "grok/ateliers-tapis-480.webp": 23714,
+      "grok/ateliers-tapis-640.webp": 39128,
+      "grok/ateliers-tapis-784.webp": 50040
+    },
+    "media": "c.media({ nom: 'grok/ateliers-tapis', alt: \"Couvertures, coussins et tapis empilés\", cadrage: '50% 67%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "grok/mbsr-ouverture": {
+    "nom": "grok/mbsr-ouverture",
+    "source": "recu/grok/mbsr-ouverture.jpg",
+    "role": "ouverture",
+    "alt": "Lac parfaitement calme à l'aube",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "1ec8bbe20a9c131c",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640
+      ],
+      "cadrage": "50% 54%"
+    },
+    "cadrage": "58% 50%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 99.4
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.56,
+        "ton": "clair"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.41,
+        "ton": "clair"
+      },
+      {
+        "cote": "bas",
+        "score": 0.28,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.17,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 95,
+      "width": 1168,
+      "height": 657,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "largeurs retirées (source trop petite) : 1920",
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "version téléphone sans 1080 px (source trop petite)",
+      "agrandie 1,1 fois (source de 1168 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/mbsr-ouverture-640.webp",
+      "grok/mbsr-ouverture-1280.webp",
+      "grok/mbsr-ouverture-mobile-640.webp"
+    ],
+    "poids": {
+      "grok/mbsr-ouverture-640.webp": 13242,
+      "grok/mbsr-ouverture-1280.webp": 35842,
+      "grok/mbsr-ouverture-mobile-640.webp": 15768
+    },
+    "media": "c.media({ nom: 'grok/mbsr-ouverture', alt: \"Lac parfaitement calme à l'aube\", cadrage: '58% 50%', cadrageMobile: '50% 54%', sizes: '100vw', priorite: true })"
+  },
+  "grok/mbsr-profondeur": {
+    "nom": "grok/mbsr-profondeur",
+    "source": "recu/grok/mbsr-profondeur.jpg",
+    "role": "section-fond",
+    "alt": "Lumière qui descend dans une eau profonde",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "2922e5231cdf546a",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280
+    ],
+    "mobile": null,
+    "cadrage": "47% 42%",
+    "sujet": {
+      "x": 3.1,
+      "y": 0,
+      "l": 96.9,
+      "h": 100
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.36,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.31,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.29,
+        "ton": "clair"
+      },
+      {
+        "cote": "droite",
+        "score": 0.28,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1168,
+      "height": 657,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "largeurs retirées (source trop petite) : 1920",
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,1 fois (source de 1168 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/mbsr-profondeur-640.webp",
+      "grok/mbsr-profondeur-1280.webp"
+    ],
+    "poids": {
+      "grok/mbsr-profondeur-640.webp": 10946,
+      "grok/mbsr-profondeur-1280.webp": 33796
+    },
+    "media": "c.media({ nom: 'grok/mbsr-profondeur', alt: \"Lumière qui descend dans une eau profonde\", cadrage: '47% 42%', sizes: '100vw' })"
+  },
+  "grok/mbsr-pratique": {
+    "nom": "grok/mbsr-pratique",
+    "source": "recu/grok/mbsr-pratique.jpg",
+    "role": "galerie",
+    "alt": "Coin de pratique avec casque audio et coussin",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "fbd3dbe8415a3d2e",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "50% 54%",
+    "sujet": {
+      "x": 2.3,
+      "y": 4.5,
+      "l": 97.7,
+      "h": 86.4
+    },
+    "zones_calmes": [
+      {
+        "cote": "droite",
+        "score": 0.37,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.37,
+        "ton": "clair"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.3,
+        "ton": "clair"
+      },
+      {
+        "cote": "bas",
+        "score": 0.14,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 50,
+      "top": 0,
+      "width": 1045,
+      "height": 784,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "grok/mbsr-pratique-480.webp",
+      "grok/mbsr-pratique-640.webp",
+      "grok/mbsr-pratique-960.webp"
+    ],
+    "poids": {
+      "grok/mbsr-pratique-480.webp": 12430,
+      "grok/mbsr-pratique-640.webp": 20604,
+      "grok/mbsr-pratique-960.webp": 42404
+    },
+    "media": "c.media({ nom: 'grok/mbsr-pratique', alt: \"Coin de pratique avec casque audio et coussin\", cadrage: '50% 54%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "grok/agenda-feuilles": {
+    "nom": "grok/agenda-feuilles",
+    "source": "recu/grok/agenda-feuilles.jpg",
+    "role": "ouverture",
+    "alt": "Feuilles alignées du vert au rouge sur un papier clair",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "bd7294d68626aeb5",
+    "ratio": "2:1",
+    "largeurs": [
+      640,
+      1280
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640
+      ],
+      "cadrage": "50% 40%"
+    },
+    "cadrage": "50% 25%",
+    "sujet": {
+      "x": 3.1,
+      "y": 32.8,
+      "l": 96.9,
+      "h": 67.1
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.92,
+        "ton": "clair"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.48,
+        "ton": "clair"
+      },
+      {
+        "cote": "droite",
+        "score": 0.31,
+        "ton": "clair"
+      },
+      {
+        "cote": "bas",
+        "score": 0.06,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": "haut",
+    "recadrage": {
+      "left": 0,
+      "top": 165,
+      "width": 1168,
+      "height": 584,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "largeurs retirées (source trop petite) : 1920",
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "version téléphone sans 1080 px (source trop petite)",
+      "agrandie 1,1 fois (source de 1168 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/agenda-feuilles-640.webp",
+      "grok/agenda-feuilles-1280.webp",
+      "grok/agenda-feuilles-mobile-640.webp"
+    ],
+    "poids": {
+      "grok/agenda-feuilles-640.webp": 19010,
+      "grok/agenda-feuilles-1280.webp": 67126,
+      "grok/agenda-feuilles-mobile-640.webp": 51480
+    },
+    "media": "c.media({ nom: 'grok/agenda-feuilles', alt: \"Feuilles alignées du vert au rouge sur un papier clair\", cadrage: '50% 25%', cadrageMobile: '50% 40%', sizes: '100vw', priorite: true })"
+  },
+  "grok/contact-banc": {
+    "nom": "grok/contact-banc",
+    "source": "recu/grok/contact-banc.jpg",
+    "role": "ouverture",
+    "alt": "Banc vide sous un grand arbre au petit matin",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "0c4f1951fae9399e",
+    "ratio": "21:9",
+    "largeurs": [
+      640,
+      1280
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640
+      ],
+      "cadrage": "50% 41%"
+    },
+    "cadrage": "51% 50%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 100
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.16,
+        "ton": "clair"
+      },
+      {
+        "cote": "bas",
+        "score": 0.1,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 71,
+      "width": 1168,
+      "height": 501,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "largeurs retirées (source trop petite) : 1920",
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "version téléphone sans 1080 px (source trop petite)",
+      "agrandie 1,1 fois (source de 1168 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/contact-banc-640.webp",
+      "grok/contact-banc-1280.webp",
+      "grok/contact-banc-mobile-640.webp"
+    ],
+    "poids": {
+      "grok/contact-banc-640.webp": 36338,
+      "grok/contact-banc-1280.webp": 97924,
+      "grok/contact-banc-mobile-640.webp": 116164
+    },
+    "media": "c.media({ nom: 'grok/contact-banc', alt: \"Banc vide sous un grand arbre au petit matin\", cadrage: '51% 50%', cadrageMobile: '50% 41%', sizes: '100vw', priorite: true })"
+  },
+  "grok/404-brume": {
+    "nom": "grok/404-brume",
+    "source": "recu/grok/404-brume.jpg",
+    "role": "404",
+    "alt": "Sentier qui disparaît dans la brume",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "6ef51e8fce9b23c5",
+    "ratio": "16:9",
+    "largeurs": [
+      800,
+      1600
+    ],
+    "mobile": null,
+    "cadrage": "46% 50%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 100
+    },
+    "zones_calmes": [
+      {
+        "cote": "droite",
+        "score": 0.19,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.09,
+        "ton": "clair"
+      },
+      {
+        "cote": "bas",
+        "score": 0.08,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 24,
+      "width": 1168,
+      "height": 657,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,37 fois (source de 1168 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/404-brume-800.webp",
+      "grok/404-brume-1600.webp"
+    ],
+    "poids": {
+      "grok/404-brume-800.webp": 59894,
+      "grok/404-brume-1600.webp": 145710
+    },
+    "media": "c.media({ nom: 'grok/404-brume', alt: \"Sentier qui disparaît dans la brume\", cadrage: '46% 50%', sizes: '100vw', ratio: '16 / 9' })"
+  },
+  "hiroko-aquarelle": {
+    "nom": "hiroko-aquarelle",
+    "source": "recu/suis-je.png",
+    "role": "galerie",
+    "alt": "Aquarelle de fleurs de cerisier",
+    "grok": false,
+    "mention": null,
+    "empreinte": "0f3bced66da6a773",
+    "ratio": "1:1",
+    "largeurs": [
+      480,
+      800
+    ],
+    "mobile": null,
+    "cadrage": "50% 45%",
+    "sujet": {
+      "x": 16.6,
+      "y": 12.1,
+      "l": 65.2,
+      "h": 57.1
+    },
+    "zones_calmes": [
+      {
+        "cote": "droite",
+        "score": 0.76,
+        "ton": "clair"
+      },
+      {
+        "cote": "bas",
+        "score": 0.72,
+        "ton": "clair"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.71,
+        "ton": "clair"
+      },
+      {
+        "cote": "haut",
+        "score": 0.69,
+        "ton": "clair"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 30,
+      "top": 0,
+      "width": 1541,
+      "height": 1541,
+      "source": [
+        1600,
+        1541
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "hiroko-aquarelle-480.webp",
+      "hiroko-aquarelle-800.webp"
+    ],
+    "poids": {
+      "hiroko-aquarelle-480.webp": 26986,
+      "hiroko-aquarelle-800.webp": 56458
+    },
+    "media": "c.media({ nom: 'hiroko-aquarelle', alt: \"Aquarelle de fleurs de cerisier\", cadrage: '50% 45%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '1 / 1' })"
+  },
+  "parcours-floral": {
+    "nom": "parcours-floral",
+    "source": "recu/marche-meditation-parc-floral.png",
+    "role": "carte-service",
+    "alt": "Entrée du Parc floral de Paris",
+    "grok": false,
+    "mention": null,
+    "empreinte": "294a3faa981d8852",
+    "ratio": "3:4",
+    "largeurs": [
+      480,
+      720
+    ],
+    "mobile": null,
+    "cadrage": "50% 58%",
+    "sujet": {
+      "x": 0,
+      "y": 54.4,
+      "l": 92.9,
+      "h": 20.6
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.24,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.22,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.21,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.15,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 512,
+      "top": 0,
+      "width": 770,
+      "height": 1026,
+      "source": [
+        1546,
+        1026
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "parcours-floral-480.webp",
+      "parcours-floral-720.webp"
+    ],
+    "poids": {
+      "parcours-floral-480.webp": 94080,
+      "parcours-floral-720.webp": 192048
+    },
+    "media": "c.media({ nom: 'parcours-floral', alt: \"Entrée du Parc floral de Paris\", cadrage: '50% 58%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '3 / 4' })"
+  },
+  "parcours-tropical": {
+    "nom": "parcours-tropical",
+    "source": "recu/atelier-saisonnier-apres-midi.jpg",
+    "role": "carte-service",
+    "alt": "Pavillon rouge du Jardin d'agronomie tropicale",
+    "grok": false,
+    "mention": null,
+    "empreinte": "3e84519db50d44b5",
+    "ratio": "3:4",
+    "largeurs": [
+      480,
+      720
+    ],
+    "mobile": null,
+    "cadrage": "50% 50%",
+    "sujet": {
+      "x": 15.1,
+      "y": 31.6,
+      "l": 78.9,
+      "h": 40
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.23,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.2,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.13,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.1,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 960,
+      "height": 1280,
+      "source": [
+        960,
+        1280
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "960 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "parcours-tropical-480.webp",
+      "parcours-tropical-720.webp"
+    ],
+    "poids": {
+      "parcours-tropical-480.webp": 95200,
+      "parcours-tropical-720.webp": 212466
+    },
+    "media": "c.media({ nom: 'parcours-tropical', alt: \"Pavillon rouge du Jardin d'agronomie tropicale\", sizes: '(max-width: 760px) 100vw, 33vw', ratio: '3 / 4' })"
+  },
+  "saison-printemps": {
+    "nom": "saison-printemps",
+    "source": "recu/printemps-est-arrive-bois.jpg",
+    "role": "galerie",
+    "alt": "Cerisier en fleurs dans le bois au printemps",
+    "grok": false,
+    "mention": null,
+    "empreinte": "b939fb37fad1c5b6",
+    "ratio": "4:3",
+    "largeurs": [
+      640,
+      1280
+    ],
+    "mobile": null,
+    "cadrage": "43% 46%",
+    "sujet": {
+      "x": 20.6,
+      "y": 27.9,
+      "l": 44.1,
+      "h": 36.8
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.68,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.54,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.31,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.26,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 2000,
+      "height": 1500,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "saison-printemps-640.webp",
+      "saison-printemps-1280.webp"
+    ],
+    "poids": {
+      "saison-printemps-640.webp": 73306,
+      "saison-printemps-1280.webp": 276836
+    },
+    "media": "c.media({ nom: 'saison-printemps', alt: \"Cerisier en fleurs dans le bois au printemps\", cadrage: '43% 46%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "bois-lumiere": {
+    "nom": "bois-lumiere",
+    "source": "recu/meditons-ensemble-journee-internationale.png",
+    "role": "ouverture",
+    "alt": "Lumière du matin entre les arbres du bois",
+    "grok": false,
+    "mention": null,
+    "empreinte": "ee654da2c8c5ef3a",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640,
+        1080
+      ],
+      "cadrage": "50% 53%"
+    },
+    "cadrage": "51% 41%",
+    "sujet": {
+      "x": 36.8,
+      "y": 18.7,
+      "l": 29.4,
+      "h": 42.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.33,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.3,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.29,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.27,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "bas",
+    "recadrage": {
+      "left": 0,
+      "top": 289,
+      "width": 2000,
+      "height": 1125,
+      "source": [
+        2000,
+        1414
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "bois-lumiere-640.webp",
+      "bois-lumiere-1280.webp",
+      "bois-lumiere-1920.webp",
+      "bois-lumiere-mobile-640.webp",
+      "bois-lumiere-mobile-1080.webp"
+    ],
+    "poids": {
+      "bois-lumiere-640.webp": 79410,
+      "bois-lumiere-1280.webp": 295166,
+      "bois-lumiere-1920.webp": 397724,
+      "bois-lumiere-mobile-640.webp": 211692,
+      "bois-lumiere-mobile-1080.webp": 301956
+    },
+    "media": "c.media({ nom: 'bois-lumiere', alt: \"Lumière du matin entre les arbres du bois\", cadrage: '51% 41%', cadrageMobile: '50% 53%', sizes: '100vw', priorite: true })"
+  },
+  "atelier-groupe": {
+    "nom": "atelier-groupe",
+    "source": "recu/atelier-pleine-conscience.jpg",
+    "role": "galerie",
+    "alt": "Participants assis en cercle pendant un atelier",
+    "grok": false,
+    "mention": null,
+    "empreinte": "82ffe6718545bf2e",
+    "ratio": "4:3",
+    "largeurs": [
+      640,
+      1280
+    ],
+    "mobile": null,
+    "cadrage": "50% 62%",
+    "sujet": {
+      "x": 0,
+      "y": 54.9,
+      "l": 51.7,
+      "h": 44.8
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.3,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.29,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.17,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.06,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1984,
+      "height": 1488,
+      "source": [
+        1984,
+        1488
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "atelier-groupe-640.webp",
+      "atelier-groupe-1280.webp"
+    ],
+    "poids": {
+      "atelier-groupe-640.webp": 43324,
+      "atelier-groupe-1280.webp": 108918
+    },
+    "media": "c.media({ nom: 'atelier-groupe', alt: \"Participants assis en cercle pendant un atelier\", cadrage: '50% 62%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "marche-groupe": {
+    "nom": "marche-groupe",
+    "source": "recu/marche-meditation.jpg",
+    "role": "galerie",
+    "alt": "Petit groupe réuni dans le bois avant une marche",
+    "grok": false,
+    "mention": null,
+    "empreinte": "33de234eae59547c",
+    "ratio": "16:10",
+    "largeurs": [
+      600
+    ],
+    "mobile": null,
+    "cadrage": "50% 54%",
+    "sujet": {
+      "x": 20.6,
+      "y": 43.1,
+      "l": 61.8,
+      "h": 22.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.26,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.21,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.19,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.18,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 7,
+      "width": 600,
+      "height": 375,
+      "source": [
+        600,
+        382
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "600 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "marche-groupe-600.webp"
+    ],
+    "poids": {
+      "marche-groupe-600.webp": 72360
+    },
+    "media": "c.media({ nom: 'marche-groupe', alt: \"Petit groupe réuni dans le bois avant une marche\", cadrage: '50% 54%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '16 / 10' })"
+  },
+  "logo-ima-koko-lo": {
+    "nom": "logo-ima-koko-lo",
+    "source": "recu/association-ima-koko-lo.png",
+    "role": "logo",
+    "alt": "Logo de l'association IMA KOKO-LO",
+    "grok": false,
+    "mention": null,
+    "empreinte": "e7957ba1fe5c20e7",
+    "ratio": null,
+    "largeurs": [
+      240,
+      480
+    ],
+    "mobile": null,
+    "cadrage": null,
+    "sujet": null,
+    "zones_calmes": null,
+    "zone_texte": null,
+    "recadrage": null,
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "logo-ima-koko-lo-240.webp",
+      "logo-ima-koko-lo-480.webp"
+    ],
+    "poids": {
+      "logo-ima-koko-lo-240.webp": 5470,
+      "logo-ima-koko-lo-480.webp": 13324
+    },
+    "media": "c.media({ nom: 'logo-ima-koko-lo', alt: \"Logo de l'association IMA KOKO-LO\", sizes: '240px' })"
+  },
+  "eau-cerisier": {
+    "nom": "eau-cerisier",
+    "source": "recu/printemps-est-arrive-bois.jpg",
+    "role": "galerie",
+    "alt": "Cerisier en fleurs dans le bois",
+    "grok": false,
+    "mention": null,
+    "empreinte": "31853b9979819d2c",
+    "ratio": "1:1",
+    "largeurs": [
+      640,
+      1024
+    ],
+    "mobile": null,
+    "cadrage": "50% 46%",
+    "sujet": {
+      "x": 20.1,
+      "y": 27.9,
+      "l": 58.8,
+      "h": 36.8
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.68,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.54,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.31,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.26,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 110,
+      "top": 0,
+      "width": 1500,
+      "height": 1500,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "eau-cerisier-640.webp",
+      "eau-cerisier-1024.webp"
+    ],
+    "poids": {
+      "eau-cerisier-640.webp": 106968,
+      "eau-cerisier-1024.webp": 264308
+    },
+    "media": "c.media({ nom: 'eau-cerisier', alt: \"Cerisier en fleurs dans le bois\", cadrage: '50% 46%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '1 / 1' })"
+  },
+  "grok/eau-plongee": {
+    "nom": "grok/eau-plongee",
+    "source": "recu/grok/plongee-bois.jpg",
+    "role": "galerie",
+    "alt": "Cime des arbres d'automne",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "f61cd364a7f3fe95",
+    "ratio": "1:1",
+    "largeurs": [
+      640,
+      1024
+    ],
+    "mobile": null,
+    "cadrage": "50% 27%",
+    "sujet": {
+      "x": 2.8,
+      "y": 0,
+      "l": 88.5,
+      "h": 63.6
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.71,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.47,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.07,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.05,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 52,
+      "top": 0,
+      "width": 784,
+      "height": 784,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,31 fois (source de 784 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/eau-plongee-640.webp",
+      "grok/eau-plongee-1024.webp"
+    ],
+    "poids": {
+      "grok/eau-plongee-640.webp": 94612,
+      "grok/eau-plongee-1024.webp": 164390
+    },
+    "media": "c.media({ nom: 'grok/eau-plongee', alt: \"Cime des arbres d'automne\", cadrage: '50% 27%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '1 / 1' })"
+  }
+}

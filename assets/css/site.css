@@ -1,0 +1,792 @@
+/* Hiroko Nakatani · direction « La cloche qui chante ».
+   Washi, encre, bronze de la cloche, vert du logo IMA KOKO-LO, indigo de l'eau du soir. */
+@font-face { font-family: 'Shippori Mincho'; src: url('/assets/fonts/shippori-mincho-latin-500-normal.woff2') format('woff2'); font-weight: 400 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Shippori Mincho'; src: url('/assets/fonts/shippori-mincho-latin-700-normal.woff2') format('woff2'); font-weight: 700 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Albert Sans'; src: url('/assets/fonts/albert-sans-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Albert Sans'; src: url('/assets/fonts/albert-sans-latin-500-normal.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Albert Sans'; src: url('/assets/fonts/albert-sans-latin-600-normal.woff2') format('woff2'); font-weight: 600 700; font-style: normal; font-display: swap; }
+/* Polices de secours ajustées : le texte ne saute pas à l'arrivée des vraies polices. */
+@font-face { font-family: 'Mincho Secours'; src: local('Georgia'), local('Times New Roman'); size-adjust: 104%; ascent-override: 92%; descent-override: 24%; }
+@font-face { font-family: 'Albert Secours'; src: local('Arial'), local('Helvetica'); size-adjust: 98%; ascent-override: 98%; descent-override: 26%; }
+
+:root {
+  --police-titres: 'Shippori Mincho', 'Mincho Secours', Georgia, serif;
+  --police-texte: 'Albert Sans', 'Albert Secours', system-ui, sans-serif;
+  --washi: #f2ede3;
+  --washi-2: #e9e2d4;
+  --encre: #1d211f;
+  --accent: #46643a;          /* vert du logo, assombri : 5,9:1 sur le washi */
+  --accent-clair: #a9c296;
+  --sauge: #7f9c6b;
+  --bronze: #9c6b34;
+  --bronze-fonce: #6e4a22;
+  --bronze-clair: #d5ac74;
+  --eau: #1f3340;
+  --eau-2: #2f4a5a;
+  --mousse: #233328;
+  --texte-doux: #4a4f49;
+  --ligne: color-mix(in srgb, var(--encre) 16%, var(--washi));
+  --largeur: 1180px;
+  --rayon: 14px;
+  --cloche-d: min(40vw, calc(100svh - var(--entete-h) - 120px), 560px);
+}
+body { font-size: clamp(1rem, .97rem + .18vw, 1.12rem); }
+h1, h2, h3 { font-weight: 600; letter-spacing: -.01em; }
+h2 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3.4rem); line-height: 1.1; }
+h3 { font-size: clamp(1.2rem, 1.05rem + .6vw, 1.5rem); line-height: 1.2; }
+.surtitre { font-family: var(--police-texte); font-size: .82rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: .9em; }
+.intro { font-size: clamp(1.05rem, 1rem + .3vw, 1.22rem); max-width: 34em; }
+section { position: relative; }
+a { text-underline-offset: .2em; }
+
+/* Boutons. */
+.bouton { background: var(--accent); color: #fbf8f1; transition: background-color .25s, color .25s, box-shadow .25s; }
+.bouton:hover { background: #3a5530; }
+.bouton--contour { background: transparent; color: var(--encre); box-shadow: inset 0 0 0 1.5px currentColor; }
+.bouton--contour:hover { background: color-mix(in srgb, var(--encre) 7%, transparent); }
+.bouton--clair { background: var(--washi); color: var(--encre); }
+.bouton--clair:hover { background: #fff; }
+.bouton--contour-clair { background: transparent; color: var(--washi); box-shadow: inset 0 0 0 1.5px currentColor; }
+.bouton--contour-clair:hover { background: rgba(255, 255, 255, .1); }
+.bouton--petit { min-height: 44px; padding: .5em 1.1em; font-size: .95rem; }
+.lien-clair { color: var(--washi); }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; }
+
+/* En-tête : le logo d'IMA KOKO-LO, le nom et le sous-titre. */
+.entete-logo img { width: 44px; height: 45px; }
+.entete-nom { display: grid; line-height: 1.1; }
+.entete-nom span { font-family: var(--police-titres); font-weight: 600; font-size: 1.12rem; }
+.entete-nom small { font-weight: 500; font-size: .74rem; letter-spacing: .06em; color: var(--texte-doux); }
+@media (max-width: 420px) { .entete-nom small { display: none; } }
+[data-nav] a { font-weight: 500; }
+[data-nav] a[aria-current] { text-decoration-color: var(--sauge); }
+[data-menu] { color: var(--washi); }
+[data-menu] .menu-lien[aria-current] { color: var(--accent-clair); }
+.menu-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+[data-menu] .bouton { background: var(--washi); color: var(--encre); }
+[data-menu] .bouton--contour { background: transparent; color: var(--washi); }
+[data-menu] button.lien { color: var(--washi); min-height: 44px; }
+
+/* Intro : le logo s'écrit (l'ensō d'abord, puis le kanji), puis tombe dans l'eau de la cloche. */
+.ouverture-panneau { color: var(--encre); gap: 14px; padding: var(--gouttiere); }
+.ouverture-logo { position: relative; width: min(46vw, 34svh, 220px); aspect-ratio: 256 / 262; }
+.ouverture-logo img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ouverture-enso {
+  -webkit-mask: radial-gradient(circle at 50% 50%, transparent 0 58%, #000 59%), conic-gradient(from -20deg, #000 var(--enso, 0deg), transparent calc(var(--enso, 0deg) + 1deg));
+  -webkit-mask-composite: source-in;
+          mask: radial-gradient(circle at 50% 50%, transparent 0 58%, #000 59%) intersect, conic-gradient(from -20deg, #000 var(--enso, 0deg), transparent calc(var(--enso, 0deg) + 1deg));
+}
+.ouverture-kanji {
+  -webkit-mask: radial-gradient(circle at 50% 50%, #000 0 58%, transparent 59%), linear-gradient(180deg, #000 calc(var(--encre-p, 0%) - 8%), transparent var(--encre-p, 0%));
+  -webkit-mask-composite: source-in;
+          mask: radial-gradient(circle at 50% 50%, #000 0 58%, transparent 59%) intersect, linear-gradient(180deg, #000 calc(var(--encre-p, 0%) - 8%), transparent var(--encre-p, 0%));
+}
+.ouverture-nom { margin: 8px 0 0; font-family: var(--police-titres); font-size: clamp(2rem, min(7vw, 9vh), 3.6rem); line-height: 1; }
+.ouverture-ligne { margin: 0; font-size: .82rem; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+/* Le trou de l'intro et du voile s'ouvre en onde : un anneau plus clair sur le bord. */
+[data-voile].avec-trou, .ouverture-panneau.avec-trou {
+  -webkit-mask: radial-gradient(circle at var(--cx, 50%) var(--cy, 50%), transparent var(--trou, -2px), rgba(0, 0, 0, .35) calc(var(--trou, -2px) + 1px), rgba(0, 0, 0, .35) calc(var(--trou, -2px) + clamp(1px, var(--trou, -2px), 10px)), #000 calc(var(--trou, -2px) + clamp(1px, var(--trou, -2px) * 2, 22px)));
+          mask: radial-gradient(circle at var(--cx, 50%) var(--cy, 50%), transparent var(--trou, -2px), rgba(0, 0, 0, .35) calc(var(--trou, -2px) + 1px), rgba(0, 0, 0, .35) calc(var(--trou, -2px) + clamp(1px, var(--trou, -2px), 10px)), #000 calc(var(--trou, -2px) + clamp(1px, var(--trou, -2px) * 2, 22px)));
+}
+.onde-anneau { position: fixed; z-index: 901; border-radius: 50%; border: 1.5px solid color-mix(in srgb, var(--bronze-clair) 70%, transparent); pointer-events: none; transform: translate(-50%, -50%) scale(0); opacity: 0; }
+[data-voile] { background: var(--eau); }
+.voile-contenu img { width: 64px; height: 66px; }
+[data-voile-libelle] { color: var(--washi); }
+
+/* Titres écrits au pinceau (grille wouahou, point 5) : la ligne se découvre de gauche à droite, un trait d'encre
+   se pose dessous. Décor en pseudo-élément : la boîte du titre ne change pas. */
+.titre-pinceau { position: relative; font-size: clamp(2.4rem, min(5.6vw, 8.6vh), 5.4rem); line-height: 1.06; padding-bottom: .22em; margin-bottom: .45em; }
+.titre-pinceau::after {
+  content: ''; position: absolute; left: 0; bottom: 0; width: min(3.6em, 70%); height: .16em; pointer-events: none;
+  background: url('/assets/images/pinceau.svg') no-repeat 0 50% / 100% 100%;
+  clip-path: inset(0 calc((1 - var(--trait, 1)) * 100%) 0 0);
+}
+.pinceau-ligne { -webkit-mask-image: linear-gradient(90deg, #000 40%, transparent 60%); mask-image: linear-gradient(90deg, #000 40%, transparent 60%); -webkit-mask-size: 260% 100%; mask-size: 260% 100%; -webkit-mask-position: 100% 0; mask-position: 100% 0; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+
+/* Cloche de méditation : bronze vu du dessus, l'eau au centre (WebGL), coussin indigo dessous. */
+.cloche { position: relative; width: var(--cloche-d); aspect-ratio: 1; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.cloche-coussin { position: absolute; inset: -5%; border-radius: 50%; background: radial-gradient(circle at 50% 46%, #33505f 0 60%, #22394a 74%, #1a2c38 100%); box-shadow: 0 30px 60px -24px rgba(16, 26, 30, .55); }
+.cloche-coussin::after { content: ''; position: absolute; inset: 3%; border-radius: 50%; border: 1px dashed rgba(242, 237, 227, .22); }
+.cloche-bol {
+  position: absolute; inset: 4%; border-radius: 50%;
+  background: conic-gradient(from calc(var(--reflet, 0deg) + 200deg), #6e4a22, #c99b5e 12%, #8a5d2c 24%, #e7c48f 34%, #7a5226 48%, #b8894f 62%, #5d3d1b 76%, #d1a46a 88%, #6e4a22);
+  box-shadow: inset 0 0 0 1px rgba(255, 238, 205, .35), inset 0 -10px 24px rgba(40, 24, 8, .45);
+}
+.cloche-bol::after { content: ''; position: absolute; inset: 6.5%; border-radius: 50%; background: radial-gradient(circle at 42% 36%, #4a3418, #2a1d0d 58%, #1a1208 100%); box-shadow: inset 0 0 0 1px rgba(255, 220, 170, .18); }
+.cloche-eau { position: absolute; inset: 14%; border-radius: 50%; overflow: hidden; background: var(--eau); box-shadow: inset 0 0 30px rgba(0, 0, 0, .45); }
+.cloche-eau .media { position: absolute; inset: 0; border-radius: 50%; }
+.cloche-eau .mention-ia { right: 50%; bottom: 7%; transform: translateX(50%); z-index: 3; }
+.cloche-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; opacity: 0; transition: opacity .6s; }
+html.cloche-gl .cloche-canvas { opacity: 1; }
+.cloche-frapper { position: absolute; inset: 14%; z-index: 4; border-radius: 50%; border: 0; background: transparent; cursor: pointer; }
+.cloche-frapper:focus-visible { outline-offset: 6px; }
+.cloche.frotte .cloche-frapper { cursor: grabbing; }
+.cloche-consigne { position: absolute; left: 50%; top: calc(100% + 5%); width: max-content; max-width: min(92vw, 30em); transform: translateX(-50%); margin: 0; text-align: center; font-size: .9rem; color: var(--texte-doux); }
+.si-tactile { display: none; }
+@media (hover: none) { .si-souris { display: none; } .si-tactile { display: inline; } }
+html.cloche-fixe .cloche-consigne { top: calc(100% + 4%); }
+
+/* Mise en page « duo » de l'accueil : sur ordinateur, la cloche reste fixe à droite et le texte occupe la gauche. */
+.duo { padding-block: clamp(64px, 10vw, 140px); }
+.duo-texte { width: min(100% - 2 * var(--gouttiere), var(--largeur)); margin-inline: auto; }
+html.cloche-fixe .duo-texte { width: auto; margin-left: max(var(--gouttiere), calc((100vw - var(--largeur)) / 2)); margin-right: calc(max(var(--gouttiere), calc((100vw - var(--largeur)) / 2)) + var(--cloche-d) + clamp(32px, 4vw, 72px)); }
+html.cloche-fixe .accueil-ouverture .cloche {
+  position: fixed; z-index: 20; right: max(var(--gouttiere), calc((100vw - var(--largeur)) / 2)); top: calc(var(--entete-h) + (100svh - var(--entete-h)) / 2 - 18px);
+  translate: 0 -50%;
+}
+html.cloche-fixe.cloche-partie .accueil-ouverture .cloche { visibility: hidden; }
+
+/* 1. Ouverture de l'accueil. */
+.accueil-ouverture { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-top: calc(var(--entete-h) + 24px); padding-bottom: calc(var(--barres-h) + 48px); overflow: hidden; }
+.accueil-ouverture h1 { max-width: 11em; }
+.saison { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.accueil-ouverture .duo-texte, .accueil-ouverture .cloche { position: relative; z-index: 1; }
+.prochaine { display: grid; gap: 2px; margin-top: 18px; padding-left: 14px; border-left: 2px solid var(--sauge); max-width: 30em; }
+.prochaine > span { font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--texte-doux); }
+.prochaine a, .prochaine strong { font-family: var(--police-titres); font-size: 1.15rem; font-weight: 600; line-height: 1.3; text-decoration: none; }
+.prochaine a:hover { text-decoration: underline; }
+.prochaine--clair { border-left-color: var(--accent-clair); }
+.prochaine--clair > span { color: #e3ddcf; }
+html:not(.cloche-fixe) .accueil-ouverture { gap: 40px; }
+html:not(.cloche-fixe) .accueil-ouverture .cloche { margin: 8px auto 64px; --cloche-d: min(78vw, 46svh, 440px); }
+
+/* 2. 念 : maintenant + cœur. */
+.nen-kanji { display: flex; align-items: flex-end; gap: clamp(8px, 2vw, 22px); margin: 8px 0 28px; }
+.kanji { margin: 0; display: grid; justify-items: center; gap: 6px; }
+.kanji-svg { width: clamp(64px, 9vw, 120px); height: auto; overflow: visible; }
+.kanji--nen .kanji-svg { width: clamp(88px, 12vw, 160px); }
+.kanji-ombre { fill: color-mix(in srgb, var(--encre) 7%, transparent); }
+.kanji-encre { fill: var(--encre); }
+.kanji--nen .kanji-encre { fill: var(--accent); }
+.kanji figcaption { font-size: .9rem; color: var(--texte-doux); white-space: nowrap; }
+.kanji-signe { font-family: var(--police-titres); font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--bronze); padding-bottom: 1.6em; }
+.nen-texte { max-width: 36em; font-size: 1.1rem; }
+.nen-points { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.nen-points li { padding-left: 28px; position: relative; }
+.nen-points li::before { content: ''; position: absolute; left: 0; top: .45em; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--sauge); }
+
+/* 3. Les quatre pratiques. */
+.pratiques-grille { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2vw, 24px); }
+.pratique-lien { display: grid; grid-template-rows: auto 1fr; height: 100%; text-decoration: none; background: #fbf8f1; border-radius: var(--rayon); overflow: hidden; box-shadow: 0 1px 0 var(--ligne), 0 18px 40px -30px rgba(29, 33, 31, .35); transition: box-shadow .35s var(--courbe), translate .35s var(--courbe); }
+.pratique-lien:hover, .pratique-lien:focus-visible { translate: 0 -4px; box-shadow: 0 1px 0 var(--ligne), 0 26px 50px -30px rgba(29, 33, 31, .5); }
+.pratique.est-active .pratique-lien { box-shadow: 0 0 0 2px var(--sauge), 0 26px 50px -30px rgba(29, 33, 31, .5); }
+.pratique-media { aspect-ratio: 4 / 3; border-radius: 0; }
+.pratique-corps { display: grid; align-content: start; gap: 6px; padding: 16px 18px 18px; }
+.pratique-titre { font-family: var(--police-titres); font-size: 1.3rem; font-weight: 600; line-height: 1.2; }
+.pratique-meta { font-size: .95rem; color: var(--texte-doux); }
+.pratique-prix { font-family: var(--police-titres); font-size: 1.25rem; font-weight: 700; color: var(--bronze-fonce); font-variant-numeric: tabular-nums; }
+.pratique-texte { font-size: .95rem; }
+.pratique-voir { font-weight: 600; color: var(--accent); margin-top: 4px; }
+
+/* 4. La marche, pas à pas (scène épinglée sur ordinateur). */
+.marche-scene { background: linear-gradient(180deg, var(--washi), var(--washi-2)); }
+.marche-cadre { padding-block: clamp(64px, 10vw, 120px); }
+.marche-chemin { width: 100%; max-width: 560px; height: auto; margin: 6px 0 18px; overflow: visible; }
+.chemin-fond { fill: none; stroke: var(--ligne); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 2 12; }
+.chemin-trace { fill: none; stroke: var(--sauge); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: var(--chemin, 0); }
+.chemin-arret { fill: var(--washi); stroke: var(--bronze); stroke-width: 3; transition: fill .3s; }
+.chemin-arret.est-passe { fill: var(--bronze); }
+.chemin-pas { fill: var(--accent); }
+.marche-etapes { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 22px; }
+.etape { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: start; }
+.etape-media { width: 96px; aspect-ratio: 1; border-radius: 50%; }
+.etape-point { width: 22px; height: 22px; margin: 6px 37px; border-radius: 50%; border: 3px solid var(--bronze); }
+.etape-heure { margin: 0 0 2px; font-family: var(--police-titres); font-size: 1.5rem; font-weight: 700; color: var(--bronze-fonce); font-variant-numeric: tabular-nums; }
+.etape h3 { margin-bottom: .25em; }
+.etape p:last-child { margin: 0; }
+/* Ordinateur, avec la cloche fixe : la scène est épinglée, une étape à la fois ; l'eau de la cloche montre le lieu. */
+html.cloche-fixe .marche-scene { height: 380svh; }
+html.cloche-fixe .marche-cadre { position: sticky; top: 0; height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-top: calc(var(--entete-h) + 12px); padding-bottom: 24px; }
+html.cloche-fixe .marche-etapes { position: relative; display: block; height: clamp(150px, 22svh, 210px); margin-bottom: 12px; }
+html.cloche-fixe .etape { position: absolute; inset: 0; display: block; opacity: 0; translate: 0 14px; transition: opacity .5s var(--courbe), translate .5s var(--courbe); }
+html.cloche-fixe .etape.est-active { opacity: 1; translate: 0 0; }
+html.cloche-fixe .etape-media, html.cloche-fixe .etape-point { display: none; }
+html.cloche-fixe .etape-heure { font-size: clamp(2.4rem, 4vw, 3.6rem); }
+
+/* 5. Prochaines dates (aussi sur la page Agenda). */
+.dates-bandeau { aspect-ratio: 3 / 1; margin: 6px 0 18px; }
+.dates-liste { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 10px; }
+.date { position: relative; display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 12px 14px; border-radius: var(--rayon); background: #fbf8f1; box-shadow: 0 1px 0 var(--ligne); }
+.date-jour { margin: 0; display: grid; justify-items: center; line-height: 1.05; text-align: center; padding: 6px 0; border-radius: 10px; background: var(--washi-2); }
+.date-jour span { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--texte-doux); }
+.date-jour strong { font-family: var(--police-titres); font-size: 1.6rem; font-variant-numeric: tabular-nums; }
+.date-titre { font-family: var(--police-titres); font-size: 1.08rem; margin: 0 0 2px; line-height: 1.25; }
+.date-sous { margin: 0; font-size: .95rem; }
+.date-meta { margin: 2px 0 0; font-size: .88rem; color: var(--texte-doux); }
+.date-fin { margin: 0; display: grid; justify-items: end; gap: 4px; text-align: right; }
+.date-prix { font-weight: 600; font-size: .92rem; font-variant-numeric: tabular-nums; max-width: 11em; }
+.date-type { font-size: .76rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.date-etat { display: none; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; }
+.date--aujourdhui { box-shadow: 0 0 0 2px var(--sauge); }
+.date--aujourdhui .date-etat--aujourdhui { display: inline-block; background: var(--sauge); color: var(--encre); }
+.date--passe { opacity: .62; background: transparent; }
+.date--passe .date-etat--passe { display: inline-block; background: var(--washi-2); color: var(--texte-doux); }
+.date--passe .date-reserver { display: none; }
+.date--marche .date-jour { background: #dfe6d6; }
+.date--enligne .date-jour { background: #d7dfe4; }
+.date--saison .date-jour { background: #efe0c8; }
+.date.est-recue::after { content: attr(data-recu); position: absolute; right: 12px; top: -10px; padding: 2px 10px; border-radius: 999px; background: var(--bronze); color: #fff; font-size: .74rem; font-weight: 700; letter-spacing: .04em; rotate: -4deg; }
+.dates .dates-liste .date:nth-child(n + 5) { display: none; }
+@media (max-width: 560px) {
+  .date { grid-template-columns: 56px minmax(0, 1fr); }
+  .date-fin { grid-column: 1 / -1; grid-template-columns: 1fr auto; justify-items: start; align-items: center; text-align: left; }
+  .date-fin .bouton { grid-row: 1 / span 3; grid-column: 2; }
+}
+.goutte { position: fixed; z-index: 950; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: radial-gradient(circle at 35% 35%, #fff, #8fb3c4 40%, #2f4a5a); pointer-events: none; box-shadow: 0 2px 6px rgba(0, 0, 0, .25); }
+
+/* 6. Qui suis-je. */
+.qui-grille { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(20px, 4vw, 48px); align-items: center; }
+.qui-media { aspect-ratio: 1; border-radius: 50%; background: #fff; }
+.citation { margin: 20px 0 0; padding: 0 0 0 18px; border-left: 2px solid var(--bronze); }
+.citation p { font-family: var(--police-titres); font-size: 1.25rem; line-height: 1.4; margin: 0 0 8px; }
+.citation footer { font-size: .92rem; color: var(--texte-doux); }
+.citation--grande p { font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem); }
+.citation--clair { border-left-color: var(--bronze-clair); }
+.citation--clair footer { color: #d9d2c4; }
+
+/* 7. Plongée dans l'eau de la cloche. */
+.plongee { min-height: 100svh; display: flex; align-items: flex-end; color: var(--washi); overflow: hidden; background: var(--eau); }
+.plongee-media { position: absolute; inset: 0; border-radius: 0; clip-path: circle(var(--plongee, 150%) at var(--px, 50%) var(--py, 50%)); }
+.plongee::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16, 26, 30, 0) 30%, rgba(16, 26, 30, .78) 100%); pointer-events: none; }
+.plongee-texte { position: relative; z-index: 2; padding-bottom: calc(var(--barres-h) + clamp(48px, 8vw, 96px)); }
+.plongee .surtitre { color: var(--accent-clair); }
+.plongee h2 { font-size: clamp(2.4rem, 1.6rem + 3.4vw, 4.8rem); max-width: 12em; }
+.plongee .mention-ia { z-index: 3; }
+
+/* Petite cloche (fil) : dans la marge gauche sur grand écran, dans la barre du bas ailleurs. */
+.mini-cloche { position: fixed; z-index: 785; left: 12px; bottom: calc(10px + env(safe-area-inset-bottom)); width: 48px; height: 48px; padding: 0; border: 0; border-radius: 50%; background: none; display: grid; place-items: center; }
+.mini-cloche-bol { position: relative; width: 40px; height: 40px; border-radius: 50%; background: conic-gradient(from 200deg, #6e4a22, #c99b5e, #8a5d2c, #e7c48f, #7a5226, #b8894f, #6e4a22); box-shadow: 0 6px 14px -6px rgba(16, 26, 30, .6); }
+.mini-cloche-eau { position: absolute; inset: 6px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #4c6c7c, var(--eau) 70%); overflow: hidden; }
+.mini-cloche-eau::after { content: ''; position: absolute; inset: 0; border-radius: 50%; box-shadow: 0 0 0 0 rgba(255, 255, 255, .6); }
+.mini-cloche.sonne .mini-cloche-eau::after { animation: mini-onde 1.2s ease-out; }
+@keyframes mini-onde { from { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .7); transform: scale(.2); opacity: 1; } to { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0); transform: scale(1.2); opacity: 0; } }
+.mini-cloche-reperes { position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(var(--sauge) calc(var(--avance, 0) * 1turn), transparent 0); -webkit-mask: radial-gradient(circle, transparent 0 21px, #000 22px); mask: radial-gradient(circle, transparent 0 21px, #000 22px); }
+[data-barre-fixe] { align-items: center; }
+.barre-place-cloche { flex: none; width: 44px; }
+@media (max-width: 999px) { [data-barre-fixe] { display: flex; } }
+@media (min-width: 1000px) {
+  .barre-place-cloche { display: none; }
+  .mini-cloche { left: max(10px, calc((100vw - var(--largeur)) / 2 - 76px)); bottom: auto; top: 50%; translate: 0 -50%; transition: opacity .4s; }
+  html[data-page="accueil"].cloche-fixe:not(.cloche-partie) .mini-cloche { opacity: 0; pointer-events: none; }
+}
+/* Sur ordinateur sans place dans la marge, le contenu des pages intérieures se resserre pour lui laisser la marge. */
+@media (min-width: 1000px) and (max-width: 1340px) {
+  html:not([data-page="accueil"]) .conteneur { width: min(100% - 2 * var(--gouttiere) - 2 * 64px, var(--largeur)); }
+}
+@media (max-width: 999px) { .mini-cloche { left: max(10px, var(--gouttiere)); bottom: calc(8px + env(safe-area-inset-bottom)); } }
+html.menu-ouvert .mini-cloche, html.menu-ouvert .pastille-son { visibility: hidden; }
+.mini-cloche.barre-masquee { translate: 0 120%; }
+.pastille-son { position: fixed; z-index: 786; left: 50%; bottom: calc(var(--barres-h) + 14px); translate: -50% 0; margin: 0; display: flex; align-items: center; gap: 10px; padding: 4px 6px 4px 16px; border-radius: 999px; background: var(--eau); color: var(--washi); font-size: .9rem; box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .6); }
+.pastille-son button.lien { color: var(--washi); min-height: 44px; padding: 0 10px; }
+
+/* Pied de page. */
+.pied { background: var(--eau); color: var(--washi); border-top: 0; }
+.pied a, .pied button.lien { color: var(--washi); }
+.pied-marque img { width: 64px; height: 66px; margin-bottom: 10px; }
+.pied-bas { color: #cfc8b9; }
+.pied-bas p { margin: 0; }
+
+/* ---------- Marches ---------- */
+.m-ouverture { min-height: 100svh; display: flex; align-items: center; color: var(--washi); background: var(--mousse); overflow: hidden; padding: calc(var(--entete-h) + 24px) 0 calc(var(--barres-h) + 32px); }
+.m-ouverture-media { position: absolute; inset: 0; border-radius: 0; }
+.m-ouverture::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(20, 30, 22, .86) 0%, rgba(20, 30, 22, .55) 48%, rgba(20, 30, 22, .1) 100%), linear-gradient(180deg, rgba(20, 30, 22, .5), transparent calc(var(--entete-h) + 110px)); pointer-events: none; }
+.m-ouverture .saison { z-index: 2; }
+.m-ouverture-grille { position: relative; z-index: 3; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+.m-ouverture .surtitre { color: var(--accent-clair); }
+.m-ouverture .mention-ia { z-index: 4; }
+.plan-rond { width: min(100%, 420px, 58svh); aspect-ratio: 1; justify-self: end; }
+.plan-rond svg { width: 100%; height: 100%; overflow: visible; }
+.plan-fond { fill: rgba(242, 237, 227, .1); stroke: rgba(242, 237, 227, .45); stroke-width: 1.5; }
+.plan-bois { fill: rgba(127, 156, 107, .3); stroke: var(--accent-clair); stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.plan-eau { fill: rgba(143, 179, 196, .45); stroke: #9fc0cf; stroke-width: 2; stroke-dasharray: 1; }
+.plan-ruisseau { fill: none; stroke: #9fc0cf; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; }
+.plan-rer { fill: none; stroke: rgba(242, 237, 227, .6); stroke-width: 2; stroke-dasharray: 1; }
+.plan-gare { fill: var(--washi); }
+.plan-repere circle { fill: var(--bronze); stroke: var(--washi); stroke-width: 2; }
+.plan-repere text { fill: #fff; font: 700 15px var(--police-texte); }
+.m-deroule { padding-block: clamp(64px, 9vw, 120px); }
+.m-deroule-tete { max-width: 40em; }
+.frise { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px; position: relative; }
+.frise::before { content: ''; position: absolute; left: 0; right: 0; top: 48px; height: 2px; background: repeating-linear-gradient(90deg, var(--sauge) 0 10px, transparent 10px 18px); }
+.frise-pas { position: relative; }
+.frise-media { width: 96px; aspect-ratio: 1; border-radius: 50%; box-shadow: 0 0 0 4px var(--washi); }
+.frise-point { display: block; width: 24px; height: 24px; margin: 36px 36px; border-radius: 50%; background: var(--washi); border: 3px solid var(--bronze); }
+.frise-heure { margin: 12px 0 2px; font-family: var(--police-titres); font-size: 1.4rem; font-weight: 700; color: var(--bronze-fonce); }
+.frise h3 { font-size: 1.1rem; }
+.frise p:last-child { font-size: .95rem; margin: 0; }
+.m-parcours { padding-block: clamp(64px, 9vw, 120px); background: var(--washi-2); }
+.parcours-grille { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.parcours { position: relative; display: flex; flex-direction: column; gap: 6px; padding-bottom: 6px; }
+.parcours-media { aspect-ratio: 3 / 4; margin-bottom: 8px; }
+.parcours-num { position: absolute; left: 12px; top: 12px; z-index: 2; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--bronze); color: #fff; font-weight: 700; }
+.parcours h3 { margin: 0; }
+.parcours p { margin: 0; font-size: .95rem; }
+.parcours-depart span, .parcours-date span { display: block; font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--texte-doux); }
+.parcours-date strong { font-family: var(--police-titres); font-size: 1.05rem; }
+.parcours-note { color: var(--texte-doux); }
+.parcours p:last-child { margin-top: auto; padding-top: 8px; }
+.m-tarifs { padding-block: clamp(72px, 10vw, 140px); color: var(--washi); background: var(--mousse); overflow: hidden; }
+.m-tarifs-media { position: absolute; inset: 0; border-radius: 0; opacity: .5; }
+.m-tarifs-texte { position: relative; z-index: 2; }
+.m-tarifs .surtitre { color: var(--accent-clair); }
+.m-tarifs .mention-ia { z-index: 3; }
+.tarifs-unite { list-style: none; padding: 0; margin: 24px 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.tarifs-unite li { display: grid; gap: 4px; padding: 20px; border-radius: var(--rayon); background: rgba(20, 30, 22, .72); box-shadow: inset 0 0 0 1px rgba(242, 237, 227, .2); }
+.tarif-prix { font-family: var(--police-titres); font-size: clamp(2rem, 1.6rem + 1.4vw, 3rem); font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.tarif-libelle { font-weight: 600; }
+.tarif-detail { font-size: .92rem; opacity: .9; }
+.tarifs-unite--sombre li { background: #fbf8f1; box-shadow: 0 1px 0 var(--ligne); }
+.tarifs-unite--sombre .tarif-prix { color: var(--bronze-fonce); }
+.m-temoin { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center; padding-block: clamp(64px, 9vw, 120px); }
+.m-temoin-media { aspect-ratio: 16 / 10; }
+
+/* ---------- Ateliers et en ligne ---------- */
+.a-ouverture { padding: calc(var(--entete-h) + clamp(24px, 4vw, 48px)) 0 calc(var(--barres-h) + 40px); text-align: center; overflow: hidden; }
+.a-ouverture-tete { display: grid; justify-items: center; }
+.a-ouverture .titre-pinceau { font-size: clamp(2.2rem, min(5vw, 7.4vh), 4.6rem); max-width: 14em; margin-inline: auto; }
+.a-ouverture .titre-pinceau::after { left: 50%; translate: -50% 0; }
+.a-ouverture .intro { margin-inline: auto; }
+.anneau { position: relative; width: min(84vw, 46svh, 440px); aspect-ratio: 1; margin: 4px auto 18px; }
+.anneau-themes { position: absolute; inset: 0; list-style: none; margin: 0; padding: 0; rotate: var(--rotation, 0deg); }
+.anneau-theme { position: absolute; left: 50%; top: 50%; width: 0; height: 0; rotate: calc(var(--i) / var(--n) * 1turn); }
+.anneau-num { position: absolute; left: -17px; top: calc(-1 * min(42vw, 23svh, 220px)); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--washi); box-shadow: inset 0 0 0 1.5px var(--sauge); font-weight: 700; font-size: .85rem; rotate: calc(-1 * var(--i) / var(--n) * 1turn - var(--rotation, 0deg)); }
+.anneau-nom { display: none; }
+.anneau-theme.est-courant .anneau-num { background: var(--accent); color: #fff; box-shadow: 0 0 0 6px color-mix(in srgb, var(--sauge) 35%, transparent); }
+.anneau-centre { position: absolute; inset: 13%; border-radius: 47% 53% 51% 49% / 52% 48% 52% 48%; overflow: hidden; box-shadow: 0 0 0 10px var(--washi), 0 0 0 11px var(--ligne); }
+.anneau-media { position: absolute; inset: 0; border-radius: 0; }
+.a-ouverture-pied { display: grid; justify-items: center; gap: 14px; }
+.a-ouverture .prochaine { text-align: left; }
+.a-ouverture .actions { justify-content: center; }
+.a-cycle { padding-block: clamp(56px, 8vw, 100px); }
+.cycle-defile { overflow-x: auto; }
+.cycle { width: 100%; min-width: 560px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.cycle th, .cycle td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--ligne); vertical-align: top; }
+.cycle thead th { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--texte-doux); }
+.cycle tbody th { font-family: var(--police-titres); text-transform: capitalize; }
+.cycle-num { display: inline-grid; place-items: center; min-width: 30px; height: 30px; margin-right: 6px; padding: 0 6px; border-radius: 999px; background: var(--washi-2); font-weight: 700; font-size: .85rem; }
+.cycle-ligne--passe { opacity: .55; }
+.cycle-ligne--courant { background: color-mix(in srgb, var(--sauge) 18%, transparent); }
+.cycle-ligne--courant .cycle-num { background: var(--accent); color: #fff; }
+.a-atelier { padding-block: clamp(56px, 8vw, 110px); }
+.a-atelier-grille, .a-enligne-grille, .a-saison-grille { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+.a-atelier-media, .a-saison-media { aspect-ratio: 4 / 3; }
+.a-atelier-pratique { display: flex; align-items: center; gap: 14px; margin-bottom: 1em; }
+.a-tapis-media { width: 84px; aspect-ratio: 3 / 4; flex: none; }
+.a-atelier-pratique p { margin: 0; }
+.a-prix span { font-family: var(--police-titres); font-weight: 700; font-size: 1.4rem; }
+.a-enligne { padding-block: clamp(72px, 10vw, 140px); background: var(--eau); color: var(--washi); }
+.a-enligne .surtitre { color: var(--accent-clair); }
+.a-enligne-media { aspect-ratio: 4 / 3; }
+.a-saison { padding-block: clamp(56px, 8vw, 110px); }
+.saison-dates { list-style: none; padding: 0; margin: 0 0 20px; display: grid; gap: 8px; }
+.saison-date { display: grid; padding: 10px 14px; border-radius: 10px; background: #fbf8f1; box-shadow: 0 1px 0 var(--ligne); }
+.saison-date span { font-size: .92rem; color: var(--texte-doux); }
+.saison-date.date--passe { opacity: .55; }
+
+/* ---------- MBSR ---------- */
+.b-ouverture { min-height: 100svh; background: var(--eau); color: var(--washi); padding: calc(var(--entete-h) + 24px) 0 calc(var(--barres-h) + 32px); display: flex; align-items: center; }
+.b-ouverture-grille { width: min(100% - 2 * var(--gouttiere), var(--largeur)); margin-inline: auto; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+.b-ouverture .surtitre { color: var(--accent-clair); }
+.b-chiffres { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: baseline; margin: 0 0 22px; }
+.b-chiffre { font-family: var(--police-titres); font-size: clamp(2rem, 1.4rem + 2.4vw, 3.4rem); font-weight: 700; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.b-chiffre small { display: block; font-family: var(--police-texte); font-size: .9rem; font-weight: 500; color: #d9d2c4; }
+.b-info { margin-top: 14px; color: #d9d2c4; }
+.b-ouverture-cadre { height: min(70svh, 640px); border-radius: 220px 220px var(--rayon) var(--rayon); overflow: hidden; }
+.b-ouverture-media { height: 100%; border-radius: 0; }
+.b-origine { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(24px, 5vw, 64px); align-items: center; padding-block: clamp(64px, 9vw, 120px); }
+.b-origine-media { aspect-ratio: 3 / 4; }
+.b-plongee { color: var(--washi); background: var(--eau); overflow: clip; }
+.b-plongee-media { position: absolute; inset: 0; border-radius: 0; }
+.b-plongee::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(16, 30, 40, .25), rgba(10, 20, 28, calc(.5 + var(--profondeur, 0) * .4))); pointer-events: none; }
+.b-plongee-cadre { position: relative; z-index: 2; padding-block: clamp(64px, 9vw, 120px); }
+.b-plongee .mention-ia { z-index: 3; }
+.b-plongee-grille { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+.b-plongee .surtitre { color: var(--accent-clair); }
+.b-contenu { padding-left: 1.1em; display: grid; gap: 6px; }
+.paliers { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.palier { display: flex; align-items: center; gap: 12px; padding: 6px 12px; border-radius: 999px; background: rgba(242, 237, 227, .08); box-shadow: inset 0 0 0 1px rgba(242, 237, 227, .2); transition: background-color .4s, box-shadow .4s; }
+.palier-num { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: rgba(242, 237, 227, .16); font-weight: 700; }
+.palier.est-atteint { background: rgba(169, 194, 150, .2); box-shadow: inset 0 0 0 1px var(--accent-clair); }
+.palier.est-atteint .palier-num { background: var(--accent-clair); color: var(--encre); }
+html.js:not(.calme):not(.secours) .b-plongee { height: 260svh; }
+html.js:not(.calme):not(.secours) .b-plongee-cadre { position: sticky; top: 0; height: 100svh; display: flex; align-items: center; padding-block: calc(var(--entete-h) + 12px) 24px; }
+html.js:not(.calme):not(.secours) .b-plongee-media { position: sticky; top: 0; height: 100svh; margin-bottom: -100svh; }
+.b-engagement { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center; padding-block: clamp(64px, 9vw, 120px); }
+.b-pratique-media { aspect-ratio: 4 / 3; }
+.b-tarif { padding-block: clamp(56px, 8vw, 100px); background: var(--washi-2); }
+.b-tarif-boite { position: relative; text-align: center; display: grid; justify-items: center; }
+.anneaux-deco { width: 120px; height: 120px; margin-bottom: 12px; }
+.anneaux-deco circle { fill: none; stroke: var(--bronze); stroke-width: 1.5; }
+
+/* ---------- Agenda ---------- */
+.g-ouverture { padding-top: calc(var(--entete-h) + clamp(24px, 4vw, 48px)); }
+.g-ouverture-grille { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 56px); align-items: end; }
+.g-ouverture .titre-pinceau { font-size: clamp(2.4rem, min(5.4vw, 8vh), 4.8rem); }
+.g-prochaine { padding: 22px; border-radius: var(--rayon); background: var(--eau); color: var(--washi); }
+.g-prochaine-label { margin: 0 0 6px; font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-clair); }
+.g-prochaine-texte { font-family: var(--police-titres); font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2.1rem); line-height: 1.2; }
+.g-prochaine .bouton { background: var(--washi); color: var(--encre); }
+.g-feuilles { margin-top: clamp(20px, 3vw, 36px); }
+.g-feuilles-media { aspect-ratio: 4 / 1; border-radius: 0; }
+.g-liste { padding-block: clamp(40px, 6vw, 80px); }
+.filtres { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; position: sticky; top: calc(var(--entete-h) + 8px); z-index: 5; padding: 8px 0; background: var(--washi); }
+html.entete-cache .filtres { top: 0; }
+.filtre { min-height: 44px; padding: 0 18px; border-radius: 999px; border: 0; background: #fbf8f1; box-shadow: inset 0 0 0 1.5px var(--ligne); font-weight: 600; }
+.filtre[aria-pressed="true"] { background: var(--encre); color: var(--washi); box-shadow: none; }
+.mois { margin-bottom: 26px; }
+.mois-titre { font-size: 1.4rem; text-transform: capitalize; margin: 0 0 10px; }
+.date.est-masquee { display: none; }
+.mois.est-vide { display: none; }
+.passees summary { min-height: 48px; display: flex; align-items: center; font-weight: 600; cursor: pointer; }
+.g-tarifs { padding-block: clamp(56px, 8vw, 110px); background: var(--washi-2); }
+.g-tarifs-grille { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(24px, 5vw, 64px); }
+.g-tarifs .tarifs-unite { grid-template-columns: minmax(0, 1fr); }
+.formules { list-style: none; padding: 0; margin: 12px 0 16px; display: grid; gap: 10px; }
+.formules li { display: grid; gap: 2px; padding: 12px 14px; border-radius: 10px; background: #fbf8f1; box-shadow: 0 1px 0 var(--ligne); }
+.formules span { font-size: .94rem; }
+.g-tarifs-media { aspect-ratio: 16 / 9; margin-top: 12px; }
+
+/* ---------- Contact ---------- */
+.c-ouverture { padding-top: var(--entete-h); }
+.c-bandeau { overflow: hidden; }
+.c-bandeau-media { aspect-ratio: 21 / 7; max-height: 44svh; width: 100%; border-radius: 0; }
+.c-ouverture-grille { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 56px); align-items: end; padding-block: clamp(24px, 4vw, 48px); }
+.c-ouverture .titre-pinceau { font-size: clamp(2.4rem, min(5.6vw, 8vh), 5rem); margin-bottom: 0; }
+.c-email { font-family: var(--police-titres); font-size: clamp(1.4rem, 1rem + 1.6vw, 2.2rem); }
+.c-email a { text-decoration-color: var(--sauge); }
+.prochaine-courte { font-size: .9rem; color: var(--texte-doux); }
+.c-form { padding-block: clamp(40px, 6vw, 80px); }
+.etapes { max-width: 720px; padding: clamp(18px, 3vw, 32px); border-radius: var(--rayon); background: #fbf8f1; box-shadow: 0 1px 0 var(--ligne), 0 30px 60px -40px rgba(29, 33, 31, .4); }
+.etapes-fil { list-style: none; padding: 0; margin: 0 0 18px; display: flex; gap: 8px; font-size: .85rem; font-weight: 600; color: var(--texte-doux); }
+.etapes-fil li { flex: 1; padding-top: 8px; border-top: 3px solid var(--ligne); }
+.etapes-fil li.est-active, .etapes-fil li.est-faite { border-top-color: var(--sauge); color: var(--encre); }
+.etape-form, .etape { border: 0; padding: 0; margin: 0; min-width: 0; }
+.etapes .etape { display: none; }
+.etapes .etape.est-active { display: block; }
+html:not(.js) .etapes .etape { display: block; margin-bottom: 18px; }
+.etapes legend { font-family: var(--police-titres); font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; padding: 0; }
+.choix { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.choix-item { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 14px; border-radius: 10px; box-shadow: inset 0 0 0 1.5px var(--ligne); cursor: pointer; }
+.choix-item:has(input:checked) { box-shadow: inset 0 0 0 2px var(--accent); background: color-mix(in srgb, var(--sauge) 12%, transparent); }
+.choix-item input { width: 18px; height: 18px; accent-color: var(--accent); }
+.champ span { font-weight: 600; }
+.rgpd { font-size: .9rem; color: var(--texte-doux); }
+.etape-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 0; }
+.message-envoi { margin-top: 16px; }
+.etapes.est-envoye { animation: plier .9s var(--courbe) both; }
+@keyframes plier { 40% { transform: scale(.96) rotate(-1deg); } 100% { transform: none; } }
+.c-lieux { padding-block: clamp(56px, 8vw, 110px); background: var(--washi-2); }
+.c-lieux-grille { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+.lieux { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.lieux li { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 12px; }
+.lieux div { display: grid; gap: 2px; }
+.lieux span { font-size: .95rem; }
+.lieu-note { color: var(--texte-doux); }
+.lieu-num { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--bronze); color: #fff; font-weight: 700; }
+.c-plan { width: 100%; height: auto; overflow: visible; }
+.c-plan .plan-bois { fill: rgba(127, 156, 107, .25); stroke: var(--accent); }
+.c-plan .plan-rer { stroke: var(--texte-doux); }
+.c-plan .plan-ruisseau { stroke: #5f8597; }
+.c-plan .plan-repere circle { stroke: #fbf8f1; }
+
+/* ---------- 404 ---------- */
+.introuvable { min-height: 100svh; display: flex; align-items: center; color: var(--washi); background: #5d6460; overflow: hidden; padding: calc(var(--entete-h) + 24px) 0 calc(var(--barres-h) + 32px); }
+.introuvable-media { position: absolute; inset: 0; border-radius: 0; }
+.introuvable::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(25, 30, 28, .78), rgba(25, 30, 28, .25)); }
+.introuvable-texte { position: relative; z-index: 2; }
+.introuvable .mention-ia { z-index: 3; }
+.introuvable .prochaine { border-left-color: var(--accent-clair); }
+
+/* ---------- Téléphone et tablette ---------- */
+@media (max-width: 999px) {
+  .pratiques-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .frise { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 28px; }
+  .frise::before { display: none; }
+  .parcours-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .duo { padding-block: 56px; }
+  .accueil-ouverture { padding-top: calc(var(--entete-h) + 16px); justify-content: flex-start; }
+  .titre-pinceau { font-size: clamp(2.1rem, 9.4vw, 3rem); }
+  .pratiques-grille { grid-template-columns: minmax(0, 1fr); }
+  .qui-grille { grid-template-columns: minmax(0, 1fr); }
+  .qui-media { width: 64%; margin-inline: auto; }
+  .nen-kanji { justify-content: center; }
+  .m-ouverture-grille, .a-atelier-grille, .a-enligne-grille, .a-saison-grille, .b-ouverture-grille, .b-origine, .b-engagement, .b-plongee-grille, .m-temoin, .g-ouverture-grille, .g-tarifs-grille, .c-ouverture-grille, .c-lieux-grille { grid-template-columns: minmax(0, 1fr); }
+  .m-ouverture { align-items: flex-start; }
+  .plan-rond { justify-self: center; width: min(78vw, 40svh); }
+  .frise { grid-template-columns: minmax(0, 1fr); }
+  .frise-pas { display: grid; grid-template-columns: 72px minmax(0, 1fr); column-gap: 14px; }
+  .frise-pas > :first-child { grid-row: 1 / span 3; }
+  .frise-media { width: 72px; }
+  .frise-point { margin: 24px; }
+  .frise-heure { margin-top: 0; }
+  .parcours-grille { grid-template-columns: minmax(0, 1fr); }
+  .parcours-media { aspect-ratio: 16 / 10; }
+  .tarifs-unite { grid-template-columns: minmax(0, 1fr); }
+  .anneau { width: min(78vw, 42svh); }
+  .anneau-num { top: calc(-1 * min(39vw, 21svh)); width: 30px; height: 30px; left: -15px; }
+  .b-ouverture-cadre { height: 36svh; border-radius: 160px 160px var(--rayon) var(--rayon); order: -1; }
+  .b-ouverture { align-items: flex-start; }
+  .g-feuilles-media { aspect-ratio: 5 / 2; }
+  .c-bandeau-media { aspect-ratio: 16 / 9; }
+  .choix { grid-template-columns: minmax(0, 1fr); }
+  .m-temoin-media { order: 2; }
+  .b-origine-media { width: 70%; }
+  .kanji-svg { width: 19vw; }
+  .kanji--nen .kanji-svg { width: 24vw; }
+}
+
+/* ---------- Écrans bas ---------- */
+@media (max-height: 820px) and (min-width: 761px) {
+  .titre-pinceau { font-size: clamp(2.2rem, min(4.8vw, 7.6vh), 4.2rem); }
+  .accueil-ouverture .intro { font-size: 1.02rem; margin-bottom: .7em; }
+  .prochaine { margin-top: 12px; }
+  .b-ouverture-cadre { height: 62svh; }
+  .anneau { width: min(40svh, 380px); }
+  .anneau-num { top: calc(-1 * min(20svh, 190px)); }
+  html.cloche-fixe .marche-etapes { height: 170px; }
+}
+@media (max-height: 500px) and (min-width: 761px) {
+  .titre-pinceau { font-size: clamp(1.8rem, 6.4vh + 1rem, 2.6rem); margin-bottom: .3em; }
+  .accueil-ouverture .surtitre, .m-ouverture .surtitre, .b-ouverture .surtitre, .a-ouverture .surtitre { display: none; }
+  .accueil-ouverture .intro { display: none; }
+  .bouton { min-height: 44px; padding-block: .5em; }
+  .plan-rond { width: min(70svh, 300px); }
+  .anneau { width: min(56svh, 260px); margin-block: 0 8px; }
+  .anneau-num { top: calc(-1 * min(28svh, 130px)); width: 28px; height: 28px; left: -14px; font-size: .75rem; }
+  .b-ouverture-cadre { height: 70svh; }
+  .b-chiffres { margin-bottom: 10px; }
+  .b-chiffre { font-size: 1.8rem; }
+  .c-bandeau-media { max-height: 30svh; }
+  .g-feuilles-media { aspect-ratio: 8 / 1; }
+}
+@media (max-height: 500px) {
+  .prochaine a, .prochaine strong { font-size: 1rem; }
+}
+
+/* ---------- Mode calme, secours et sans JavaScript : tout est posé, rien ne bouge ---------- */
+:is(html.calme, html.secours, html:not(.js)) .cloche-canvas { display: none; }
+:is(html.calme, html.secours, html:not(.js)) .titre-pinceau::after { clip-path: none; }
+:is(html.calme, html.secours, html:not(.js)) .saison { display: none; }
+:is(html.calme, html.secours, html:not(.js)) .plongee-media { clip-path: none; }
+
+@media (prefers-reduced-motion: reduce) { .pratique-lien, .bouton { transition: none; } }
+
+/* Scène de la marche épinglée : tout tient dans l'écran. */
+html.cloche-fixe .marche-texte h2 { font-size: clamp(1.8rem, min(3vw, 5.4vh), 2.8rem); }
+html.cloche-fixe .marche-texte .surtitre { margin-bottom: .5em; }
+html.cloche-fixe .marche-consigne { margin-bottom: .4em; }
+html.cloche-fixe .marche-chemin { max-width: 460px; margin: 0 0 10px; }
+html.cloche-fixe .etape-heure { font-size: clamp(2rem, min(3.4vw, 6vh), 3.2rem); }
+html.cloche-fixe .marche-etapes { height: clamp(140px, 20svh, 190px); }
+html.cloche-fixe .marche-lien { margin: 0; }
+@media (max-height: 820px) { html.cloche-fixe .marche-consigne { display: none; } }
+html.secours .accueil-ouverture .cloche { position: relative !important; right: auto !important; top: auto !important; translate: none !important; }
+html.calme .mini-cloche.sonne .mini-cloche-eau::after { animation: none; }
+.plan-rond svg { clip-path: circle(50%); }
+
+/* Téléphone et tablette : la cloche passe au-dessus du titre, plus petite, pour être dans le premier écran
+   (l'intro finit sur elle) ; le titre, la phrase et le bouton suivent sans défiler. */
+@media (max-width: 999px) { html:not(.cloche-fixe) .accueil-ouverture .cloche { order: -1; --cloche-d: min(60vw, 30svh, 320px); margin: 6px auto 34px; } }
+html:not(.cloche-fixe) .accueil-ouverture { gap: 18px; }
+html:not(.cloche-fixe) .accueil-ouverture .cloche-consigne { font-size: .8rem; top: calc(100% + 4%); }
+@media (max-width: 760px) {
+  html:not(.cloche-fixe) .accueil-ouverture .surtitre { display: none; }
+  html:not(.cloche-fixe) .accueil-ouverture .intro { font-size: 1rem; margin-bottom: .8em; }
+  .accueil-ouverture .actions .bouton { min-height: 46px; padding-inline: 1.05em; }
+}
+@media (max-height: 640px) and (max-width: 999px) { html:not(.cloche-fixe) .accueil-ouverture .cloche-consigne { display: none; } html:not(.cloche-fixe) .accueil-ouverture .cloche { margin-bottom: 8px; } }
+/* Mention « Illustration générée » de l'eau de la cloche : sous le bol, sur le coussin, jamais coupée. */
+.cloche-eau, .cloche-eau .media { overflow: visible; }
+.cloche-eau .media picture { border-radius: 50%; overflow: hidden; }
+.cloche-eau .mention-ia { bottom: -22%; white-space: nowrap; }
+@media (max-width: 999px) { html:not(.cloche-fixe) .accueil-ouverture .cloche { --cloche-d: min(56vw, 26svh, 300px); } }
+@media (max-width: 420px) { .accueil-ouverture .actions .bouton--contour { display: none; } }
+@media (max-width: 999px) and (max-height: 700px) {
+  html:not(.cloche-fixe) .accueil-ouverture .intro { display: none; }
+  html:not(.cloche-fixe) .accueil-ouverture .cloche { --cloche-d: min(52vw, 22svh, 260px); }
+  html:not(.cloche-fixe) .accueil-ouverture h1 { font-size: clamp(1.8rem, 8.4vw, 2.6rem); }
+  html:not(.cloche-fixe) .accueil-ouverture .prochaine { margin-top: 10px; }
+}
+/* Téléphone à l'horizontale : texte à gauche, cloche à droite, tout dans l'écran. */
+@media (max-height: 500px) and (min-width: 600px) and (max-width: 999px) {
+  .accueil-ouverture { flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding-inline: var(--gouttiere); padding-top: calc(var(--entete-h) + 8px); padding-bottom: calc(var(--barres-h) + 8px); }
+  .accueil-ouverture .duo-texte { width: auto; margin: 0; flex: 1 1 auto; }
+  html:not(.cloche-fixe) .accueil-ouverture .cloche { order: 2; --cloche-d: min(48svh, 30vw); margin: 0 12px 0 0; flex: none; }
+  html:not(.cloche-fixe) .accueil-ouverture .cloche-consigne, .accueil-ouverture .surtitre, .accueil-ouverture .intro { display: none; }
+  .accueil-ouverture h1 { font-size: clamp(1.6rem, 8vh, 2.2rem); max-width: none; }
+  .accueil-ouverture .prochaine { margin-top: 8px; }
+  .accueil-ouverture .prochaine a { font-size: .95rem; }
+}
+
+/* ---------- Boosts ---------- */
+/* Pinceau mouillé : sous le contenu (main et pied au-dessus), sur le washi seulement. */
+main, .pied { position: relative; z-index: 1; }
+.pinceau-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; }
+/* Ensō à tracer. */
+.enso { --encre-enso: #3f5a35; display: grid; justify-items: center; gap: 6px; }
+.enso-toile { width: min(76vw, 300px); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, #fbf8f1 0 62%, color-mix(in srgb, var(--washi-2) 80%, transparent) 70%); box-shadow: inset 0 0 0 1px var(--ligne); touch-action: none; cursor: crosshair; }
+.enso.est-enso .enso-toile { box-shadow: inset 0 0 0 1px var(--sauge), 0 0 0 8px color-mix(in srgb, var(--sauge) 18%, transparent); }
+.enso-message { min-height: 2.8em; margin: 0; text-align: center; font-family: var(--police-titres); font-size: 1.05rem; max-width: 22em; }
+.enso p { margin: 0; }
+.c-enso { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center; padding-block: clamp(48px, 7vw, 96px); }
+.introuvable { flex-wrap: wrap; }
+.introuvable-enso { position: relative; z-index: 2; margin-top: 18px; }
+.introuvable .enso { justify-items: start; --encre-enso: #f2ede3; }
+.introuvable .enso-toile { width: min(56vw, 220px); background: rgba(242, 237, 227, .12); box-shadow: inset 0 0 0 1px rgba(242, 237, 227, .5); }
+.introuvable .enso-message { text-align: left; color: var(--washi); }
+.introuvable .bouton--contour { color: var(--washi); }
+@media (max-width: 760px) { .c-enso { grid-template-columns: minmax(0, 1fr); } }
+/* Plongée en profondeur : plans du bois découpés qui s'écartent. */
+.plongee-plans { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+.plan { position: absolute; width: min(60vw, 720px); height: auto; fill: #142219; stroke: #142219; opacity: .92; }
+.plan--hg { left: -6%; top: -8%; }
+.plan--hd { right: -8%; top: -4%; scale: -1 1; }
+.plan--bd { right: -10%; bottom: -14%; scale: -1 -1; }
+:is(html.calme, html.secours, html:not(.js)) .plongee-plans { display: none; }
+
+/* Corrections de l'audit rapide. */
+.date-jour { line-height: 1.25; gap: 1px; }
+.date-jour span { font-size: .78rem; line-height: 1.25; }
+.date-jour strong { line-height: 1.12; }
+.entete-nom small { font-size: max(.75rem, 12px); }
+.prochaine a { display: inline-flex; align-items: center; min-height: 44px; }
+.prochaine > span { line-height: 1.3; }
+.etape-media, .frise-media, .a-tapis-media { overflow: visible; }
+:is(.etape-media, .frise-media, .a-tapis-media) picture { border-radius: inherit; overflow: hidden; }
+:is(.etape-media, .frise-media) .mention-ia, .a-tapis-media .mention-ia { display: block; top: calc(100% + 4px); bottom: auto; left: 50%; right: auto; transform: translateX(-50%); white-space: nowrap; }
+.a-tapis-media .mention-ia { left: 0; transform: none; }
+.frise-media { margin-bottom: 26px; }
+.etape-media { margin-bottom: 24px; }
+.a-atelier-pratique { align-items: flex-start; padding-bottom: 26px; }
+html.cloche-gl .cloche-canvas { transition: none; }
+
+/* Corrections de l'audit standard et du test visiteur. */
+@font-face { font-family: 'Shippori Mincho'; src: url('/assets/fonts/shippori-mincho-latin-ext-500-normal.woff2') format('woff2'); font-weight: 400 800; font-style: normal; font-display: swap; unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+.pour-qui { margin: -.4em 0 1.1em; font-weight: 600; color: var(--accent); }
+.pause-hiver { max-width: 46em; padding: 12px 16px; border-radius: 10px; background: #fbf8f1; box-shadow: inset 3px 0 0 var(--bronze); }
+html.cloche-fixe .accueil-ouverture h1 { max-width: 13em; }
+@media (max-height: 820px) and (min-width: 761px) {
+  html.cloche-fixe { --cloche-d: min(34vw, calc(100svh - var(--entete-h) - 150px), 520px); }
+  html.cloche-fixe .accueil-ouverture .surtitre { display: none; }
+  html.cloche-fixe .accueil-ouverture h1 { font-size: clamp(2rem, min(4.2vw, 6.8vh), 3.6rem); }
+  html.cloche-fixe .accueil-ouverture .intro { font-size: .98rem; }
+  .pour-qui { margin-bottom: .7em; }
+}
+html.cloche-fixe .marche-scene { height: 260svh; }
+.prochaine a, .c-email a { display: inline-flex; align-items: center; min-height: 44px; }
+.m-temoin h2 { margin-top: 32px; }
+.anneaux-deco--petit { width: 72px; height: 72px; margin: 0 0 12px; }
+.anneaux-deco--petit circle { fill: none; stroke: var(--bronze); stroke-width: 2; }
+/* MBSR : paliers en couleurs pleines (contraste mesurable), scène non épinglée sur petit écran. */
+.palier { background: #213744; box-shadow: inset 0 0 0 1px #4f6a78; }
+.palier-num { background: #344f5e; color: #f2ede3; }
+.palier.est-atteint { background: #2c4636; box-shadow: inset 0 0 0 1px var(--accent-clair); }
+@media (max-width: 760px), (max-height: 600px) {
+  html.js:not(.calme):not(.secours) .b-plongee { height: auto; }
+  html.js:not(.calme):not(.secours) .b-plongee-cadre { position: relative; height: auto; padding-block: 56px; }
+  html.js:not(.calme):not(.secours) .b-plongee-media { position: absolute; inset: 0; height: 100%; margin: 0; }
+}
+/* Marches : la photo d'ouverture plus sombre sur téléphone ; plan aux repères foncés sur fond sombre. */
+.plan-fond { fill: rgba(18, 28, 20, .7); }
+.plan-repere circle { fill: #5d3d1b; }
+@media (max-width: 760px) {
+  .m-ouverture::before { background: linear-gradient(180deg, rgba(18, 28, 20, .86), rgba(18, 28, 20, .74) 55%, rgba(18, 28, 20, .6)); }
+  :is(.etape-media, .frise-media) .mention-ia { width: 100%; white-space: normal; text-align: center; line-height: 1.25; border-radius: 8px; padding: 3px 4px; }
+  .frise-media, .etape-media { margin-bottom: 44px; }
+}
+/* Petits téléphones : le titre, le bouton et l'information clé dans le premier écran. */
+@media (max-width: 760px) and (max-height: 700px) {
+  .m-ouverture .intro, .a-ouverture .intro, .b-ouverture .intro, .g-ouverture .intro, .c-ouverture .intro { display: none; }
+  .anneau { width: min(64vw, 26svh); }
+  .anneau-num { top: calc(-1 * min(32vw, 13svh)); width: 26px; height: 26px; left: -13px; font-size: .75rem; }
+  .b-ouverture-cadre { height: 20svh; }
+  .b-chiffres { margin-bottom: 10px; }
+  .b-chiffre { font-size: 1.6rem; }
+  .c-bandeau-media { max-height: 22svh; }
+  .g-prochaine { padding: 14px; }
+  .g-prochaine-texte { font-size: 1.2rem; margin-bottom: .5em; }
+  .titre-pinceau { margin-bottom: .3em; }
+  .a-ouverture-tete .surtitre, .g-ouverture .surtitre, .c-ouverture .surtitre { display: none; }
+}
+@media (max-height: 500px) and (min-width: 600px) {
+  .g-ouverture-grille, .c-ouverture-grille { align-items: start; }
+  .g-ouverture .surtitre, .c-ouverture .surtitre { display: none; }
+  .c-bandeau-media { max-height: 22svh; }
+  .c-ouverture-grille { padding-block: 10px; }
+  .g-prochaine { padding: 12px 16px; }
+  .g-prochaine-texte { font-size: 1.15rem; margin-bottom: .4em; }
+  .g-ouverture { padding-top: calc(var(--entete-h) + 12px); }
+}
+/* Relance 1 de l'audit. */
+.plan-repere circle { fill: var(--washi); stroke: var(--bronze); stroke-width: 3; }
+.plan-repere text { fill: var(--encre); }
+@media (max-height: 500px) { .pour-qui { display: none; } }
+@media (max-height: 700px) {
+  .a-ouverture { display: flex; flex-direction: column; }
+  .a-ouverture-pied { order: 1; margin-bottom: 14px; }
+  .anneau { order: 2; }
+}
+@media (max-width: 760px) { .b-ouverture-cadre { order: 0; height: 30svh; } }
+html.cloche-fixe .accueil-ouverture .cloche, .plan { will-change: transform; }
+/* Regard neuf et relance 2. */
+.cloche-consigne { background: color-mix(in srgb, var(--washi) 92%, transparent); padding: 4px 12px; border-radius: 999px; color: var(--texte-doux); }
+.mini-cloche { width: 60px; height: 60px; }
+.mini-cloche-bol { width: 54px; height: 54px; }
+.mini-cloche-eau { inset: 8px; }
+.mini-cloche-reperes { -webkit-mask: radial-gradient(circle, transparent 0 28px, #000 29px); mask: radial-gradient(circle, transparent 0 28px, #000 29px); }
+@media (min-width: 1000px) { .mini-cloche { left: max(8px, calc((100vw - var(--largeur)) / 2 - 84px)); } }
+@media (max-width: 999px) { .mini-cloche { width: 48px; height: 48px; } .mini-cloche-bol { width: 42px; height: 42px; } .mini-cloche-eau { inset: 6px; } .mini-cloche-reperes { -webkit-mask: radial-gradient(circle, transparent 0 22px, #000 23px); mask: radial-gradient(circle, transparent 0 22px, #000 23px); } }
+.c-ouverture-grille { align-items: start; }
+@media (max-width: 760px) {
+  html:not(.cloche-fixe) .accueil-ouverture .cloche { --cloche-d: min(48vw, 22svh, 260px); }
+  .a-ouverture { display: flex; flex-direction: column; }
+  .a-ouverture-pied { order: 1; margin-bottom: 14px; }
+  .anneau { order: 2; }
+  .g-feuilles-media { aspect-ratio: 5 / 1; }
+}
+@media (max-height: 500px) and (min-width: 600px) {
+  .b-ouverture .titre-pinceau { font-size: clamp(1.6rem, 7vh, 2.2rem); }
+  .b-chiffre { font-size: 1.5rem; }
+  .b-chiffre small { display: none; }
+  .b-ouverture .surtitre { display: none; }
+  .b-ouverture { padding-top: calc(var(--entete-h) + 10px); }
+}
+@media (max-width: 999px) and (max-height: 700px) { .pour-qui { display: none; } }
+@media (max-height: 820px) and (min-width: 761px) {
+  .anneau { width: min(32svh, 300px); }
+  .anneau-num { top: calc(-1 * min(16svh, 150px)); width: 30px; height: 30px; left: -15px; }
+  .a-ouverture .titre-pinceau { font-size: clamp(2rem, min(4.4vw, 6.6vh), 3.6rem); }
+}
+@media (max-width: 760px) {
+  .accueil-ouverture .duo-texte { display: flex; flex-direction: column; align-items: flex-start; }
+  .accueil-ouverture .pour-qui { order: 5; margin: 12px 0 0; }
+  .accueil-ouverture .titre-pinceau { margin-bottom: .3em; }
+}
+
+/* Ordinateur sans la cloche fixe (mode calme, secours, sans JavaScript) : texte à gauche, cloche à droite, posée. */
+@media (min-width: 1000px) {
+  html:not(.cloche-fixe) .accueil-ouverture { flex-direction: row; align-items: center; justify-content: space-between; gap: 48px; padding-inline: max(var(--gouttiere), calc((100vw - var(--largeur)) / 2)); }
+  html:not(.cloche-fixe) .accueil-ouverture .duo-texte { width: auto; margin: 0; flex: 1 1 0; }
+  html:not(.cloche-fixe) .accueil-ouverture .cloche { --cloche-d: min(36vw, calc(100svh - var(--entete-h) - 170px), 480px); flex: none; margin: 0 0 40px; }
+}
+/* Passe des formats. Ateliers : l'information du mois et le bouton avant l'anneau, à toutes les tailles. */
+.a-ouverture { display: flex; flex-direction: column; }
+.a-ouverture-pied { order: 1; margin-bottom: 18px; }
+.anneau { order: 2; }
+/* Sans JavaScript, l'en-tête est dans le flux : sur les écrans bas, les ouvertures se resserrent. */
+@media (max-height: 600px) {
+  html:not(.js) #debut :is(.intro, .surtitre, .pour-qui, .b-info) { display: none; }
+  html:not(.js) #debut .titre-pinceau { font-size: clamp(1.7rem, 7vh, 2.4rem); margin-bottom: .3em; }
+  html:not(.js) .b-chiffre { font-size: 1.5rem; }
+  html:not(.js) .b-chiffre small { display: none; }
+  html:not(.js) .accueil-ouverture, html:not(.js) .m-ouverture, html:not(.js) .b-ouverture { padding-top: 12px; }
+  html:not(.js) .accueil-ouverture .actions .bouton--contour { display: none; }
+}
+@media (max-width: 999px) { html:not(.js) { --barres-h: calc(65px + env(safe-area-inset-bottom)); } }
+@media (max-height: 600px) {
+  html:not(.js) .accueil-ouverture .cloche { order: 3; }
+  html:not(.js) .accueil-ouverture .cloche-consigne { display: none; }
+}
+@media (max-height: 500px) { html:not(.js) { --barres-h: 0px; } html:not(.js) [data-barre-fixe], html:not(.js) .mini-cloche { display: none; } }

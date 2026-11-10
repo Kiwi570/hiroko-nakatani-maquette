@@ -1,0 +1,17 @@
+{
+  "nom": "Hiroko Nakatani",
+  "sousTitre": "Méditation de pleine conscience",
+  "adresse": "https://hiroko-nakatani-maquette.vercel.app",
+  "siteActuel": "hirokoo8.wixsite.com/website-1",
+  "version": 1,
+  "langues": ["fr"],
+  "navigation": ["accueil", "marches", "ateliers", "mbsr", "agenda", "contact"],
+  "actionEntete": { "page": "agenda" },
+  "couleurs": { "fond": "#f2ede3", "texte": "#1d211f", "voile": "#1f3340", "theme": "#f2ede3", "ouverture": "#f2ede3", "menu": "#1f3340" },
+  "formeVoile": "onde",
+  "contact": { "email": "imakokolo@netc.fr", "association": "IMA KOKO-LO" },
+  "billetterie": "https://www.billetweb.fr/les-formules-annuelles-cartes-fidelites",
+  "polices": ["/assets/fonts/shippori-mincho-latin-500-normal.woff2"],
+  "imagePartage": "grok/eau-bois-1024.webp",
+  "curseur": false
+}

@@ -1,0 +1,37 @@
+{
+  "echecs": [],
+  "aRegarder": [
+    {
+      "niveau": "regarder",
+      "controle": "« à compléter » visible",
+      "detail": "1 fois hors du pied de page : remplacer par une phrase vraie qui oriente le visiteur (« Tarifs selon la saison, donnés à la réservation ») ou retirer l'élément, et le noter dans la fiche du README (sauf sens propre : « dossier à compléter »)",
+      "etape": "fichiers",
+      "page": "contact.html",
+      "lieux": [
+        ""
+      ]
+    }
+  ],
+  "nonLances": [
+    {
+      "controle": "mesures:balayage",
+      "raison": "page.evaluate: TypeError: Cannot read properties of undefined (reading 'visible')",
+      "etape": "mesures"
+    }
+  ],
+  "oks": {
+    "vercel.json": 1,
+    ".vercelignore": 1,
+    "robots.txt": 1,
+    "numéro de version": 1,
+    "langues": 1,
+    "mesures": 52
+  },
+  "infos": [
+    "Numéro de version des fichiers : ?v=1",
+    "Journal v1 : 9 étape(s) notée(s), 147 min de travail pour 169 min de budget, 10 min d’attente de l’utilisateur.",
+    "Journal : « audit, regard neuf et corrections » 79 min pour 35 prévues.",
+    "Accessibilité : axe-core 4.12.1 en plus des contrôles intégrés."
+  ],
+  "grille": []
+}

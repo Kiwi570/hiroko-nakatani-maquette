@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-page="accueil">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hiroko Nakatani · Méditation de pleine conscience à Paris Est et en ligne</title>
+<meta name="description" content="Marches méditatives dans le bois de Vincennes, ateliers à Fontenay-sous-Bois, méditation du soir en ligne et programme MBSR, avec Hiroko Nakatani, instructrice MBSR.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://hiroko-nakatani-maquette.vercel.app/">
+<style>:root{--fond:#f2ede3;--texte:#1d211f;--voile-fond:#1f3340;--ouverture-fond:#f2ede3;--menu-fond:#1f3340}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<script>(function(){var d=document.documentElement;if(!d.classList.contains('calme')&&matchMedia('(min-width: 1000px) and (min-height: 560px)').matches)d.classList.add('cloche-fixe');})();</script>
+<link rel="preload" href="/assets/fonts/shippori-mincho-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f2ede3">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hiroko Nakatani">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Hiroko Nakatani · Méditation de pleine conscience à Paris Est et en ligne">
+<meta property="og:description" content="Marches méditatives dans le bois de Vincennes, ateliers à Fontenay-sous-Bois, méditation du soir en ligne et programme MBSR, avec Hiroko Nakatani, instructrice MBSR.">
+<meta property="og:url" content="https://hiroko-nakatani-maquette.vercel.app/">
+<meta property="og:image" content="https://hiroko-nakatani-maquette.vercel.app/assets/partage/accueil-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="La cloche de méditation et le reflet du bois d’automne">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Hiroko Nakatani — Méditation de pleine conscience","url":"https://hiroko-nakatani-maquette.vercel.app/","email":"imakokolo@netc.fr","description":"Marches méditatives dans le bois de Vincennes, ateliers de pleine conscience à Fontenay-sous-Bois, méditation du soir en ligne et programme MBSR, avec Hiroko Nakatani, instructrice MBSR.","areaServed":"Paris et Val-de-Marne","founder":{"@type":"Person","name":"Hiroko Nakatani","jobTitle":"Instructrice MBSR"}}</script>
+</head>
+<body id="haut">
+<div data-voile data-forme="onde" data-grille="voile" aria-hidden="true"><div class="voile-contenu"><img src="/assets/images/logo-imakokolo-clair.png" alt="" width="64" height="66"><span data-voile-libelle>Accueil</span></div></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <div class="ouverture-logo" data-ouverture-objet>
+    <img class="ouverture-enso" src="/assets/images/logo-imakokolo.png" alt="" width="256" height="262">
+    <img class="ouverture-kanji" src="/assets/images/logo-imakokolo.png" alt="" width="256" height="262">
+  </div>
+  <p class="ouverture-nom">Hiroko Nakatani</p>
+  <p class="ouverture-ligne">Méditation de pleine conscience</p>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil" aria-current="page">
+      <img src="/assets/images/logo-imakokolo.png" alt="" width="44" height="45"><span class="entete-nom"><span>Hiroko Nakatani</span><small>Méditation de pleine conscience</small></span>
+    </a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/marches" data-libelle="Marches">Marches</a></li><li><a href="/ateliers" data-libelle="Ateliers et en ligne">Ateliers et en ligne</a></li><li><a href="/mbsr" data-libelle="MBSR">MBSR</a></li><li><a href="/agenda" data-libelle="Agenda">Agenda</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton" href="/agenda" data-libelle="Agenda">Réserver</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+      <a class="menu-sansjs" href="#menu" data-menu-lien>Menu</a>
+    </div>
+  </div>
+</header>
+<script>/* Avant le premier affichage : rangées de la navigation (même règle que ajusterNav dans assets/js/socle/entete.js)
+   et hauteur réelle de l'en-tête, pour que rien ne saute quand le JavaScript du site prend la main. */
+(function () {
+  var h = document.documentElement, u = document.querySelector('[data-nav] ul'), e = document.querySelector('[data-entete]');
+  if (u) {
+    var deborde = function () { return u.scrollWidth > u.clientWidth + 1; }, c = deborde();
+    if (c && window.matchMedia('(min-width: 900px)').matches) {
+      h.classList.add('nav-deux-rangees'); c = deborde();
+      if (c) { h.classList.add('nav-deux-lignes'); var a = u.querySelector('a'); c = !a || u.getBoundingClientRect().height > a.getBoundingClientRect().height * 2.5; }
+      if (c) h.classList.remove('nav-deux-rangees', 'nav-deux-lignes');
+    }
+    if (c) h.classList.add('nav-compacte');
+  }
+  if (e) h.style.setProperty('--entete-h', Math.round(e.getBoundingClientRect().height) + 'px');
+})();</script>
+<span id="menu-ferme" aria-hidden="true"></span>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <p class="menu-sansjs-fermer"><a href="#menu-ferme">Fermer</a></p>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil" aria-current="page">Accueil</a></li><li style="--i:1"><a href="/marches" class="menu-lien" data-libelle="Marches">Marches</a></li><li style="--i:2"><a href="/ateliers" class="menu-lien" data-libelle="Ateliers et en ligne">Ateliers et en ligne</a></li><li style="--i:3"><a href="/mbsr" class="menu-lien" data-libelle="MBSR">MBSR</a></li><li style="--i:4"><a href="/agenda" class="menu-lien" data-libelle="Agenda">Agenda</a></li><li style="--i:5"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+  <p class="menu-actions"><a class="bouton" href="/agenda" data-libelle="Agenda">Réserver une séance</a> <a class="bouton bouton--contour" href="mailto:imakokolo@netc.fr">imakokolo@netc.fr</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+</div>
+<main id="contenu" tabindex="-1">
+<section class="accueil-ouverture duo" id="debut" data-eau="grok/eau-bois">
+  <canvas class="saison" data-saison aria-hidden="true" data-audit-ignorer></canvas>
+  <div class="duo-texte">
+    <p class="surtitre" data-anime="gsap">Méditation de pleine conscience · Paris Est et en ligne</p>
+    <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">Revenir à l’instant, en marchant, ensemble.</h1>
+    <p class="intro" data-anime="gsap">Marches en silence dans le bois de Vincennes, ateliers à Fontenay-sous-Bois, méditation du mardi soir en ligne et programme MBSR, avec Hiroko Nakatani, instructrice MBSR et neurobiologiste de formation.</p>
+    <p class="pour-qui" data-anime="gsap">Débutants bienvenus : aucune expérience nécessaire.</p>
+    <p class="actions" data-anime="gsap">
+      <a href="/agenda" class="bouton" data-libelle="Agenda" data-action-principale data-survol="magnetique">Réserver une séance</a>
+      <a class="bouton bouton--contour" href="#pratiques">Voir les pratiques</a>
+    </p>
+    <p class="prochaine" data-info-cle data-anime="gsap"><span>Prochaine séance</span> <a href="/agenda" data-libelle="Agenda" data-prochaine>Ce soir, 20 h · Méditation du soir en ligne</a></p>
+  </div>
+  <div class="cloche" data-cloche data-grille="manipuler fil" data-effet="cloche" data-superpose>
+    <span class="cloche-coussin" aria-hidden="true"></span>
+    <span class="cloche-bol" aria-hidden="true"></span>
+    <div class="cloche-eau" data-iris-centre="disque">
+      <figure class="media cloche-repli" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/eau-bois-1024.webp" srcset="/assets/images/grok/eau-bois-640.webp 640w, /assets/images/grok/eau-bois-1024.webp 1024w" sizes="(max-width: 999px) 70vw, 36vw" alt="La cloche de méditation et le reflet du bois d’automne" width="1024" height="1024" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+      <canvas class="cloche-canvas" aria-hidden="true"></canvas>
+    </div>
+    <button class="cloche-frapper" type="button" aria-label="Cloche de méditation : la faire sonner"></button>
+    <p class="cloche-consigne" data-anime="gsap"><span class="si-souris">Faites le tour du bord pour la faire chanter, effleurez l’eau pour la faire sonner</span><span class="si-tactile">Effleurez l’eau pour la faire sonner, glissez le long du bord pour la faire chanter</span></p>
+  </div>
+</section>
+<section class="nen duo" id="nen" data-eau="grok/eau-matin">
+  <div class="duo-texte">
+    <p class="surtitre" data-anime>念 · la pleine conscience</p>
+    <h2 data-anime="lignes">Maintenant, et le cœur</h2>
+    <div class="nen-kanji" data-kanji data-effet="kanji-pinceau" data-visuel role="img" aria-label="今 · maintenant + 心 · le cœur = 念">
+      <figure class="kanji"><svg class="kanji-svg" viewBox="0 -880 1000 1000" aria-hidden="true" focusable="false">
+  <defs><mask id="m-ima" maskUnits="userSpaceOnUse" x="-100" y="-200" width="1200" height="1200"><path class="kanji-trait" data-trait="0" d="M420 860 C 340 700 200 520 40 320" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/><path class="kanji-trait" data-trait="1" d="M520 800 C 650 640 780 560 920 480" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/><path class="kanji-trait" data-trait="2" d="M275 485 L 690 485" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/><path class="kanji-trait" data-trait="3" d="M170 320 L 740 320 L 560 -80" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/></mask></defs>
+  <g transform="scale(1,-1)"><path class="kanji-ombre" d="M47 348 39 361Q123 418 210.0 508.5Q297 599 360 694Q419 782 431 866L586 818Q585 809 574.5 804.0Q564 799 543 797Q605 699 715.5 619.5Q826 540 960 483L958 468Q930 462 909.5 438.5Q889 415 882 387Q760 460 665.5 562.0Q571 664 526 784Q456 662 321.5 540.0Q187 418 47 348ZM422 458Q365 457 304 444L278 495Q333 489 411 487H560L584 523Q589 530 595.5 540.0Q602 550 606.5 555.0Q611 560 615 560Q621 560 644.0 541.5Q667 523 687.5 502.0Q708 481 708 474Q705 458 682 458ZM341 287Q270 286 191 273L165 324Q220 318 298 316H679L700 342Q705 347 714.0 358.0Q723 369 729 369Q735 369 758.0 350.5Q781 332 801.5 311.5Q822 291 822 284Q810 272 776 267Q748 201 701.0 97.5Q654 -6 616 -85Q598 -89 588 -89Q556 -89 517 -71Q590 73 678 287Z"/><path class="kanji-encre" d="M47 348 39 361Q123 418 210.0 508.5Q297 599 360 694Q419 782 431 866L586 818Q585 809 574.5 804.0Q564 799 543 797Q605 699 715.5 619.5Q826 540 960 483L958 468Q930 462 909.5 438.5Q889 415 882 387Q760 460 665.5 562.0Q571 664 526 784Q456 662 321.5 540.0Q187 418 47 348ZM422 458Q365 457 304 444L278 495Q333 489 411 487H560L584 523Q589 530 595.5 540.0Q602 550 606.5 555.0Q611 560 615 560Q621 560 644.0 541.5Q667 523 687.5 502.0Q708 481 708 474Q705 458 682 458ZM341 287Q270 286 191 273L165 324Q220 318 298 316H679L700 342Q705 347 714.0 358.0Q723 369 729 369Q735 369 758.0 350.5Q781 332 801.5 311.5Q822 291 822 284Q810 272 776 267Q748 201 701.0 97.5Q654 -6 616 -85Q598 -89 588 -89Q556 -89 517 -71Q590 73 678 287Z" mask="url(#m-ima)"/></g>
+</svg><figcaption aria-hidden="true">今 · maintenant</figcaption></figure>
+      <span class="kanji-signe" aria-hidden="true">+</span>
+      <figure class="kanji"><svg class="kanji-svg" viewBox="0 -880 1000 1000" aria-hidden="true" focusable="false">
+  <defs><mask id="m-kokoro" maskUnits="userSpaceOnUse" x="-100" y="-200" width="1200" height="1200"><path class="kanji-trait" data-trait="0" d="M180 520 C 175 400 150 280 80 190" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/><path class="kanji-trait" data-trait="1" d="M295 610 L 300 200 C 305 40 330 20 400 20 L 680 20 C 720 20 735 120 740 230" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/><path class="kanji-trait" data-trait="2" d="M320 815 C 420 770 520 700 600 620" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/><path class="kanji-trait" data-trait="3" d="M720 530 C 820 430 880 330 900 200" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/></mask></defs>
+  <g transform="scale(1,-1)"><path class="kanji-ombre" d="M325 823Q433 811 501.5 781.5Q570 752 600.0 716.0Q630 680 630 646Q630 622 616.0 606.0Q602 590 581 590Q564 590 548 600Q524 649 464.0 707.5Q404 766 320 809L322 816ZM308 418Q308 544 295 623Q368 605 396.0 594.5Q424 584 424 577Q424 574 416 568L399 557V74Q399 56 410.0 49.5Q421 43 453 43H568Q645 43 670 46Q681 47 687.5 50.5Q694 54 698 63Q713 92 742 225H753L756 56Q778 47 786.0 38.0Q794 29 794 14Q794 -11 775.0 -25.0Q756 -39 706.0 -45.5Q656 -52 561 -52H439Q387 -52 359.0 -43.5Q331 -35 319.5 -14.0Q308 7 308 48ZM733 536Q845 479 896.5 406.0Q948 333 948 266Q948 224 931.0 196.5Q914 169 890 169Q867 169 847 195Q847 277 818.0 369.0Q789 461 726 526ZM190 525Q217 441 217 367Q217 303 199.0 254.5Q181 206 154 178Q126 147 94 147Q69 147 56 166Q47 178 47 194Q47 221 73 244Q117 279 147.5 356.5Q178 434 176 525Z"/><path class="kanji-encre" d="M325 823Q433 811 501.5 781.5Q570 752 600.0 716.0Q630 680 630 646Q630 622 616.0 606.0Q602 590 581 590Q564 590 548 600Q524 649 464.0 707.5Q404 766 320 809L322 816ZM308 418Q308 544 295 623Q368 605 396.0 594.5Q424 584 424 577Q424 574 416 568L399 557V74Q399 56 410.0 49.5Q421 43 453 43H568Q645 43 670 46Q681 47 687.5 50.5Q694 54 698 63Q713 92 742 225H753L756 56Q778 47 786.0 38.0Q794 29 794 14Q794 -11 775.0 -25.0Q756 -39 706.0 -45.5Q656 -52 561 -52H439Q387 -52 359.0 -43.5Q331 -35 319.5 -14.0Q308 7 308 48ZM733 536Q845 479 896.5 406.0Q948 333 948 266Q948 224 931.0 196.5Q914 169 890 169Q867 169 847 195Q847 277 818.0 369.0Q789 461 726 526ZM190 525Q217 441 217 367Q217 303 199.0 254.5Q181 206 154 178Q126 147 94 147Q69 147 56 166Q47 178 47 194Q47 221 73 244Q117 279 147.5 356.5Q178 434 176 525Z" mask="url(#m-kokoro)"/></g>
+</svg><figcaption aria-hidden="true">心 · le cœur</figcaption></figure>
+      <span class="kanji-signe" aria-hidden="true">=</span>
+      <figure class="kanji kanji--nen"><svg class="kanji-svg" viewBox="0 -880 1000 1000" aria-hidden="true" focusable="false">
+  <defs><mask id="m-nen" maskUnits="userSpaceOnUse" x="-100" y="-200" width="1200" height="1200"><path class="kanji-trait" data-trait="0" d="M455 850 C 400 760 300 620 50 470" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/><path class="kanji-trait" data-trait="1" d="M510 790 C 600 690 720 590 915 500" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/><path class="kanji-trait" data-trait="2" d="M330 578 L 640 578" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/><path class="kanji-trait" data-trait="3" d="M200 470 L 690 470 L 560 255" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/><path class="kanji-trait" data-trait="4" d="M195 248 C 200 170 160 70 75 15" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/><path class="kanji-trait" data-trait="5" d="M300 262 L 300 40 C 305 -30 330 -40 380 -40 L 640 -40 C 680 -40 690 20 700 150" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/><path class="kanji-trait" data-trait="6" d="M420 322 C 480 290 535 230 545 150" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/><path class="kanji-trait" data-trait="7" d="M700 252 C 790 200 860 120 880 40" pathLength="1" fill="none" stroke="#fff" stroke-width="150" stroke-linecap="round" stroke-linejoin="round"/></mask></defs>
+  <g transform="scale(1,-1)"><path class="kanji-ombre" d="M958 585 956 570Q928 560 912.0 534.5Q896 509 890 477Q764 525 667.5 602.5Q571 680 515 781Q449 685 324.0 594.5Q199 504 53 458L48 472Q128 513 201.5 572.5Q275 632 333 699Q365 737 389.5 780.5Q414 824 424 864L574 813Q572 803 562.0 798.0Q552 793 530 791Q601 719 714.0 665.0Q827 611 958 585ZM442 553Q402 552 360 539L335 590Q385 584 455 582H512L535 613Q538 617 545.0 626.5Q552 636 556.5 640.5Q561 645 565 645Q571 645 593.5 629.0Q616 613 635.0 594.5Q654 576 654 569Q650 553 629 553ZM663 494Q667 498 675.5 508.0Q684 518 690 518Q696 518 717.5 501.0Q739 484 757.5 464.5Q776 445 776 438Q766 426 731 423Q701 361 639 256Q629 253 616 253Q587 253 548 272Q592 344 639 441H379Q308 440 229 427L202 478Q257 472 335 470H643ZM409 317Q504 294 549.0 252.0Q594 210 594 169Q594 147 582.0 132.5Q570 118 551 118Q537 118 518 129Q506 172 471.5 221.5Q437 271 399 309ZM300 144Q300 222 292 269Q360 252 386.0 242.0Q412 232 412 225Q412 222 405 217L391 208V43Q391 32 398.5 28.5Q406 25 433 25H543Q625 25 638 27Q649 28 654.0 30.5Q659 33 663 40Q674 58 702 155H713L716 36Q736 29 744.0 20.0Q752 11 752 -3Q752 -25 734.0 -37.0Q716 -49 669.5 -54.5Q623 -60 535 -60H416Q367 -60 342.5 -53.0Q318 -46 309.0 -28.5Q300 -11 300 24ZM725 255Q800 230 847.5 195.0Q895 160 916.0 124.0Q937 88 937 56Q937 30 924.0 13.5Q911 -3 891 -3Q871 -3 851 13Q840 69 801.0 133.5Q762 198 715 247ZM205 248Q221 194 221 149Q221 95 202.0 56.5Q183 18 154 0Q134 -14 111 -14Q92 -14 78.0 -2.5Q64 9 64 30Q64 46 73.5 59.5Q83 73 99 82Q135 102 163.0 148.0Q191 194 191 248Z"/><path class="kanji-encre" d="M958 585 956 570Q928 560 912.0 534.5Q896 509 890 477Q764 525 667.5 602.5Q571 680 515 781Q449 685 324.0 594.5Q199 504 53 458L48 472Q128 513 201.5 572.5Q275 632 333 699Q365 737 389.5 780.5Q414 824 424 864L574 813Q572 803 562.0 798.0Q552 793 530 791Q601 719 714.0 665.0Q827 611 958 585ZM442 553Q402 552 360 539L335 590Q385 584 455 582H512L535 613Q538 617 545.0 626.5Q552 636 556.5 640.5Q561 645 565 645Q571 645 593.5 629.0Q616 613 635.0 594.5Q654 576 654 569Q650 553 629 553ZM663 494Q667 498 675.5 508.0Q684 518 690 518Q696 518 717.5 501.0Q739 484 757.5 464.5Q776 445 776 438Q766 426 731 423Q701 361 639 256Q629 253 616 253Q587 253 548 272Q592 344 639 441H379Q308 440 229 427L202 478Q257 472 335 470H643ZM409 317Q504 294 549.0 252.0Q594 210 594 169Q594 147 582.0 132.5Q570 118 551 118Q537 118 518 129Q506 172 471.5 221.5Q437 271 399 309ZM300 144Q300 222 292 269Q360 252 386.0 242.0Q412 232 412 225Q412 222 405 217L391 208V43Q391 32 398.5 28.5Q406 25 433 25H543Q625 25 638 27Q649 28 654.0 30.5Q659 33 663 40Q674 58 702 155H713L716 36Q736 29 744.0 20.0Q752 11 752 -3Q752 -25 734.0 -37.0Q716 -49 669.5 -54.5Q623 -60 535 -60H416Q367 -60 342.5 -53.0Q318 -46 309.0 -28.5Q300 -11 300 24ZM725 255Q800 230 847.5 195.0Q895 160 916.0 124.0Q937 88 937 56Q937 30 924.0 13.5Q911 -3 891 -3Q871 -3 851 13Q840 69 801.0 133.5Q762 198 715 247ZM205 248Q221 194 221 149Q221 95 202.0 56.5Q183 18 154 0Q134 -14 111 -14Q92 -14 78.0 -2.5Q64 9 64 30Q64 46 73.5 59.5Q83 73 99 82Q135 102 163.0 148.0Q191 194 191 248Z" mask="url(#m-nen)"/></g>
+</svg><figcaption aria-hidden="true">念 · l’attention</figcaption></figure>
+    </div>
+    <p class="nen-texte" data-anime>Le caractère 念, au cœur du logo d’IMA KOKO-LO, se lit « attention » : 今, « maintenant », posé sur 心, « le cœur ». Revenir au moment présent, avec bienveillance : c’est ce que l’on pratique ici, ensemble.</p>
+    <ul class="nen-points" data-anime="cascade"><li>Aucune expérience de la méditation n’est nécessaire.</li><li>Une pratique laïque, ouverte à tous les niveaux.</li><li>Une séance ou plusieurs : chacun vient à son rythme.</li></ul>
+  </div>
+</section>
+<section class="pratiques duo" id="pratiques" data-eau="grok/eau-bois">
+  <div class="duo-texte">
+    <p class="surtitre" data-anime>Quatre façons de pratiquer</p>
+    <h2 data-anime="lignes">Dehors, en salle, chez vous, ou sur huit semaines</h2>
+    <ul class="pratiques-grille" data-anime="cascade">
+      <li class="pratique" data-eau-carte="grok/eau-bois">
+        <a href="/marches" class="pratique-lien" data-libelle="Marches">
+          <figure class="media pratique-media" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/carte-marche-784.webp" srcset="/assets/images/grok/carte-marche-480.webp 480w, /assets/images/grok/carte-marche-640.webp 640w, /assets/images/grok/carte-marche-784.webp 784w" sizes="(max-width: 760px) 92vw, (max-width: 999px) 45vw, 24vw" alt="" width="784" height="1175" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <span class="pratique-corps">
+            <span class="pratique-titre">Marche et méditation</span>
+            <span class="pratique-meta">Le dimanche, 10 h – 12 h<br>Bois de Vincennes</span>
+            <span class="pratique-prix" data-prix>20 €</span>
+            <span class="pratique-texte">Deux heures de marche en silence, en petit groupe, avec des méditations au départ, à la pause et à l’arrivée.</span>
+            <span class="pratique-voir">Découvrir <span aria-hidden="true">→</span></span>
+          </span></a>
+      </li><li class="pratique" data-eau-carte="grok/eau-salle">
+        <a href="/ateliers" class="pratique-lien" data-libelle="Ateliers et en ligne">
+          <figure class="media pratique-media" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/carte-atelier-784.webp" srcset="/assets/images/grok/carte-atelier-480.webp 480w, /assets/images/grok/carte-atelier-640.webp 640w, /assets/images/grok/carte-atelier-784.webp 784w" sizes="(max-width: 760px) 92vw, (max-width: 999px) 45vw, 24vw" alt="" width="784" height="1175" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <span class="pratique-corps">
+            <span class="pratique-titre">Atelier de pleine conscience</span>
+            <span class="pratique-meta">Un samedi par mois, 14 h – 16 h<br>Fontenay-sous-Bois, salle 207</span>
+            <span class="pratique-prix" data-prix>20 €</span>
+            <span class="pratique-texte">Méditations guidées, mouvement conscient (Seitai méditatif) et partages, sur le thème du mois.</span>
+            <span class="pratique-voir">Découvrir <span aria-hidden="true">→</span></span>
+          </span></a>
+      </li><li class="pratique" data-eau-carte="grok/eau-soir">
+        <a href="/ateliers#en-ligne" class="pratique-lien" data-libelle="Ateliers et en ligne">
+          <figure class="media pratique-media" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/carte-en-ligne-784.webp" srcset="/assets/images/grok/carte-en-ligne-480.webp 480w, /assets/images/grok/carte-en-ligne-640.webp 640w, /assets/images/grok/carte-en-ligne-784.webp 784w" sizes="(max-width: 760px) 92vw, (max-width: 999px) 45vw, 24vw" alt="" width="784" height="1175" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <span class="pratique-corps">
+            <span class="pratique-titre">Méditation du soir en ligne</span>
+            <span class="pratique-meta">Le mardi, 20 h – 20 h 45<br>Chez vous, sans application</span>
+            <span class="pratique-prix" data-prix>20,50 € le mois</span>
+            <span class="pratique-texte">Quatre mardis par mois : préparation, méditation guidée, partage libre. On peut repartir en silence.</span>
+            <span class="pratique-voir">Découvrir <span aria-hidden="true">→</span></span>
+          </span></a>
+      </li><li class="pratique" data-eau-carte="grok/eau-matin">
+        <a href="/mbsr" class="pratique-lien" data-libelle="MBSR">
+          <figure class="media pratique-media" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/carte-mbsr-784.webp" srcset="/assets/images/grok/carte-mbsr-480.webp 480w, /assets/images/grok/carte-mbsr-640.webp 640w, /assets/images/grok/carte-mbsr-784.webp 784w" sizes="(max-width: 760px) 92vw, (max-width: 999px) 45vw, 24vw" alt="" width="784" height="1175" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <span class="pratique-corps">
+            <span class="pratique-titre">Programme MBSR</span>
+            <span class="pratique-meta">Huit semaines<br>Prochain cycle à venir</span>
+            <span class="pratique-prix" data-prix>450 €</span>
+            <span class="pratique-texte">Le programme de réduction du stress basé sur la pleine conscience, en groupe, avec une pratique quotidienne.</span>
+            <span class="pratique-voir">Découvrir <span aria-hidden="true">→</span></span>
+          </span></a>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="marche-scene" id="marche" data-scene data-grille="scene" data-effet="marche-pas" data-eau="grok/pas-depart">
+  <div class="marche-cadre duo" data-collant>
+    <div class="duo-texte marche-texte">
+      <p class="surtitre" data-anime>Une marche, pas à pas</p>
+      <h2 data-anime="lignes">Deux heures dans le bois, en silence</h2>
+      <p class="marche-consigne" data-anime>Le dimanche matin, de 10 h à midi. Faites défiler : la cloche sonne à chaque arrêt.</p>
+      <svg class="marche-chemin" viewBox="0 0 640 120" data-visuel aria-hidden="true" focusable="false">
+        <path class="chemin-fond" d="M20 80 C 90 20 150 110 230 70 S 360 20 420 64 S 540 108 620 40"/>
+        <path class="chemin-trace" d="M20 80 C 90 20 150 110 230 70 S 360 20 420 64 S 540 108 620 40" pathLength="1"/>
+        <circle class="chemin-arret" data-arret="0" cx="20" cy="80" r="9"/><circle class="chemin-arret" data-arret="1" cx="130" cy="64" r="9"/><circle class="chemin-arret" data-arret="2" cx="230" cy="70" r="9"/><circle class="chemin-arret" data-arret="3" cx="330" cy="40" r="9"/><circle class="chemin-arret" data-arret="4" cx="470" cy="82" r="9"/><circle class="chemin-arret" data-arret="5" cx="620" cy="40" r="9"/>
+        <circle class="chemin-pas" cx="20" cy="80" r="6"/>
+      </svg>
+      <ol class="marche-etapes">
+        <li class="etape" data-etape="0" data-eau-etape="grok/pas-depart">
+          <figure class="media etape-media" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/pas-depart-1024.webp" srcset="/assets/images/grok/pas-depart-640.webp 640w, /assets/images/grok/pas-depart-1024.webp 1024w" sizes="(max-width: 760px) 30vw, 160px" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <div><p class="etape-heure">9 h 55</p><h3>Le rendez-vous</h3><p>On se retrouve cinq minutes avant le départ, au point indiqué pour le parcours du jour.</p></div>
+        </li><li class="etape" data-etape="1" data-eau-etape="grok/pas-depart">
+          <span class="etape-point" aria-hidden="true"></span>
+          <div><p class="etape-heure">10 h</p><h3>La méditation d’ouverture</h3><p>Debout ou assis, selon ce qui vous convient, pour arriver dans le lieu et dans le corps.</p></div>
+        </li><li class="etape" data-etape="2" data-eau-etape="grok/pas-silence">
+          <figure class="media etape-media" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/pas-silence-1024.webp" srcset="/assets/images/grok/pas-silence-640.webp 640w, /assets/images/grok/pas-silence-1024.webp 1024w" sizes="(max-width: 760px) 30vw, 160px" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <div><p class="etape-heure">10 h 15</p><h3>Marcher en silence</h3><p>En petit groupe, dans le bois ou le parc : l’écoute, la vue, les sensations des pas. Le silence laisse la liberté de sourire.</p></div>
+        </li><li class="etape" data-etape="3" data-eau-etape="grok/pas-pause">
+          <figure class="media etape-media" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/pas-pause-1024.webp" srcset="/assets/images/grok/pas-pause-640.webp 640w, /assets/images/grok/pas-pause-1024.webp 1024w" sizes="(max-width: 760px) 30vw, 160px" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <div><p class="etape-heure">11 h</p><h3>La pause</h3><p>Une courte méditation guidée au milieu du parcours, près de l’eau ou sous les arbres.</p></div>
+        </li><li class="etape" data-etape="4" data-eau-etape="grok/pas-cloture">
+          <figure class="media etape-media" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/pas-cloture-1024.webp" srcset="/assets/images/grok/pas-cloture-640.webp 640w, /assets/images/grok/pas-cloture-1024.webp 1024w" sizes="(max-width: 760px) 30vw, 160px" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <div><p class="etape-heure">12 h</p><h3>La méditation de clôture</h3><p>À l’arrivée, une dernière pratique, comme un balayage du corps.</p></div>
+        </li><li class="etape" data-etape="5" data-eau-etape="grok/pas-cloture">
+          <span class="etape-point" aria-hidden="true"></span>
+          <div><p class="etape-heure">Ensuite</p><h3>Le partage, si l’on veut</h3><p>Chacun peut dire un mot de son expérience, ou repartir en silence.</p></div>
+        </li>
+      </ol>
+      <p class="marche-lien"><a href="/marches" class="bouton bouton--contour" data-libelle="Marches">Les parcours et les dates</a></p>
+    </div>
+  </div>
+</section>
+<section class="dates duo" id="dates" data-eau="grok/eau-soir">
+  <div class="duo-texte">
+    <p class="surtitre" data-anime>Prochaines dates</p>
+    <h2 data-anime="lignes">Choisissez votre moment</h2>
+    <figure class="media dates-bandeau" data-grok data-anime="rideau" style="--cadrage:50% 50%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/agenda-feuilles-mobile-640.webp 640w" sizes="(max-width: 999px) 92vw, 50vw">
+    <img src="/assets/images/grok/agenda-feuilles-1280.webp" srcset="/assets/images/grok/agenda-feuilles-640.webp 640w, /assets/images/grok/agenda-feuilles-1280.webp 1280w" sizes="(max-width: 999px) 92vw, 50vw" alt="" width="1280" height="640" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    <p data-anime>Les réservations se font sur la billetterie Billetweb : le bouton l’ouvre dans un nouvel onglet.</p>
+    <ol class="dates-liste" data-prochaines="4" data-grille="retour"><li class="date date--enligne date--aujourdhui" data-date data-type="enligne" data-debut="29891520" data-fin="29934525" data-jour="2026-11-01" data-mardis="2026-11-03 2026-11-10 2026-11-17 2026-11-24">
+  <p class="date-jour" aria-hidden="true"><span>nov.</span><strong>✦</strong><span>2026</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Mardis 3, 10, 17, 24 · thème 3 « Respirer, observer »</p>
+    <p class="date-meta">novembre 2026 · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20,50 € le mois</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, novembre 2026 · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--marche date--avenir" data-date data-type="marche" data-debut="29912280" data-fin="29912400" data-jour="2026-11-15" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>dim.</span><strong>15</strong><span>nov.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Marche et méditation</h3>
+    <p class="date-sous">Parc floral de Paris</p>
+    <p class="date-meta">dimanche 15 novembre · 10 h – 12 h · Parc floral de Paris</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Marche</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/marche-et-meditation-parc-floral-de-paris" target="_blank" rel="noopener" data-retour aria-label="Réserver : Marche et méditation, dimanche 15 novembre · 10 h – 12 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--atelier date--avenir" data-date data-type="atelier" data-debut="29921160" data-fin="29921280" data-jour="2026-11-21" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>21</strong><span>nov.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de pleine conscience n° 3</h3>
+    <p class="date-sous">« Respirer, observer »</p>
+    <p class="date-meta">samedi 21 novembre · 14 h – 16 h · Maison du Citoyen, salle 207</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Atelier</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-ima-koko-lo" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de pleine conscience n° 3, samedi 21 novembre · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--enligne date--avenir" data-date data-type="enligne" data-debut="29934720" data-fin="29979165" data-jour="2026-12-01" data-mardis="2026-12-01 2026-12-08 2026-12-15 2026-12-22">
+  <p class="date-jour" aria-hidden="true"><span>déc.</span><strong>✦</strong><span>2026</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Mardis 1, 8, 15, 22 · thème spécial de fin d’année</p>
+    <p class="date-meta">décembre 2026 · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20,50 € le mois</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, décembre 2026 · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--enligne date--avenir" data-date data-type="enligne" data-debut="29979360" data-fin="30023805" data-jour="2027-01-01" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>janv.</span><strong>✦</strong><span>2027</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Quatre mardis (dates sur la billetterie) · thème 4 « Le stress ? »</p>
+    <p class="date-meta">janvier 2027 · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20,50 € le mois</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, janvier 2027 · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--atelier date--avenir" data-date data-type="atelier" data-debut="30001800" data-fin="30001920" data-jour="2027-01-16" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>16</strong><span>janv.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de pleine conscience n° 4</h3>
+    <p class="date-sous">« Le stress ? »</p>
+    <p class="date-meta">samedi 16 janvier · 14 h – 16 h · Maison du Citoyen, salle 207</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Atelier</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-ima-koko-lo" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de pleine conscience n° 4, samedi 16 janvier · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--enligne date--avenir" data-date data-type="enligne" data-debut="30024000" data-fin="30064125" data-jour="2027-02-01" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>févr.</span><strong>✦</strong><span>2027</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Méditation du soir en ligne</h3>
+    <p class="date-sous">Quatre mardis (dates sur la billetterie) · thème 5 « Du réflexe à la conscience »</p>
+    <p class="date-meta">février 2027 · 20 h – 20 h 45 · En ligne</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20,50 € le mois</span><span class="date-type">En ligne</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver : Méditation du soir en ligne, février 2027 · 20 h – 20 h 45 (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li><li class="date date--atelier date--avenir" data-date data-type="atelier" data-debut="30032040" data-fin="30032160" data-jour="2027-02-06" data-mardis="">
+  <p class="date-jour" aria-hidden="true"><span>sam.</span><strong>6</strong><span>févr.</span></p>
+  <div class="date-corps">
+    <h3 class="date-titre">Atelier de pleine conscience n° 5</h3>
+    <p class="date-sous">« Du réflexe à la conscience »</p>
+    <p class="date-meta">samedi 6 février · 14 h – 16 h · Maison du Citoyen, salle 207</p>
+  </div>
+  <p class="date-fin"><span class="date-prix" data-prix>20 €</span><span class="date-type">Atelier</span>
+    <span class="date-etat date-etat--aujourdhui">Aujourd’hui</span><span class="date-etat date-etat--passe">Passé</span>
+    <a class="bouton bouton--petit date-reserver" href="https://www.billetweb.fr/atelier-de-meditation-ima-koko-lo" target="_blank" rel="noopener" data-retour aria-label="Réserver : Atelier de pleine conscience n° 5, samedi 6 février · 14 h – 16 h (s’ouvre dans un nouvel onglet)">Réserver</a></p>
+</li></ol>
+    <p class="dates-tout"><a href="/agenda" class="bouton bouton--contour" data-libelle="Agenda">Tout l’agenda</a></p>
+  </div>
+</section>
+<section class="qui duo" id="hiroko" data-eau="eau-cerisier">
+  <div class="duo-texte qui-grille">
+    <figure class="media qui-media" data-fx="zoom" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/hiroko-aquarelle-800.webp" srcset="/assets/images/hiroko-aquarelle-480.webp 480w, /assets/images/hiroko-aquarelle-800.webp 800w" sizes="(max-width: 760px) 60vw, 22vw" alt="Aquarelle de fleurs de cerisier" width="800" height="800" loading="lazy" decoding="async">
+  </picture>
+</figure>
+    <div>
+      <p class="surtitre" data-anime>Qui suis-je ?</p>
+      <h2 data-anime="lignes">Hiroko Nakatani</h2>
+      <p data-anime>Instructrice MBSR et neurobiologiste de formation, j’accompagne des publics variés à découvrir et pratiquer la pleine conscience : pour mieux se connaître et revenir au moment présent.</p>
+      <p data-anime>Les ateliers, les marches et les séances en ligne sont organisés avec l’association IMA KOKO-LO (今ここ, « ici et maintenant »).</p>
+      <blockquote class="citation" data-anime><p>« un bon moyen de se recentrer sur soi tout en restant connecté avec son environnement et le groupe »</p><footer>Laure S., après une marche et méditation</footer></blockquote>
+    </div>
+  </div>
+</section>
+<section class="plongee" id="plongee" data-effet="plongee" data-eau="grok/eau-plongee">
+  <figure class="media plongee-media" data-grok style="--cadrage:50% 50%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/plongee-bois-mobile-640.webp 640w" sizes="100vw">
+    <img src="/assets/images/grok/plongee-bois-1280.webp" srcset="/assets/images/grok/plongee-bois-640.webp 640w, /assets/images/grok/plongee-bois-1280.webp 1280w" sizes="100vw" alt="Cime des arbres d’automne vue d’en bas" width="1280" height="720" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  <div class="plongee-plans" aria-hidden="true" data-effet="plongee-profondeur" data-superpose>
+    <svg class="plan plan--hg" viewBox="0 0 400 400" focusable="false"><path d="M-20 60 C 80 90 170 150 300 250" fill="none" stroke-width="9"/><path transform="translate(137.1 156.8) rotate(42) scale(0.92)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(123.0 144.6) rotate(28) scale(1.49)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(166.8 166.6) rotate(102) scale(1.40)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(187.2 159.5) rotate(179) scale(0.91)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(191.6 167.2) rotate(202) scale(1.14)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(42.9 66.5) rotate(338) scale(1.57)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(26.2 79.6) rotate(344) scale(0.87)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(115.8 142.7) rotate(242) scale(0.95)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(41.1 121.5) rotate(160) scale(0.91)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(154.1 153.8) rotate(55) scale(1.40)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(95.5 117.8) rotate(29) scale(1.53)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(61.6 128.4) rotate(169) scale(0.91)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(170.9 168.7) rotate(273) scale(1.29)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(30.8 69.3) rotate(162) scale(0.78)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(4.3 63.8) rotate(245) scale(1.28)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(276.6 231.0) rotate(158) scale(1.15)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(121.7 163.7) rotate(162) scale(1.10)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(69.2 94.4) rotate(267) scale(0.82)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(71.1 127.4) rotate(309) scale(1.57)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(268.1 257.7) rotate(269) scale(1.28)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(156.4 136.8) rotate(117) scale(1.02)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(54.5 94.5) rotate(247) scale(1.36)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(70.0 138.1) rotate(3) scale(1.02)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(165.7 167.8) rotate(32) scale(1.59)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(126.9 169.0) rotate(211) scale(1.12)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(27.5 101.4) rotate(323) scale(0.94)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/></svg><svg class="plan plan--hd" viewBox="0 0 400 400" focusable="false"><path d="M-20 90 C 80 110 170 160 300 230" fill="none" stroke-width="7"/><path transform="translate(-7.4 87.1) rotate(165) scale(0.74)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(213.3 198.8) rotate(344) scale(0.78)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(-0.5 75.7) rotate(314) scale(1.58)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(25.1 109.6) rotate(215) scale(0.87)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(119.9 146.8) rotate(297) scale(0.74)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(135.7 163.2) rotate(275) scale(1.23)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(113.2 126.2) rotate(12) scale(0.88)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(48.7 104.4) rotate(76) scale(1.37)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(160.8 202.5) rotate(23) scale(1.15)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(156.8 183.6) rotate(155) scale(1.35)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(199.8 218.3) rotate(281) scale(1.46)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(274.8 220.3) rotate(157) scale(1.03)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(56.0 148.4) rotate(165) scale(1.09)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(173.0 195.2) rotate(74) scale(0.72)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(77.7 163.4) rotate(199) scale(1.49)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(10.8 107.2) rotate(282) scale(1.60)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(168.5 181.7) rotate(53) scale(1.55)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(69.5 158.3) rotate(26) scale(1.30)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(221.0 206.8) rotate(25) scale(0.77)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(86.2 164.5) rotate(98) scale(0.95)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(150.1 191.7) rotate(241) scale(1.09)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(286.9 273.8) rotate(356) scale(1.01)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(126.1 170.3) rotate(91) scale(1.31)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(219.7 190.3) rotate(2) scale(1.44)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(108.3 174.8) rotate(72) scale(1.12)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(188.3 185.7) rotate(270) scale(1.44)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/></svg><svg class="plan plan--bd" viewBox="0 0 400 400" focusable="false"><path d="M-20 120 C 80 130 170 170 300 210" fill="none" stroke-width="5"/><path transform="translate(148.1 176.2) rotate(288) scale(1.45)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(3.7 105.0) rotate(300) scale(0.97)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(132.1 208.2) rotate(165) scale(0.86)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(163.0 222.1) rotate(250) scale(0.84)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(48.3 140.8) rotate(32) scale(1.24)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(228.5 241.3) rotate(212) scale(0.90)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(200.2 215.5) rotate(39) scale(0.89)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(281.7 269.6) rotate(270) scale(0.88)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(280.5 259.5) rotate(245) scale(1.39)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(159.5 212.9) rotate(255) scale(1.31)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(4.0 108.0) rotate(174) scale(1.39)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(188.0 199.7) rotate(145) scale(1.16)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(241.1 221.0) rotate(57) scale(0.90)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(15.2 102.7) rotate(345) scale(1.57)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(151.1 188.3) rotate(152) scale(0.79)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(45.0 166.6) rotate(46) scale(1.15)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(215.4 190.4) rotate(303) scale(1.11)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(69.7 162.1) rotate(145) scale(0.89)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(71.0 126.2) rotate(102) scale(0.87)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(204.4 237.7) rotate(288) scale(1.52)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(143.9 187.8) rotate(6) scale(1.15)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(219.2 216.6) rotate(104) scale(1.56)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(182.2 191.3) rotate(179) scale(1.59)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(273.6 262.0) rotate(332) scale(1.28)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(89.7 184.4) rotate(293) scale(1.11)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/><path transform="translate(49.0 167.8) rotate(217) scale(1.03)" d="M0 0 C -14 -10 -26 -34 -18 -46 C -8 -40 8 -40 18 -46 C 26 -34 14 -10 0 0 Z"/></svg>
+  </div>
+  <div class="plongee-texte conteneur">
+    <p class="surtitre" data-anime>Dimanche matin</p>
+    <h2 data-anime="lignes">Venez marcher dans le bois</h2>
+    <p data-anime>Rendez-vous à 9 h 55, retour vers midi. Aucune expérience nécessaire.</p>
+    <p class="actions" data-anime>
+      <a href="/agenda?type=marche" class="bouton bouton--clair" data-libelle="Agenda" data-survol="magnetique">Réserver une marche</a>
+      <a href="/contact" class="bouton bouton--contour-clair" data-libelle="Contact">Écrire à Hiroko</a>
+    </p>
+  </div>
+</section>
+</main>
+<footer class="pied" id="pied" data-masque-barre>
+  <div class="conteneur pied-grille">
+    <div class="pied-marque">
+      <img src="/assets/images/logo-imakokolo-clair.png" alt="" width="44" height="45">
+      <p><strong>Hiroko Nakatani</strong><br>Méditation de pleine conscience<br>Association IMA KOKO-LO</p>
+      <p><a href="mailto:imakokolo@netc.fr">imakokolo@netc.fr</a><br><a href="https://www.billetweb.fr/les-formules-annuelles-cartes-fidelites" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">Billetterie (Billetweb)</a></p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p><strong>Sommaire</strong></p>
+      <ul><li><a href="/" data-libelle="Accueil" aria-current="page">Accueil</a></li><li><a href="/marches" data-libelle="Marches">Marches</a></li><li><a href="/ateliers" data-libelle="Ateliers et en ligne">Ateliers et en ligne</a></li><li><a href="/mbsr" data-libelle="MBSR">MBSR</a></li><li><a href="/agenda" data-libelle="Agenda">Agenda</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div>
+      <p><strong>Confort de lecture</strong></p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><p>Mentions légales et politique de confidentialité : à compléter</p><p>Maquette de démonstration : réservations et formulaires simulés.</p><p>© 2026 Hiroko Nakatani</p></div>
+  <span id="nouvel-onglet" hidden>s’ouvre dans un nouvel onglet</span>
+</footer>
+<div data-barre-fixe>
+  <span class="barre-place-cloche" aria-hidden="true"></span>
+  <a class="bouton bouton--contour" href="/contact" data-libelle="Contact">Écrire</a>
+  <a class="bouton" href="/agenda" data-libelle="Agenda">Réserver</a>
+</div>
+<button type="button" class="mini-cloche" data-mini-cloche data-grille="fil" data-effet="mini-cloche" aria-label="Faire sonner la cloche">
+  <span class="mini-cloche-bol" aria-hidden="true"><span class="mini-cloche-eau"></span></span>
+  <span class="mini-cloche-reperes" aria-hidden="true"></span>
+</button>
+<p class="pastille-son" data-pastille-son hidden aria-live="polite"><span data-son-etat>La cloche sonne</span> <button type="button" class="lien" data-son-bascule data-libelle-couper="Couper le son" data-libelle-remettre="Remettre le son" data-etat-coupe="Son coupé" data-etat-sonne="La cloche sonne">Couper le son</button></p>
+</body>
+</html>

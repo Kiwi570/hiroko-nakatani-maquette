@@ -1,0 +1,483 @@
+[
+ {
+  "source": "recu/grok/eau-bois.jpg",
+  "nom": "grok/eau-bois",
+  "role": "galerie",
+  "page": "accueil",
+  "emplacement": "Eau de la cloche : la marche (ouverture et offre)",
+  "priorite": "Indispensable",
+  "alt": "Reflet des arbres d'automne dans une eau calme",
+  "consigne_scene": "Looking straight down at the perfectly still surface of a forest pond in autumn, the water mirroring a canopy of golden, copper and green trees against a pale sky, two small floating yellow leaves near the edge, soft overcast light, no ground visible, only the reflective water surface filling the frame",
+  "gabarit": "texture",
+  "ratio": "1:1",
+  "largeurs": [
+   640,
+   1024
+  ]
+ },
+ {
+  "source": "recu/grok/eau-salle.jpg",
+  "nom": "grok/eau-salle",
+  "role": "galerie",
+  "page": "accueil",
+  "emplacement": "Eau de la cloche : l'atelier",
+  "priorite": "Indispensable",
+  "alt": "Reflet d'une salle lumineuse dans l'eau",
+  "consigne_scene": "Looking straight down at a perfectly still water surface that mirrors the soft daylight of tall bright windows and pale wooden ceiling beams of a quiet room, luminous and minimal, only the reflective water filling the frame",
+  "gabarit": "texture",
+  "ratio": "1:1",
+  "largeurs": [
+   640,
+   1024
+  ]
+ },
+ {
+  "source": "recu/grok/eau-soir.jpg",
+  "nom": "grok/eau-soir",
+  "role": "galerie",
+  "page": "accueil",
+  "emplacement": "Eau de la cloche : la méditation du soir en ligne",
+  "priorite": "Indispensable",
+  "alt": "Reflet d'une lampe et du ciel du soir dans l'eau",
+  "consigne_scene": "Looking straight down at a perfectly still dark water surface at blue hour, mirroring the warm glow of a single round paper lamp and a deep indigo evening sky, a few soft highlights, only the reflective water filling the frame",
+  "gabarit": "texture",
+  "ratio": "1:1",
+  "largeurs": [
+   640,
+   1024
+  ]
+ },
+ {
+  "source": "recu/grok/eau-matin.jpg",
+  "nom": "grok/eau-matin",
+  "role": "galerie",
+  "page": "accueil",
+  "emplacement": "Eau de la cloche : le programme MBSR",
+  "priorite": "Indispensable",
+  "alt": "Reflet d'une branche et du ciel du matin dans l'eau",
+  "consigne_scene": "Looking straight down at a perfectly still water surface mirroring a clear pale morning sky and a single slender bare branch crossing the frame, very minimal, delicate light, only the reflective water filling the frame",
+  "gabarit": "texture",
+  "ratio": "1:1",
+  "largeurs": [
+   640,
+   1024
+  ]
+ },
+ {
+  "source": "recu/grok/carte-marche.jpg",
+  "nom": "grok/carte-marche",
+  "role": "carte-service",
+  "page": "accueil",
+  "emplacement": "Carte « Marche et méditation »",
+  "priorite": "Indispensable",
+  "alt": "Petit groupe qui marche en silence sur un sentier du bois",
+  "consigne_scene": "A narrow earthen path through an autumn oak and chestnut forest in soft morning mist, far ahead a small group of four walkers seen from behind, very small in the frame, walking slowly in single file, no face visible"
+ },
+ {
+  "source": "recu/grok/carte-atelier.jpg",
+  "nom": "grok/carte-atelier",
+  "role": "carte-service",
+  "page": "accueil",
+  "emplacement": "Carte « Atelier de pleine conscience »",
+  "priorite": "Indispensable",
+  "alt": "Coussins disposés en cercle dans une salle claire",
+  "consigne_scene": "A bright simple community room with tall windows, about ten round meditation cushions and folded wool blankets arranged in a circle on a pale wooden floor, rolled yoga mats along the wall, soft afternoon light, empty of people"
+ },
+ {
+  "source": "recu/grok/carte-en-ligne.jpg",
+  "nom": "grok/carte-en-ligne",
+  "role": "carte-service",
+  "page": "accueil",
+  "emplacement": "Carte « Méditation du soir en ligne »",
+  "priorite": "Indispensable",
+  "alt": "Coin de méditation éclairé par une lampe, le soir",
+  "consigne_scene": "A cosy corner of a home at night: a round meditation cushion on a wool rug, a folded blanket, a warm round paper lamp glowing, a tall window showing a deep blue evening sky over rooftops, no electronic device visible, empty of people"
+ },
+ {
+  "source": "recu/grok/carte-mbsr.jpg",
+  "nom": "grok/carte-mbsr",
+  "role": "carte-service",
+  "page": "accueil",
+  "emplacement": "Carte « Programme MBSR »",
+  "priorite": "Indispensable",
+  "alt": "Cloche de méditation, carnet et coussin dans la lumière du matin",
+  "consigne_scene": "On a pale linen cloth, a small aged bronze meditation bowl resting on a round cushion with its wooden striker beside it, a closed plain notebook with a blank cover, a small sprig of leaves, soft morning light, minimal still life, empty of people"
+ },
+ {
+  "source": "recu/grok/pas-depart.jpg",
+  "nom": "grok/pas-depart",
+  "role": "galerie",
+  "page": "accueil",
+  "emplacement": "Scène « La marche, pas à pas » : le rendez-vous",
+  "priorite": "Indispensable",
+  "alt": "Allée du bois au matin, lieu du rendez-vous",
+  "consigne_scene": "The edge of a large city forest park at ten in the morning, a wide sandy alley under tall plane and chestnut trees in light autumn mist, an old wooden bench at the meeting point, nobody around",
+  "gabarit": "lieu",
+  "ratio": "1:1",
+  "largeurs": [
+   640,
+   1024
+  ]
+ },
+ {
+  "source": "recu/grok/pas-silence.jpg",
+  "nom": "grok/pas-silence",
+  "role": "galerie",
+  "page": "accueil",
+  "emplacement": "Scène « La marche, pas à pas » : marcher en silence",
+  "priorite": "Indispensable",
+  "alt": "Sentier couvert de feuilles d'or dans la brume",
+  "consigne_scene": "Low view along a forest path covered with fallen golden leaves, soft morning mist between the trunks, the path curving gently away, nobody around",
+  "gabarit": "lieu",
+  "ratio": "1:1",
+  "largeurs": [
+   640,
+   1024
+  ]
+ },
+ {
+  "source": "recu/grok/pas-pause.jpg",
+  "nom": "grok/pas-pause",
+  "role": "galerie",
+  "page": "accueil",
+  "emplacement": "Scène « La marche, pas à pas » : la pause",
+  "priorite": "Indispensable",
+  "alt": "Méandre d'un ruisseau calme dans le bois",
+  "consigne_scene": "A quiet bend of a small stream in an autumn forest, still water mirroring the trees, a flat grassy place on the bank, soft light, a peaceful place to stop",
+  "gabarit": "lieu",
+  "ratio": "1:1",
+  "largeurs": [
+   640,
+   1024
+  ]
+ },
+ {
+  "source": "recu/grok/pas-cloture.jpg",
+  "nom": "grok/pas-cloture",
+  "role": "galerie",
+  "page": "accueil",
+  "emplacement": "Scène « La marche, pas à pas » : la clôture vers midi",
+  "priorite": "Indispensable",
+  "alt": "Clairière éclairée à midi",
+  "consigne_scene": "A sunlit clearing at midday in an autumn forest, warm light falling through the canopy onto a soft carpet of leaves, a patch of open sky above, nobody around",
+  "gabarit": "lieu",
+  "ratio": "1:1",
+  "largeurs": [
+   640,
+   1024
+  ]
+ },
+ {
+  "source": "recu/grok/plongee-bois.jpg",
+  "nom": "grok/plongee-bois",
+  "role": "ouverture",
+  "page": "accueil",
+  "emplacement": "Plongée finale vers l'agenda (plein écran)",
+  "priorite": "Indispensable",
+  "alt": "Cime des arbres d'automne vue d'en bas",
+  "consigne_scene": "Looking straight up from the forest floor into a tall autumn canopy of golden and copper leaves, soft sunlight shining through the branches, vast and quiet",
+  "gabarit": "lieu",
+  "ratio": "16:9",
+  "mobile": true,
+  "zone_texte": "bas"
+ },
+ {
+  "source": "recu/grok/marches-ouverture.jpg",
+  "nom": "grok/marches-ouverture",
+  "role": "ouverture",
+  "page": "marches",
+  "emplacement": "Ouverture de la page Marches",
+  "priorite": "Indispensable",
+  "alt": "Sentier du bois dans la brume du matin",
+  "consigne_scene": "A narrow earthen footpath winding gently through a quiet old forest park on a misty autumn morning, golden sunbeams slanting through the mist, fallen leaves on the path, the path leading toward a bright opening of light",
+  "gabarit": "lieu",
+  "ratio": "16:9",
+  "mobile": true,
+  "zone_texte": "gauche"
+ },
+ {
+  "source": "recu/grok/parcours-eau.jpg",
+  "nom": "grok/parcours-eau",
+  "role": "carte-service",
+  "page": "marches",
+  "emplacement": "Parcours le long du cours d'eau",
+  "priorite": "Conseillée",
+  "alt": "Ruisseau bordé d'arbres et chemin le long de la rive",
+  "consigne_scene": "A small calm stream winding between tall trees in a city forest in autumn, a gravel path following the bank, light mist over the water, nobody around"
+ },
+ {
+  "source": "recu/grok/parcours-chateau.jpg",
+  "nom": "grok/parcours-chateau",
+  "role": "carte-service",
+  "page": "marches",
+  "emplacement": "Parcours du château (à venir)",
+  "priorite": "Facultative",
+  "alt": "Vieux murs de pierre aperçus entre les arbres",
+  "consigne_scene": "Old grey stone walls of a medieval keep glimpsed between autumn trees from a forest path, soft morning mist, nobody around"
+ },
+ {
+  "source": "recu/grok/marches-feuilles.jpg",
+  "nom": "grok/marches-feuilles",
+  "role": "section-fond",
+  "page": "marches",
+  "emplacement": "Fond de la section Tarifs",
+  "priorite": "Conseillée",
+  "alt": "Feuilles de ginkgo sur une pierre mouillée",
+  "consigne_scene": "Top view of fallen yellow ginkgo leaves scattered on a dark wet stone path, soft overcast light, large calm area in the center",
+  "gabarit": "texture"
+ },
+ {
+  "source": "recu/grok/ateliers-ouverture.jpg",
+  "nom": "grok/ateliers-ouverture",
+  "role": "ouverture",
+  "page": "ateliers",
+  "emplacement": "Ouverture de la page Ateliers et en ligne",
+  "priorite": "Indispensable",
+  "alt": "Salle d'atelier lumineuse, coussins en cercle",
+  "consigne_scene": "A wide bright community room in the afternoon, round meditation cushions and folded blankets in a circle on a pale wooden floor, tall windows with trees outside, soft light, empty of people",
+  "gabarit": "scene-metier",
+  "ratio": "16:9",
+  "mobile": true,
+  "zone_texte": "gauche"
+ },
+ {
+  "source": "recu/grok/ateliers-soir.jpg",
+  "nom": "grok/ateliers-soir",
+  "role": "galerie",
+  "page": "ateliers",
+  "emplacement": "Section Méditation du soir en ligne",
+  "priorite": "Indispensable",
+  "alt": "Fenêtre à l'heure bleue et lampe allumée",
+  "consigne_scene": "A large window at blue hour seen from inside a quiet home, the warm reflection of a round paper lamp in the glass, a cup of tea and a meditation cushion on the floor below, calm and intimate, no electronic device visible, nobody around",
+  "gabarit": "scene-metier",
+  "ratio": "16:9",
+  "zone_texte": "droite"
+ },
+ {
+  "source": "recu/grok/ateliers-saison.jpg",
+  "nom": "grok/ateliers-saison",
+  "role": "galerie",
+  "page": "ateliers",
+  "emplacement": "Section Ateliers de saison en plein air",
+  "priorite": "Indispensable",
+  "alt": "Vieux jardin au printemps, jeunes feuilles",
+  "consigne_scene": "An old garden at the spring equinox, soft young green leaves on old trees, a mossy stone path, low morning sun, a few early blossoms, nobody around",
+  "gabarit": "lieu",
+  "ratio": "16:9",
+  "zone_texte": "gauche"
+ },
+ {
+  "source": "recu/grok/ateliers-tapis.jpg",
+  "nom": "grok/ateliers-tapis",
+  "role": "carte-service",
+  "page": "ateliers",
+  "emplacement": "Section Atelier mensuel : ce qu'on apporte",
+  "priorite": "Conseillée",
+  "alt": "Couvertures, coussins et tapis empilés",
+  "consigne_scene": "Folded wool blankets, round cushions and rolled yoga mats stacked on a pale wooden bench against a white wall, soft window light, minimal",
+  "gabarit": "scene-metier"
+ },
+ {
+  "source": "recu/grok/mbsr-ouverture.jpg",
+  "nom": "grok/mbsr-ouverture",
+  "role": "ouverture",
+  "page": "mbsr",
+  "emplacement": "Ouverture de la page MBSR",
+  "priorite": "Indispensable",
+  "alt": "Lac parfaitement calme à l'aube",
+  "consigne_scene": "A wide calm lake at dawn seen from the shore, perfectly still water, thin mist on the surface, the far bank of trees barely visible, vast quiet sky in the upper part",
+  "gabarit": "lieu",
+  "ratio": "16:9",
+  "mobile": true,
+  "zone_texte": "gauche"
+ },
+ {
+  "source": "recu/grok/mbsr-profondeur.jpg",
+  "nom": "grok/mbsr-profondeur",
+  "role": "section-fond",
+  "page": "mbsr",
+  "emplacement": "Scène des huit semaines (plongée)",
+  "priorite": "Indispensable",
+  "alt": "Lumière qui descend dans une eau profonde",
+  "consigne_scene": "Underwater view just below the calm surface of a clear lake, soft light rays descending into deep blue-green water, tiny suspended particles, gradient from bright surface to deep calm blue",
+  "gabarit": "section-fond",
+  "ratio": "16:9"
+ },
+ {
+  "source": "recu/grok/mbsr-pratique.jpg",
+  "nom": "grok/mbsr-pratique",
+  "role": "galerie",
+  "page": "mbsr",
+  "emplacement": "Section Pratique entre les séances",
+  "priorite": "Conseillée",
+  "alt": "Coin de pratique avec casque audio et coussin",
+  "consigne_scene": "A simple practice corner at home in the morning: a folded blanket and a round cushion on a wooden floor, a pair of headphones resting on the cushion, a glass of water, light through a linen curtain, nobody around",
+  "gabarit": "scene-metier",
+  "ratio": "4:3"
+ },
+ {
+  "source": "recu/grok/agenda-feuilles.jpg",
+  "nom": "grok/agenda-feuilles",
+  "role": "ouverture",
+  "page": "agenda",
+  "emplacement": "Ouverture de la page Agenda",
+  "priorite": "Indispensable",
+  "alt": "Feuilles alignées du vert au rouge sur un papier clair",
+  "consigne_scene": "Top view of autumn leaves laid out in a long single row on pale handmade paper, each leaf a different color from green to yellow to orange to deep red, soft daylight, large calm empty area above",
+  "gabarit": "texture",
+  "ratio": "2:1",
+  "mobile": true,
+  "zone_texte": "haut",
+  "cadrage": [
+   50,
+   40
+  ]
+ },
+ {
+  "source": "recu/grok/contact-banc.jpg",
+  "nom": "grok/contact-banc",
+  "role": "ouverture",
+  "page": "contact",
+  "emplacement": "Ouverture de la page Contact",
+  "priorite": "Indispensable",
+  "alt": "Banc vide sous un grand arbre au petit matin",
+  "consigne_scene": "An empty wooden bench under a large old tree at the edge of a lawn in a park, soft early morning light and light mist, calm and welcoming",
+  "gabarit": "lieu",
+  "ratio": "21:9",
+  "mobile": true,
+  "zone_texte": "gauche"
+ },
+ {
+  "source": "recu/grok/404-brume.jpg",
+  "nom": "grok/404-brume",
+  "role": "404",
+  "page": "404",
+  "emplacement": "Page 404",
+  "priorite": "Conseillée",
+  "alt": "Sentier qui disparaît dans la brume",
+  "consigne_scene": "A forest path disappearing into thick white fog, trees fading into the mist, the trail ending softly in white",
+  "gabarit": "404",
+  "ratio": "16:9"
+ },
+ {
+  "source": "recu/suis-je.png",
+  "nom": "hiroko-aquarelle",
+  "role": "galerie",
+  "ratio": "1:1",
+  "largeurs": [
+   480,
+   800
+  ],
+  "alt": "Aquarelle de fleurs de cerisier",
+  "cadrage": [
+   50,
+   45
+  ]
+ },
+ {
+  "source": "recu/marche-meditation-parc-floral.png",
+  "nom": "parcours-floral",
+  "role": "carte-service",
+  "ratio": "3:4",
+  "largeurs": [
+   480,
+   720
+  ],
+  "alt": "Entrée du Parc floral de Paris",
+  "cadrage": [
+   58,
+   58
+  ]
+ },
+ {
+  "source": "recu/atelier-saisonnier-apres-midi.jpg",
+  "nom": "parcours-tropical",
+  "role": "carte-service",
+  "ratio": "3:4",
+  "largeurs": [
+   480,
+   720
+  ],
+  "alt": "Pavillon rouge du Jardin d'agronomie tropicale",
+  "cadrage": [
+   50,
+   50
+  ]
+ },
+ {
+  "source": "recu/printemps-est-arrive-bois.jpg",
+  "nom": "saison-printemps",
+  "role": "galerie",
+  "ratio": "4:3",
+  "largeurs": [
+   640,
+   1280
+  ],
+  "alt": "Cerisier en fleurs dans le bois au printemps"
+ },
+ {
+  "source": "recu/meditons-ensemble-journee-internationale.png",
+  "nom": "bois-lumiere",
+  "role": "ouverture",
+  "mobile": true,
+  "alt": "Lumière du matin entre les arbres du bois",
+  "zone_texte": "bas"
+ },
+ {
+  "source": "recu/atelier-pleine-conscience.jpg",
+  "nom": "atelier-groupe",
+  "role": "galerie",
+  "ratio": "4:3",
+  "largeurs": [
+   640,
+   1280
+  ],
+  "alt": "Participants assis en cercle pendant un atelier",
+  "cadrage": [
+   50,
+   62
+  ]
+ },
+ {
+  "source": "recu/marche-meditation.jpg",
+  "nom": "marche-groupe",
+  "role": "galerie",
+  "ratio": "16:10",
+  "largeurs": [
+   600
+  ],
+  "alt": "Petit groupe réuni dans le bois avant une marche",
+  "cadrage": [
+   50,
+   55
+  ]
+ },
+ {
+  "source": "recu/association-ima-koko-lo.png",
+  "nom": "logo-ima-koko-lo",
+  "role": "logo",
+  "alt": "Logo de l'association IMA KOKO-LO"
+ },
+ {
+  "source": "recu/printemps-est-arrive-bois.jpg",
+  "nom": "eau-cerisier",
+  "role": "galerie",
+  "ratio": "1:1",
+  "largeurs": [
+   640,
+   1024
+  ],
+  "alt": "Cerisier en fleurs dans le bois"
+ },
+ {
+  "source": "recu/grok/plongee-bois.jpg",
+  "nom": "grok/eau-plongee",
+  "role": "galerie",
+  "ratio": "1:1",
+  "largeurs": [
+   640,
+   1024
+  ],
+  "alt": "Cime des arbres d'automne"
+ }
+]

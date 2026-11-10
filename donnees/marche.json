@@ -1,0 +1,44 @@
+[
+ {
+  "heure": "9 h 55",
+  "titre": "Le rendez-vous",
+  "texte": "On se retrouve cinq minutes avant le départ, au point indiqué pour le parcours du jour.",
+  "image": "grok/pas-depart",
+  "eau": "grok/pas-depart"
+ },
+ {
+  "heure": "10 h",
+  "titre": "La méditation d’ouverture",
+  "texte": "Debout ou assis, selon ce qui vous convient, pour arriver dans le lieu et dans le corps.",
+  "image": null,
+  "eau": "grok/pas-depart"
+ },
+ {
+  "heure": "10 h 15",
+  "titre": "Marcher en silence",
+  "texte": "En petit groupe, dans le bois ou le parc : l’écoute, la vue, les sensations des pas. Le silence laisse la liberté de sourire.",
+  "image": "grok/pas-silence",
+  "eau": "grok/pas-silence"
+ },
+ {
+  "heure": "11 h",
+  "titre": "La pause",
+  "texte": "Une courte méditation guidée au milieu du parcours, près de l’eau ou sous les arbres.",
+  "image": "grok/pas-pause",
+  "eau": "grok/pas-pause"
+ },
+ {
+  "heure": "12 h",
+  "titre": "La méditation de clôture",
+  "texte": "À l’arrivée, une dernière pratique, comme un balayage du corps.",
+  "image": "grok/pas-cloture",
+  "eau": "grok/pas-cloture"
+ },
+ {
+  "heure": "Ensuite",
+  "titre": "Le partage, si l’on veut",
+  "texte": "Chacun peut dire un mot de son expérience, ou repartir en silence.",
+  "image": null,
+  "eau": "grok/pas-cloture"
+ }
+]

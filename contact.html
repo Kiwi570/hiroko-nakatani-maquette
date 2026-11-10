@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-page="contact">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact · Hiroko Nakatani</title>
+<meta name="description" content="Écrire à Hiroko Nakatani et à l’association IMA KOKO-LO : une question, une marche à la demande, le programme MBSR.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://hiroko-nakatani-maquette.vercel.app/contact">
+<style>:root{--fond:#f2ede3;--texte:#1d211f;--voile-fond:#1f3340;--ouverture-fond:#f2ede3;--menu-fond:#1f3340}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/fonts/shippori-mincho-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f2ede3">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hiroko Nakatani">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Contact · Hiroko Nakatani">
+<meta property="og:description" content="Écrire à Hiroko Nakatani et à l’association IMA KOKO-LO : une question, une marche à la demande, le programme MBSR.">
+<meta property="og:url" content="https://hiroko-nakatani-maquette.vercel.app/contact">
+<meta property="og:image" content="https://hiroko-nakatani-maquette.vercel.app/assets/partage/contact-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Banc vide sous un grand arbre au petit matin">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Hiroko Nakatani — Méditation de pleine conscience","url":"https://hiroko-nakatani-maquette.vercel.app/","email":"imakokolo@netc.fr","description":"Marches méditatives dans le bois de Vincennes, ateliers de pleine conscience à Fontenay-sous-Bois, méditation du soir en ligne et programme MBSR, avec Hiroko Nakatani, instructrice MBSR.","areaServed":"Paris et Val-de-Marne","founder":{"@type":"Person","name":"Hiroko Nakatani","jobTitle":"Instructrice MBSR"}}</script>
+</head>
+<body id="haut">
+<div data-voile data-forme="onde" data-grille="voile" aria-hidden="true"><div class="voile-contenu"><img src="/assets/images/logo-imakokolo-clair.png" alt="" width="64" height="66"><span data-voile-libelle>Contact</span></div></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <div class="ouverture-logo" data-ouverture-objet>
+    <img class="ouverture-enso" src="/assets/images/logo-imakokolo.png" alt="" width="256" height="262">
+    <img class="ouverture-kanji" src="/assets/images/logo-imakokolo.png" alt="" width="256" height="262">
+  </div>
+  <p class="ouverture-nom">Hiroko Nakatani</p>
+  <p class="ouverture-ligne">Méditation de pleine conscience</p>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil">
+      <img src="/assets/images/logo-imakokolo.png" alt="" width="44" height="45"><span class="entete-nom"><span>Hiroko Nakatani</span><small>Méditation de pleine conscience</small></span>
+    </a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/marches" data-libelle="Marches">Marches</a></li><li><a href="/ateliers" data-libelle="Ateliers et en ligne">Ateliers et en ligne</a></li><li><a href="/mbsr" data-libelle="MBSR">MBSR</a></li><li><a href="/agenda" data-libelle="Agenda">Agenda</a></li><li><a href="/contact" data-libelle="Contact" aria-current="page">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton" href="/agenda" data-libelle="Agenda">Réserver</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+      <a class="menu-sansjs" href="#menu" data-menu-lien>Menu</a>
+    </div>
+  </div>
+</header>
+<script>/* Avant le premier affichage : rangées de la navigation (même règle que ajusterNav dans assets/js/socle/entete.js)
+   et hauteur réelle de l'en-tête, pour que rien ne saute quand le JavaScript du site prend la main. */
+(function () {
+  var h = document.documentElement, u = document.querySelector('[data-nav] ul'), e = document.querySelector('[data-entete]');
+  if (u) {
+    var deborde = function () { return u.scrollWidth > u.clientWidth + 1; }, c = deborde();
+    if (c && window.matchMedia('(min-width: 900px)').matches) {
+      h.classList.add('nav-deux-rangees'); c = deborde();
+      if (c) { h.classList.add('nav-deux-lignes'); var a = u.querySelector('a'); c = !a || u.getBoundingClientRect().height > a.getBoundingClientRect().height * 2.5; }
+      if (c) h.classList.remove('nav-deux-rangees', 'nav-deux-lignes');
+    }
+    if (c) h.classList.add('nav-compacte');
+  }
+  if (e) h.style.setProperty('--entete-h', Math.round(e.getBoundingClientRect().height) + 'px');
+})();</script>
+<span id="menu-ferme" aria-hidden="true"></span>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <p class="menu-sansjs-fermer"><a href="#menu-ferme">Fermer</a></p>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/marches" class="menu-lien" data-libelle="Marches">Marches</a></li><li style="--i:2"><a href="/ateliers" class="menu-lien" data-libelle="Ateliers et en ligne">Ateliers et en ligne</a></li><li style="--i:3"><a href="/mbsr" class="menu-lien" data-libelle="MBSR">MBSR</a></li><li style="--i:4"><a href="/agenda" class="menu-lien" data-libelle="Agenda">Agenda</a></li><li style="--i:5"><a href="/contact" class="menu-lien" data-libelle="Contact" aria-current="page">Contact</a></li></ul>
+  <p class="menu-actions"><a class="bouton" href="/agenda" data-libelle="Agenda">Réserver une séance</a> <a class="bouton bouton--contour" href="mailto:imakokolo@netc.fr">imakokolo@netc.fr</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+</div>
+<main id="contenu" tabindex="-1">
+<section class="c-ouverture" id="debut">
+  <div class="c-bandeau" data-iris-centre>
+    <figure class="media c-bandeau-media" data-grok data-fx="zoom" data-fx-force="10" style="--cadrage:58% 60%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/contact-banc-mobile-640.webp 640w" sizes="100vw">
+    <img src="/assets/images/grok/contact-banc-1280.webp" srcset="/assets/images/grok/contact-banc-640.webp 640w, /assets/images/grok/contact-banc-1280.webp 1280w" sizes="100vw" alt="Banc vide sous un grand arbre au petit matin" width="1280" height="549" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+  <div class="conteneur c-ouverture-grille">
+    <div>
+      <p class="surtitre" data-anime="gsap">Contact</p>
+      <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">Écrire à Hiroko</h1>
+    </div>
+    <div>
+      <p class="intro masque-ecran-bas" data-anime="gsap">Une question sur une pratique, une marche pour votre groupe, le prochain cycle MBSR : le formulaire ou l’e-mail de l’association.</p>
+      <p class="c-email" data-anime="gsap"><a href="mailto:imakokolo@netc.fr">imakokolo@netc.fr</a></p>
+      <p class="actions" data-anime="gsap"><a class="bouton" href="#formulaire" data-action-principale>Écrire un message</a> <span class="prochaine-courte" data-info-cle>Réponse par e-mail</span></p>
+    </div>
+  </div>
+</section>
+<section class="c-form conteneur" id="formulaire">
+  <svg class="anneaux-deco anneaux-deco--petit" viewBox="0 0 200 200" data-visuel aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="30"/><circle cx="100" cy="100" r="56"/><circle cx="100" cy="100" r="82"/></svg>
+  <h2 data-anime="lignes">Votre message, en trois temps</h2>
+  <form class="etapes" data-formulaire data-etapes data-grille="retour" novalidate>
+    <ol class="etapes-fil" aria-hidden="true"><li class="est-active">Le sujet</li><li>Le message</li><li>Vos coordonnées</li></ol>
+    <fieldset class="etape est-active" data-etape-form="0">
+      <legend>De quoi s’agit-il ?</legend>
+      <div class="choix"><label class="choix-item"><input type="radio" name="sujet" value="marche" required> <span>Une marche</span></label><label class="choix-item"><input type="radio" name="sujet" value="atelier"> <span>Un atelier</span></label><label class="choix-item"><input type="radio" name="sujet" value="enligne"> <span>La méditation en ligne</span></label><label class="choix-item"><input type="radio" name="sujet" value="mbsr"> <span>Le programme MBSR</span></label><label class="choix-item"><input type="radio" name="sujet" value="demande"> <span>Une marche à la demande</span></label><label class="choix-item"><input type="radio" name="sujet" value="autre"> <span>Autre chose</span></label></div>
+      <p class="etape-actions"><button type="button" class="bouton" data-suivant>Suivant</button></p>
+    </fieldset>
+    <fieldset class="etape" data-etape-form="1">
+      <legend>Le message</legend>
+      <label class="champ"><span>Votre message</span><textarea name="message" rows="6" required minlength="10"></textarea></label>
+      <p class="etape-actions"><button type="button" class="bouton bouton--contour" data-precedent>Retour</button> <button type="button" class="bouton" data-suivant>Suivant</button></p>
+    </fieldset>
+    <fieldset class="etape" data-etape-form="2">
+      <legend>Vos coordonnées</legend>
+      <label class="champ"><span>Votre nom</span><input type="text" name="nom" autocomplete="name" required></label>
+      <label class="champ"><span>Votre e-mail</span><input type="email" name="email" autocomplete="email" required></label>
+      <p class="rgpd">Vos coordonnées servent seulement à vous répondre. Politique de confidentialité : à compléter.</p>
+      <p class="etape-actions"><button type="button" class="bouton bouton--contour" data-precedent>Retour</button> <button type="submit" class="bouton">Envoyer</button></p>
+    </fieldset>
+    <p class="message-envoi" data-message-envoi hidden role="status">Maquette : rien n’a été envoyé. Sur le vrai site, le message partira vers imakokolo@netc.fr.</p>
+  </form>
+</section>
+<section class="c-lieux" id="lieux">
+  <div class="conteneur c-lieux-grille">
+    <div>
+      <p class="surtitre" data-anime>Les lieux</p>
+      <h2 data-anime="lignes">Où se retrouver</h2>
+      <ol class="lieux" data-anime="cascade">
+        <li><span class="lieu-num" aria-hidden="true">1</span><div><strong>Maison du Citoyen, salle 207</strong><span>16 rue du Révérend Père Lucien Aubry, 94120 Fontenay-sous-Bois</span><span class="lieu-note">À 15 minutes à pied ou 10 minutes en bus 124 de la gare de Fontenay-sous-Bois (RER A).</span></div></li><li><span class="lieu-num" aria-hidden="true">2</span><div><strong>Parc floral de Paris</strong><span>Entrée du Parc floral, bois de Vincennes (Paris 12e)</span><span class="lieu-note">Entrée du parc gratuite en automne et en hiver.</span></div></li><li><span class="lieu-num" aria-hidden="true">3</span><div><strong>Jardin d’agronomie tropicale</strong><span>Gare de Fontenay-sous-Bois (RER A)</span></div></li><li><span class="lieu-num" aria-hidden="true">4</span><div><strong>Le long du cours d’eau</strong><span>Gare de Fontenay-sous-Bois (RER A)</span></div></li><li><span class="lieu-num" aria-hidden="true">5</span><div><strong>Château de Vincennes</strong><span>Mairie de Vincennes</span><span class="lieu-note">Dates à venir.</span></div></li>
+        <li><span class="lieu-num" aria-hidden="true">✦</span><div><strong>En ligne</strong><span>Depuis un ordinateur ou un téléphone, sans application à installer</span></div></li>
+      </ol>
+    </div>
+    <svg class="c-plan" viewBox="0 0 420 260" data-visuel data-fx="trace" role="img" aria-label="Plan simplifié des lieux de pratique à l’est de Paris">
+      <path data-fx-trait class="plan-bois" d="M60 130 C 80 90 140 80 190 90 C 250 76 320 88 360 120 C 380 150 366 196 330 216 C 280 240 210 246 150 234 C 100 224 56 198 50 162 C 48 150 52 140 60 130 Z"/>
+      <path data-fx-trait class="plan-rer" d="M20 52 C 120 46 240 40 410 34"/>
+      <path data-fx-trait class="plan-ruisseau" d="M232 128 C 244 150 238 168 256 184 C 276 200 300 196 318 210"/>
+      <g class="plan-repere" data-repere><circle cx="300" cy="70" r="13"/><text x="300" y="75" text-anchor="middle">1</text></g><g class="plan-repere" data-repere><circle cx="150" cy="150" r="13"/><text x="150" y="155" text-anchor="middle">2</text></g><g class="plan-repere" data-repere><circle cx="330" cy="150" r="13"/><text x="330" y="155" text-anchor="middle">3</text></g><g class="plan-repere" data-repere><circle cx="255" cy="185" r="13"/><text x="255" y="190" text-anchor="middle">4</text></g><g class="plan-repere" data-repere><circle cx="140" cy="100" r="13"/><text x="140" y="105" text-anchor="middle">5</text></g>
+    </svg>
+  </div>
+</section>
+<section class="c-enso conteneur" id="enso">
+  <div>
+    <h2 data-anime="lignes">Tracez votre ensō</h2>
+    <p data-anime>Le cercle tracé d’un seul geste, comme dans le logo d’IMA KOKO-LO. Pas de bon ni de mauvais cercle : seulement celui de cet instant.</p>
+  </div>
+  <div class="enso" data-enso data-effet="enso">
+  <canvas class="enso-toile" role="img" aria-label="Zone pour tracer un cercle au pinceau" data-visuel></canvas>
+  <p class="enso-message" data-enso-message data-invite="À vous : un seul geste, sans lever le doigt." data-reussi="Voici votre ensō de l’instant." data-encore="Presque : recommencez d’un seul geste, en tournant." aria-live="polite">À vous : un seul geste, sans lever le doigt.</p>
+  <p><button type="button" class="bouton bouton--contour bouton--petit" data-enso-auto>Tracer pour moi</button></p>
+</div>
+</section>
+</main>
+<footer class="pied" id="pied" data-masque-barre>
+  <div class="conteneur pied-grille">
+    <div class="pied-marque">
+      <img src="/assets/images/logo-imakokolo-clair.png" alt="" width="44" height="45">
+      <p><strong>Hiroko Nakatani</strong><br>Méditation de pleine conscience<br>Association IMA KOKO-LO</p>
+      <p><a href="mailto:imakokolo@netc.fr">imakokolo@netc.fr</a><br><a href="https://www.billetweb.fr/les-formules-annuelles-cartes-fidelites" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">Billetterie (Billetweb)</a></p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p><strong>Sommaire</strong></p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/marches" data-libelle="Marches">Marches</a></li><li><a href="/ateliers" data-libelle="Ateliers et en ligne">Ateliers et en ligne</a></li><li><a href="/mbsr" data-libelle="MBSR">MBSR</a></li><li><a href="/agenda" data-libelle="Agenda">Agenda</a></li><li><a href="/contact" data-libelle="Contact" aria-current="page">Contact</a></li></ul>
+    </nav>
+    <div>
+      <p><strong>Confort de lecture</strong></p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><p>Mentions légales et politique de confidentialité : à compléter</p><p>Maquette de démonstration : réservations et formulaires simulés.</p><p>© 2026 Hiroko Nakatani</p></div>
+  <span id="nouvel-onglet" hidden>s’ouvre dans un nouvel onglet</span>
+</footer>
+<div data-barre-fixe>
+  <span class="barre-place-cloche" aria-hidden="true"></span>
+  <a class="bouton bouton--contour" href="/contact" data-libelle="Contact">Écrire</a>
+  <a class="bouton" href="/agenda" data-libelle="Agenda">Réserver</a>
+</div>
+<button type="button" class="mini-cloche" data-mini-cloche data-grille="fil" data-effet="mini-cloche" aria-label="Faire sonner la cloche">
+  <span class="mini-cloche-bol" aria-hidden="true"><span class="mini-cloche-eau"></span></span>
+  <span class="mini-cloche-reperes" aria-hidden="true"></span>
+</button>
+<p class="pastille-son" data-pastille-son hidden aria-live="polite"><span data-son-etat>La cloche sonne</span> <button type="button" class="lien" data-son-bascule data-libelle-couper="Couper le son" data-libelle-remettre="Remettre le son" data-etat-coupe="Son coupé" data-etat-sonne="La cloche sonne">Couper le son</button></p>
+</body>
+</html>

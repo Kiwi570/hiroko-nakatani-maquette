@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-page="ateliers">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ateliers de pleine conscience et méditation du soir en ligne · Hiroko Nakatani</title>
+<meta name="description" content="L’atelier mensuel du samedi à Fontenay-sous-Bois, la méditation du mardi soir en ligne et les ateliers de saison : le cycle des thèmes 2026-2027.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://hiroko-nakatani-maquette.vercel.app/ateliers">
+<style>:root{--fond:#f2ede3;--texte:#1d211f;--voile-fond:#1f3340;--ouverture-fond:#f2ede3;--menu-fond:#1f3340}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/fonts/shippori-mincho-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f2ede3">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hiroko Nakatani">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Ateliers de pleine conscience et méditation du soir en ligne · Hiroko Nakatani">
+<meta property="og:description" content="L’atelier mensuel du samedi à Fontenay-sous-Bois, la méditation du mardi soir en ligne et les ateliers de saison : le cycle des thèmes 2026-2027.">
+<meta property="og:url" content="https://hiroko-nakatani-maquette.vercel.app/ateliers">
+<meta property="og:image" content="https://hiroko-nakatani-maquette.vercel.app/assets/partage/ateliers-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Salle d’atelier lumineuse, coussins en cercle">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Hiroko Nakatani — Méditation de pleine conscience","url":"https://hiroko-nakatani-maquette.vercel.app/","email":"imakokolo@netc.fr","description":"Marches méditatives dans le bois de Vincennes, ateliers de pleine conscience à Fontenay-sous-Bois, méditation du soir en ligne et programme MBSR, avec Hiroko Nakatani, instructrice MBSR.","areaServed":"Paris et Val-de-Marne","founder":{"@type":"Person","name":"Hiroko Nakatani","jobTitle":"Instructrice MBSR"}}</script>
+</head>
+<body id="haut">
+<div data-voile data-forme="onde" data-grille="voile" aria-hidden="true"><div class="voile-contenu"><img src="/assets/images/logo-imakokolo-clair.png" alt="" width="64" height="66"><span data-voile-libelle>Ateliers et en ligne</span></div></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <div class="ouverture-logo" data-ouverture-objet>
+    <img class="ouverture-enso" src="/assets/images/logo-imakokolo.png" alt="" width="256" height="262">
+    <img class="ouverture-kanji" src="/assets/images/logo-imakokolo.png" alt="" width="256" height="262">
+  </div>
+  <p class="ouverture-nom">Hiroko Nakatani</p>
+  <p class="ouverture-ligne">Méditation de pleine conscience</p>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil">
+      <img src="/assets/images/logo-imakokolo.png" alt="" width="44" height="45"><span class="entete-nom"><span>Hiroko Nakatani</span><small>Méditation de pleine conscience</small></span>
+    </a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/marches" data-libelle="Marches">Marches</a></li><li><a href="/ateliers" data-libelle="Ateliers et en ligne" aria-current="page">Ateliers et en ligne</a></li><li><a href="/mbsr" data-libelle="MBSR">MBSR</a></li><li><a href="/agenda" data-libelle="Agenda">Agenda</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton" href="/agenda" data-libelle="Agenda">Réserver</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+      <a class="menu-sansjs" href="#menu" data-menu-lien>Menu</a>
+    </div>
+  </div>
+</header>
+<script>/* Avant le premier affichage : rangées de la navigation (même règle que ajusterNav dans assets/js/socle/entete.js)
+   et hauteur réelle de l'en-tête, pour que rien ne saute quand le JavaScript du site prend la main. */
+(function () {
+  var h = document.documentElement, u = document.querySelector('[data-nav] ul'), e = document.querySelector('[data-entete]');
+  if (u) {
+    var deborde = function () { return u.scrollWidth > u.clientWidth + 1; }, c = deborde();
+    if (c && window.matchMedia('(min-width: 900px)').matches) {
+      h.classList.add('nav-deux-rangees'); c = deborde();
+      if (c) { h.classList.add('nav-deux-lignes'); var a = u.querySelector('a'); c = !a || u.getBoundingClientRect().height > a.getBoundingClientRect().height * 2.5; }
+      if (c) h.classList.remove('nav-deux-rangees', 'nav-deux-lignes');
+    }
+    if (c) h.classList.add('nav-compacte');
+  }
+  if (e) h.style.setProperty('--entete-h', Math.round(e.getBoundingClientRect().height) + 'px');
+})();</script>
+<span id="menu-ferme" aria-hidden="true"></span>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <p class="menu-sansjs-fermer"><a href="#menu-ferme">Fermer</a></p>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/marches" class="menu-lien" data-libelle="Marches">Marches</a></li><li style="--i:2"><a href="/ateliers" class="menu-lien" data-libelle="Ateliers et en ligne" aria-current="page">Ateliers et en ligne</a></li><li style="--i:3"><a href="/mbsr" class="menu-lien" data-libelle="MBSR">MBSR</a></li><li style="--i:4"><a href="/agenda" class="menu-lien" data-libelle="Agenda">Agenda</a></li><li style="--i:5"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+  <p class="menu-actions"><a class="bouton" href="/agenda" data-libelle="Agenda">Réserver une séance</a> <a class="bouton bouton--contour" href="mailto:imakokolo@netc.fr">imakokolo@netc.fr</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+</div>
+<main id="contenu" tabindex="-1">
+<section class="a-ouverture" id="debut">
+  <div class="conteneur a-ouverture-tete">
+    <p class="surtitre" data-anime="gsap">Ateliers et méditation en ligne</p>
+    <h1 class="titre-pinceau" data-anime="gsap" data-grille="typo">Un thème par mois, toute l’année</h1>
+    <p class="intro masque-ecran-bas" data-anime="gsap">Le cycle 2026-2027 s’inspire du programme MBSR : le même thème au samedi en salle et aux mardis soir en ligne.</p>
+  </div>
+  <div class="anneau" data-anneau="2" data-effet="anneau-themes" role="img" aria-label="Les thèmes de l’année 2026-2027, celui du mois mis en avant : 3 « Respirer, observer »">
+    <ol class="anneau-themes" aria-hidden="true">
+      <li class="anneau-theme" style="--i:0;--n:10"><span class="anneau-num">1</span><span class="anneau-nom">La pleine conscience</span></li><li class="anneau-theme" style="--i:1;--n:10"><span class="anneau-num">2</span><span class="anneau-nom">Corps et monde</span></li><li class="anneau-theme est-courant" style="--i:2;--n:10"><span class="anneau-num">3</span><span class="anneau-nom">Respirer, observer</span></li><li class="anneau-theme" style="--i:3;--n:10"><span class="anneau-num">✦</span><span class="anneau-nom">Thème spécial de fin d’année</span></li><li class="anneau-theme" style="--i:4;--n:10"><span class="anneau-num">4</span><span class="anneau-nom">Le stress ?</span></li><li class="anneau-theme" style="--i:5;--n:10"><span class="anneau-num">5</span><span class="anneau-nom">Du réflexe à la conscience</span></li><li class="anneau-theme" style="--i:6;--n:10"><span class="anneau-num">6</span><span class="anneau-nom">Présence à soi et aux autres</span></li><li class="anneau-theme" style="--i:7;--n:10"><span class="anneau-num">6,5</span><span class="anneau-nom">Vivre sans parole</span></li><li class="anneau-theme" style="--i:8;--n:10"><span class="anneau-num">7</span><span class="anneau-nom">Prendre soin de soi</span></li><li class="anneau-theme" style="--i:9;--n:10"><span class="anneau-num">8</span><span class="anneau-nom">Intégrer et poursuivre</span></li>
+    </ol>
+    <div class="anneau-centre" data-iris-centre="disque">
+      <figure class="media anneau-media" data-grok style="--cadrage:50% 62%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/ateliers-ouverture-mobile-640.webp 640w" sizes="(max-width: 760px) 70vw, 34vw">
+    <img src="/assets/images/grok/ateliers-ouverture-1280.webp" srcset="/assets/images/grok/ateliers-ouverture-640.webp 640w, /assets/images/grok/ateliers-ouverture-1280.webp 1280w" sizes="(max-width: 760px) 70vw, 34vw" alt="Salle d’atelier lumineuse, coussins en cercle" width="1280" height="720" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    </div>
+  </div>
+  <div class="conteneur a-ouverture-pied">
+    <p class="prochaine" data-info-cle data-anime="gsap"><span>Ce mois-ci · novembre</span> <strong>Thème 3 · « Respirer, observer » · atelier le samedi 21 novembre</strong></p>
+    <p class="actions" data-anime="gsap"><a href="/agenda?type=atelier" class="bouton" data-libelle="Agenda" data-action-principale>Réserver un atelier</a> <a class="bouton bouton--contour" href="#en-ligne">Méditation du soir en ligne</a></p>
+  </div>
+</section>
+<section class="a-cycle conteneur" id="cycle">
+  <svg class="anneaux-deco anneaux-deco--petit" viewBox="0 0 200 200" data-visuel aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="30"/><circle cx="100" cy="100" r="56"/><circle cx="100" cy="100" r="82"/></svg>
+  <h2 data-anime="lignes">Le cycle 2026-2027</h2>
+  <div class="cycle-defile" tabindex="0" role="region" aria-label="Le cycle 2026-2027">
+  <table class="cycle" data-anime data-effet="cycle">
+    <thead><tr><th scope="col">Mois</th><th scope="col">Thème</th><th scope="col">Atelier (samedi)</th><th scope="col">En ligne (mardis)</th></tr></thead>
+    <tbody>
+      <tr class="cycle-ligne cycle-ligne--passe" data-mois="2026-09"><th scope="row">septembre</th><td><span class="cycle-num">1</span> La pleine conscience</td><td>samedi 12</td><td>4 mardis, 20 h</td></tr><tr class="cycle-ligne cycle-ligne--passe" data-mois="2026-10"><th scope="row">octobre</th><td><span class="cycle-num">2</span> Corps et monde</td><td>samedi 10</td><td>4 mardis, 20 h</td></tr><tr class="cycle-ligne cycle-ligne--courant" data-mois="2026-11"><th scope="row">novembre</th><td><span class="cycle-num">3</span> Respirer, observer</td><td>samedi 21</td><td>4 mardis, 20 h</td></tr><tr class="cycle-ligne cycle-ligne--avenir" data-mois="2026-12"><th scope="row">décembre</th><td><span class="cycle-num">✦</span> Thème spécial de fin d’année</td><td>En ligne seulement</td><td>4 mardis, 20 h</td></tr><tr class="cycle-ligne cycle-ligne--avenir" data-mois="2027-01"><th scope="row">janvier</th><td><span class="cycle-num">4</span> Le stress ?</td><td>samedi 16</td><td>4 mardis, 20 h</td></tr><tr class="cycle-ligne cycle-ligne--avenir" data-mois="2027-02"><th scope="row">février</th><td><span class="cycle-num">5</span> Du réflexe à la conscience</td><td>samedi 6</td><td>4 mardis, 20 h</td></tr><tr class="cycle-ligne cycle-ligne--avenir" data-mois="2027-03"><th scope="row">mars</th><td><span class="cycle-num">6</span> Présence à soi et aux autres</td><td>samedi 13</td><td>4 mardis, 20 h</td></tr><tr class="cycle-ligne cycle-ligne--avenir" data-mois="2027-04"><th scope="row">avril</th><td><span class="cycle-num">6,5</span> Vivre sans parole</td><td>samedi 24</td><td>4 mardis, 20 h</td></tr><tr class="cycle-ligne cycle-ligne--avenir" data-mois="2027-05"><th scope="row">mai</th><td><span class="cycle-num">7</span> Prendre soin de soi</td><td>samedi 22</td><td>4 mardis, 20 h</td></tr><tr class="cycle-ligne cycle-ligne--avenir" data-mois="2027-06"><th scope="row">juin</th><td><span class="cycle-num">8</span> Intégrer et poursuivre</td><td>samedi 12</td><td>4 mardis, 20 h</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+<section class="a-atelier" id="atelier">
+  <div class="conteneur a-atelier-grille">
+    <figure class="media a-atelier-media" data-anime="rideau" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/atelier-groupe-1280.webp" srcset="/assets/images/atelier-groupe-640.webp 640w, /assets/images/atelier-groupe-1280.webp 1280w" sizes="(max-width: 760px) 92vw, 46vw" alt="L’atelier mensuel" width="1280" height="960" loading="lazy" decoding="async">
+  </picture>
+</figure>
+    <div>
+      <p class="surtitre" data-anime>L’atelier mensuel</p>
+      <h2 data-anime="lignes">Un samedi par mois, de 14 h à 16 h</h2>
+      <p data-anime>Méditations guidées en solo, puis partages à deux et en groupe. Depuis la rentrée 2026, l’atelier ajoute le Seitai méditatif : un rééquilibrage du corps par le mouvement conscient, assis, allongé ou debout.</p>
+      <div class="a-atelier-pratique" data-anime>
+        <figure class="media a-tapis-media" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/ateliers-tapis-784.webp" srcset="/assets/images/grok/ateliers-tapis-480.webp 480w, /assets/images/grok/ateliers-tapis-640.webp 640w, /assets/images/grok/ateliers-tapis-784.webp 784w" sizes="120px" alt="" width="784" height="1175" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <p>À apporter si besoin : tapis de yoga, coussin, couverture.</p>
+      </div>
+      <p class="a-acces" data-anime><strong>Accès</strong> · Maison du Citoyen, salle 207, 16 rue du Révérend Père Lucien Aubry, 94120 Fontenay-sous-Bois. À 15 minutes à pied ou 10 minutes en bus 124 de la gare de Fontenay-sous-Bois (RER A).</p>
+      <p class="a-prix" data-anime><span data-prix>20 €</span> la séance · <a href="/agenda#tarifs" data-libelle="Agenda">formules et cartes</a></p>
+    </div>
+  </div>
+</section>
+<section class="a-enligne" id="en-ligne">
+  <div class="conteneur a-enligne-grille">
+    <div>
+      <p class="surtitre" data-anime>Méditation du soir en ligne</p>
+      <h2 data-anime="lignes">Le mardi, de 20 h à 20 h 45</h2>
+      <p data-anime>Quatre mardis par mois : une pratique pour se préparer, une méditation guidée, puis un court partage, facultatif ; on peut aussi repartir en silence. Depuis un ordinateur ou un téléphone, sans rien installer : le lien arrive par e-mail.</p>
+      <blockquote class="citation citation--clair" data-anime><p>« Expérience en ligne, mais expérience vraie et ensemble ! »</p></blockquote>
+      <p class="a-prix" data-anime><span data-prix>20,50 €</span> le mois, quatre mardis</p>
+      <p data-anime><a class="bouton bouton--clair" href="https://www.billetweb.fr/meditation-du-soir-en-ligne" target="_blank" rel="noopener" data-retour aria-label="Réserver un mois (s’ouvre dans un nouvel onglet)">Réserver un mois</a></p>
+    </div>
+    <figure class="media a-enligne-media" data-grok data-fx="parallaxe" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/ateliers-soir-960.webp" srcset="/assets/images/grok/ateliers-soir-480.webp 480w, /assets/images/grok/ateliers-soir-640.webp 640w, /assets/images/grok/ateliers-soir-960.webp 960w" sizes="(max-width: 760px) 92vw, 46vw" alt="" width="960" height="540" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+</section>
+<section class="a-saison" id="saison">
+  <div class="conteneur a-saison-grille">
+    <figure class="media a-saison-media" data-fx="zoom" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/saison-printemps-1280.webp" srcset="/assets/images/saison-printemps-640.webp 640w, /assets/images/saison-printemps-1280.webp 1280w" sizes="(max-width: 760px) 92vw, 46vw" alt="Cerisier en fleurs dans le bois au printemps" width="1280" height="960" loading="lazy" decoding="async">
+  </picture>
+</figure>
+    <div>
+      <p class="surtitre" data-anime>Ateliers de saison</p>
+      <h2 data-anime="lignes">Trois fois par an, au changement de saison</h2>
+      <p data-anime>En plein air, au Jardin d’agronomie tropicale. Participation libre, 20 € à titre indicatif. Jardin d’agronomie tropicale, 36 avenue de la Belle Gabrielle, 94130 Nogent-sur-Marne.</p>
+      <ul class="saison-dates" data-anime="cascade">
+        <li class="saison-date date--passe" data-date data-debut="29830440" data-fin="29830560" data-jour="2026-09-19"><strong>Après-midi de l’équinoxe d’automne</strong><span>samedi 19 septembre · 14 h – 16 h</span></li><li class="saison-date date--avenir" data-date data-debut="30092520" data-fin="30092640" data-jour="2027-03-20"><strong>Après-midi de l’équinoxe de printemps</strong><span>samedi 20 mars · 14 h – 16 h</span></li><li class="saison-date date--avenir" data-date data-debut="30223320" data-fin="30223440" data-jour="2027-06-19"><strong>Matinée du solstice d’été</strong><span>samedi 19 juin · 10 h – 12 h</span></li>
+      </ul>
+      <p data-anime><a class="bouton" href="https://www.billetweb.fr/atelier-de-meditation-en-plein-air-jardin-dagronomie-tropicale" target="_blank" rel="noopener" data-retour aria-label="Réserver l’atelier de saison (s’ouvre dans un nouvel onglet)">Réserver l’atelier de saison</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="pied" id="pied" data-masque-barre>
+  <div class="conteneur pied-grille">
+    <div class="pied-marque">
+      <img src="/assets/images/logo-imakokolo-clair.png" alt="" width="44" height="45">
+      <p><strong>Hiroko Nakatani</strong><br>Méditation de pleine conscience<br>Association IMA KOKO-LO</p>
+      <p><a href="mailto:imakokolo@netc.fr">imakokolo@netc.fr</a><br><a href="https://www.billetweb.fr/les-formules-annuelles-cartes-fidelites" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">Billetterie (Billetweb)</a></p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p><strong>Sommaire</strong></p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/marches" data-libelle="Marches">Marches</a></li><li><a href="/ateliers" data-libelle="Ateliers et en ligne" aria-current="page">Ateliers et en ligne</a></li><li><a href="/mbsr" data-libelle="MBSR">MBSR</a></li><li><a href="/agenda" data-libelle="Agenda">Agenda</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div>
+      <p><strong>Confort de lecture</strong></p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><p>Mentions légales et politique de confidentialité : à compléter</p><p>Maquette de démonstration : réservations et formulaires simulés.</p><p>© 2026 Hiroko Nakatani</p></div>
+  <span id="nouvel-onglet" hidden>s’ouvre dans un nouvel onglet</span>
+</footer>
+<div data-barre-fixe>
+  <span class="barre-place-cloche" aria-hidden="true"></span>
+  <a class="bouton bouton--contour" href="/contact" data-libelle="Contact">Écrire</a>
+  <a class="bouton" href="/agenda" data-libelle="Agenda">Réserver</a>
+</div>
+<button type="button" class="mini-cloche" data-mini-cloche data-grille="fil" data-effet="mini-cloche" aria-label="Faire sonner la cloche">
+  <span class="mini-cloche-bol" aria-hidden="true"><span class="mini-cloche-eau"></span></span>
+  <span class="mini-cloche-reperes" aria-hidden="true"></span>
+</button>
+<p class="pastille-son" data-pastille-son hidden aria-live="polite"><span data-son-etat>La cloche sonne</span> <button type="button" class="lien" data-son-bascule data-libelle-couper="Couper le son" data-libelle-remettre="Remettre le son" data-etat-coupe="Son coupé" data-etat-sonne="La cloche sonne">Couper le son</button></p>
+</body>
+</html>

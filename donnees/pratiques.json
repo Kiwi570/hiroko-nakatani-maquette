@@ -1,0 +1,47 @@
+[
+ {
+  "cle": "marche",
+  "titre": "Marche et méditation",
+  "quand": "Le dimanche, 10 h – 12 h",
+  "ou": "Bois de Vincennes",
+  "prix": "20 €",
+  "texte": "Deux heures de marche en silence, en petit groupe, avec des méditations au départ, à la pause et à l’arrivée.",
+  "image": "grok/carte-marche",
+  "eau": "grok/eau-bois",
+  "page": "marches"
+ },
+ {
+  "cle": "atelier",
+  "titre": "Atelier de pleine conscience",
+  "quand": "Un samedi par mois, 14 h – 16 h",
+  "ou": "Fontenay-sous-Bois, salle 207",
+  "prix": "20 €",
+  "texte": "Méditations guidées, mouvement conscient (Seitai méditatif) et partages, sur le thème du mois.",
+  "image": "grok/carte-atelier",
+  "eau": "grok/eau-salle",
+  "page": "ateliers"
+ },
+ {
+  "cle": "enligne",
+  "titre": "Méditation du soir en ligne",
+  "quand": "Le mardi, 20 h – 20 h 45",
+  "ou": "Chez vous, sans application",
+  "prix": "20,50 € le mois",
+  "texte": "Quatre mardis par mois : préparation, méditation guidée, partage libre. On peut repartir en silence.",
+  "image": "grok/carte-en-ligne",
+  "eau": "grok/eau-soir",
+  "page": "ateliers",
+  "ancre": "en-ligne"
+ },
+ {
+  "cle": "mbsr",
+  "titre": "Programme MBSR",
+  "quand": "Huit semaines",
+  "ou": "Prochain cycle à venir",
+  "prix": "450 €",
+  "texte": "Le programme de réduction du stress basé sur la pleine conscience, en groupe, avec une pratique quotidienne.",
+  "image": "grok/carte-mbsr",
+  "eau": "grok/eau-matin",
+  "page": "mbsr"
+ }
+]

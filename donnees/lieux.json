@@ -1,0 +1,37 @@
+{
+ "floral": {
+  "nom": "Parc floral de Paris",
+  "depart": "Entrée du Parc floral, bois de Vincennes (Paris 12e)",
+  "note": "Entrée du parc gratuite en automne et en hiver."
+ },
+ "tropical": {
+  "nom": "Jardin d’agronomie tropicale",
+  "depart": "Gare de Fontenay-sous-Bois (RER A)",
+  "note": ""
+ },
+ "eau": {
+  "nom": "Le long du cours d’eau",
+  "depart": "Gare de Fontenay-sous-Bois (RER A)",
+  "note": ""
+ },
+ "chateau": {
+  "nom": "Château de Vincennes",
+  "depart": "Mairie de Vincennes",
+  "note": "Dates à venir."
+ },
+ "salle": {
+  "nom": "Maison du Citoyen, salle 207",
+  "depart": "16 rue du Révérend Père Lucien Aubry, 94120 Fontenay-sous-Bois",
+  "note": "À 15 minutes à pied ou 10 minutes en bus 124 de la gare de Fontenay-sous-Bois (RER A)."
+ },
+ "jardin": {
+  "nom": "Jardin d’agronomie tropicale",
+  "depart": "36 avenue de la Belle Gabrielle, 94130 Nogent-sur-Marne",
+  "note": ""
+ },
+ "enligne": {
+  "nom": "En ligne",
+  "depart": "Depuis un ordinateur ou un téléphone, sans application à installer",
+  "note": "Le lien de connexion arrive par e-mail après l’inscription."
+ }
+}

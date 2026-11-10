@@ -1,0 +1,18 @@
+{
+ "marche": {
+  "nom": "Marches",
+  "court": "Marche"
+ },
+ "atelier": {
+  "nom": "Ateliers",
+  "court": "Atelier"
+ },
+ "enligne": {
+  "nom": "En ligne",
+  "court": "En ligne"
+ },
+ "saison": {
+  "nom": "De saison",
+  "court": "Saison"
+ }
+}

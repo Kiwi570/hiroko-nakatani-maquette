@@ -1,0 +1,412 @@
+{
+  "client": "Hiroko Nakatani",
+  "activite": "bien-être",
+  "direction": "La cloche qui chante",
+  "date": "2026-11-10T16:34:50.736Z",
+  "images": [
+    {
+      "nom": "eau-bois",
+      "fichier": "eau-bois.jpg",
+      "page": "accueil",
+      "emplacement": "Eau de la cloche : la marche (ouverture et offre)",
+      "role": "galerie",
+      "format": "1:1",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "texture",
+      "pieges": [],
+      "consigne": "Looking straight down at the perfectly still surface of a forest pond in autumn, the water mirroring a canopy of golden, copper and green trees against a pale sky, two small floating yellow leaves near the edge, soft overcast light, no ground visible, only the reflective water surface filling the frame. Square composition, aspect ratio 1:1, subject centered, main subject well inside the central area with generous margins on every side, so the image can be cropped. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "eau-salle",
+      "fichier": "eau-salle.jpg",
+      "page": "accueil",
+      "emplacement": "Eau de la cloche : l'atelier",
+      "role": "galerie",
+      "format": "1:1",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "texture",
+      "pieges": [],
+      "consigne": "Looking straight down at a perfectly still water surface that mirrors the soft daylight of tall bright windows and pale wooden ceiling beams of a quiet room, luminous and minimal, only the reflective water filling the frame. Square composition, aspect ratio 1:1, subject centered, main subject well inside the central area with generous margins on every side, so the image can be cropped. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "eau-soir",
+      "fichier": "eau-soir.jpg",
+      "page": "accueil",
+      "emplacement": "Eau de la cloche : la méditation du soir en ligne",
+      "role": "galerie",
+      "format": "1:1",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "texture",
+      "pieges": [],
+      "consigne": "Looking straight down at a perfectly still dark water surface at blue hour, mirroring the warm glow of a single round paper lamp and a deep indigo evening sky, a few soft highlights, only the reflective water filling the frame. Square composition, aspect ratio 1:1, subject centered, main subject well inside the central area with generous margins on every side, so the image can be cropped. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "eau-matin",
+      "fichier": "eau-matin.jpg",
+      "page": "accueil",
+      "emplacement": "Eau de la cloche : le programme MBSR",
+      "role": "galerie",
+      "format": "1:1",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "texture",
+      "pieges": [],
+      "consigne": "Looking straight down at a perfectly still water surface mirroring a clear pale morning sky and a single slender bare branch crossing the frame, very minimal, delicate light, only the reflective water filling the frame. Square composition, aspect ratio 1:1, subject centered, main subject well inside the central area with generous margins on every side, so the image can be cropped. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "carte-marche",
+      "fichier": "carte-marche.jpg",
+      "page": "accueil",
+      "emplacement": "Carte « Marche et méditation »",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Indispensable",
+      "gabarit": "scene-metier",
+      "pieges": [
+        "visages"
+      ],
+      "consigne": "A narrow earthen path through an autumn oak and chestnut forest in soft morning mist, far ahead a small group of four walkers seen from behind, very small in the frame, walking slowly in single file, no face visible. Vertical composition, aspect ratio 2:3. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. Seen strictly from behind, face never visible, head turned away, or cropped at the shoulders. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "carte-atelier",
+      "fichier": "carte-atelier.jpg",
+      "page": "accueil",
+      "emplacement": "Carte « Atelier de pleine conscience »",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Indispensable",
+      "gabarit": "scene-metier",
+      "pieges": [
+        "visages"
+      ],
+      "consigne": "A bright simple community room with tall windows, about ten round meditation cushions and folded wool blankets arranged in a circle on a pale wooden floor, rolled yoga mats along the wall, soft afternoon light, empty of people. Vertical composition, aspect ratio 2:3. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. Seen strictly from behind, face never visible, head turned away, or cropped at the shoulders. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "carte-en-ligne",
+      "fichier": "carte-en-ligne.jpg",
+      "page": "accueil",
+      "emplacement": "Carte « Méditation du soir en ligne »",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Indispensable",
+      "gabarit": "scene-metier",
+      "pieges": [
+        "visages"
+      ],
+      "consigne": "A cosy corner of a home at night: a round meditation cushion on a wool rug, a folded blanket, a warm round paper lamp glowing, a tall window showing a deep blue evening sky over rooftops, no electronic device visible, empty of people. Vertical composition, aspect ratio 2:3. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. Seen strictly from behind, face never visible, head turned away, or cropped at the shoulders. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "carte-mbsr",
+      "fichier": "carte-mbsr.jpg",
+      "page": "accueil",
+      "emplacement": "Carte « Programme MBSR »",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Indispensable",
+      "gabarit": "scene-metier",
+      "pieges": [
+        "texte parasite",
+        "visages"
+      ],
+      "consigne": "On a pale linen cloth, a small aged bronze meditation bowl resting on a round cushion with its wooden striker beside it, a closed plain notebook with a blank cover, a small sprig of leaves, soft morning light, minimal still life, empty of people. Vertical composition, aspect ratio 2:3. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. Pages completely blank, blank book spines, abstract unreadable marks, plain unmarked surfaces, dials with tick marks only and no numbers. Seen strictly from behind, face never visible, head turned away, or cropped at the shoulders. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "pas-depart",
+      "fichier": "pas-depart.jpg",
+      "page": "accueil",
+      "emplacement": "Scène « La marche, pas à pas » : le rendez-vous",
+      "role": "galerie",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "lieu",
+      "pieges": [
+        "paysage qui dérive"
+      ],
+      "consigne": "The edge of a large city forest park at ten in the morning, a wide sandy alley under tall plane and chestnut trees in light autumn mist, an old wooden bench at the meeting point, nobody around. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. The green eastern edge of a European city landscape only, described by its real features: no tea plantation, no rice terraces, no high mountains, no tropical vegetation, no power lines, no pylons, no modern buildings. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "pas-silence",
+      "fichier": "pas-silence.jpg",
+      "page": "accueil",
+      "emplacement": "Scène « La marche, pas à pas » : marcher en silence",
+      "role": "galerie",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "lieu",
+      "pieges": [
+        "paysage qui dérive"
+      ],
+      "consigne": "Low view along a forest path covered with fallen golden leaves, soft morning mist between the trunks, the path curving gently away, nobody around. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. The green eastern edge of a European city landscape only, described by its real features: no tea plantation, no rice terraces, no high mountains, no tropical vegetation, no power lines, no pylons, no modern buildings. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "pas-pause",
+      "fichier": "pas-pause.jpg",
+      "page": "accueil",
+      "emplacement": "Scène « La marche, pas à pas » : la pause",
+      "role": "galerie",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "lieu",
+      "pieges": [
+        "paysage qui dérive"
+      ],
+      "consigne": "A quiet bend of a small stream in an autumn forest, still water mirroring the trees, a flat grassy place on the bank, soft light, a peaceful place to stop. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. The green eastern edge of a European city landscape only, described by its real features: no tea plantation, no rice terraces, no high mountains, no tropical vegetation, no power lines, no pylons, no modern buildings. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "pas-cloture",
+      "fichier": "pas-cloture.jpg",
+      "page": "accueil",
+      "emplacement": "Scène « La marche, pas à pas » : la clôture vers midi",
+      "role": "galerie",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "lieu",
+      "pieges": [
+        "paysage qui dérive"
+      ],
+      "consigne": "A sunlit clearing at midday in an autumn forest, warm light falling through the canopy onto a soft carpet of leaves, a patch of open sky above, nobody around. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. The green eastern edge of a European city landscape only, described by its real features: no tea plantation, no rice terraces, no high mountains, no tropical vegetation, no power lines, no pylons, no modern buildings. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "plongee-bois",
+      "fichier": "plongee-bois.jpg",
+      "page": "accueil",
+      "emplacement": "Plongée finale vers l'agenda (plein écran)",
+      "role": "ouverture",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "lieu",
+      "pieges": [
+        "paysage qui dérive"
+      ],
+      "consigne": "Looking straight up from the forest floor into a tall autumn canopy of golden and copper leaves, soft sunlight shining through the branches, vast and quiet. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, the lower third stays dark and simple for text overlay. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. The green eastern edge of a European city landscape only, described by its real features: no tea plantation, no rice terraces, no high mountains, no tropical vegetation, no power lines, no pylons, no modern buildings. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "marches-ouverture",
+      "fichier": "marches-ouverture.jpg",
+      "page": "marches",
+      "emplacement": "Ouverture de la page Marches",
+      "role": "ouverture",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "lieu",
+      "pieges": [
+        "paysage qui dérive"
+      ],
+      "consigne": "A narrow earthen footpath winding gently through a quiet old forest park on a misty autumn morning, golden sunbeams slanting through the mist, fallen leaves on the path, the path leading toward a bright opening of light. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. The green eastern edge of a European city landscape only, described by its real features: no tea plantation, no rice terraces, no high mountains, no tropical vegetation, no power lines, no pylons, no modern buildings. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "parcours-floral",
+      "fichier": "parcours-floral.jpg",
+      "page": "marches",
+      "emplacement": "Parcours du Parc floral",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Conseillée",
+      "gabarit": "scene-metier",
+      "pieges": [],
+      "consigne": "A quiet botanical park in autumn: wide lawns, old trees with copper leaves, a small pond with water lilies and curving gravel paths, nobody around. Vertical composition, aspect ratio 2:3. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "parcours-tropical",
+      "fichier": "parcours-tropical.jpg",
+      "page": "marches",
+      "emplacement": "Parcours du jardin d'agronomie tropicale",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Conseillée",
+      "gabarit": "scene-metier",
+      "pieges": [],
+      "consigne": "An old overgrown garden in autumn light, exotic trees and bamboo mixed with oaks, a weathered ornamental wooden gateway half hidden by foliage, moss on old stones, nobody around. Vertical composition, aspect ratio 2:3. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "parcours-eau",
+      "fichier": "parcours-eau.jpg",
+      "page": "marches",
+      "emplacement": "Parcours le long du cours d'eau",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Conseillée",
+      "gabarit": "scene-metier",
+      "pieges": [],
+      "consigne": "A small calm stream winding between tall trees in a city forest in autumn, a gravel path following the bank, light mist over the water, nobody around. Vertical composition, aspect ratio 2:3. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "parcours-chateau",
+      "fichier": "parcours-chateau.jpg",
+      "page": "marches",
+      "emplacement": "Parcours du château (à venir)",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Facultative",
+      "gabarit": "scene-metier",
+      "pieges": [],
+      "consigne": "Old grey stone walls of a medieval keep glimpsed between autumn trees from a forest path, soft morning mist, nobody around. Vertical composition, aspect ratio 2:3. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "marches-feuilles",
+      "fichier": "marches-feuilles.jpg",
+      "page": "marches",
+      "emplacement": "Fond de la section Tarifs",
+      "role": "section-fond",
+      "format": "3:2",
+      "grok": "1168×784",
+      "priorite": "Conseillée",
+      "gabarit": "texture",
+      "pieges": [],
+      "consigne": "Top view of fallen yellow ginkgo leaves scattered on a dark wet stone path, soft overcast light, large calm area in the center. Landscape composition, aspect ratio 3:2, quiet uncluttered area in the upper half for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "ateliers-ouverture",
+      "fichier": "ateliers-ouverture.jpg",
+      "page": "ateliers",
+      "emplacement": "Ouverture de la page Ateliers et en ligne",
+      "role": "ouverture",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "scene-metier",
+      "pieges": [
+        "visages"
+      ],
+      "consigne": "A wide bright community room in the afternoon, round meditation cushions and folded blankets in a circle on a pale wooden floor, tall windows with trees outside, soft light, empty of people. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. Seen strictly from behind, face never visible, head turned away, or cropped at the shoulders. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "ateliers-soir",
+      "fichier": "ateliers-soir.jpg",
+      "page": "ateliers",
+      "emplacement": "Section Méditation du soir en ligne",
+      "role": "galerie",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "scene-metier",
+      "pieges": [],
+      "consigne": "A large window at blue hour seen from inside a quiet home, the warm reflection of a round paper lamp in the glass, a cup of tea and a meditation cushion on the floor below, calm and intimate, no electronic device visible, nobody around. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, calm empty area in the right third of the frame for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "ateliers-saison",
+      "fichier": "ateliers-saison.jpg",
+      "page": "ateliers",
+      "emplacement": "Section Ateliers de saison en plein air",
+      "role": "galerie",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "lieu",
+      "pieges": [],
+      "consigne": "An old garden at the spring equinox, soft young green leaves on old trees, a mossy stone path, low morning sun, a few early blossoms, nobody around. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "ateliers-tapis",
+      "fichier": "ateliers-tapis.jpg",
+      "page": "ateliers",
+      "emplacement": "Section Atelier mensuel : ce qu'on apporte",
+      "role": "carte-service",
+      "format": "2:3",
+      "grok": "784×1168",
+      "priorite": "Conseillée",
+      "gabarit": "scene-metier",
+      "pieges": [],
+      "consigne": "Folded wool blankets, round cushions and rolled yoga mats stacked on a pale wooden bench against a white wall, soft window light, minimal. Vertical composition, aspect ratio 2:3. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "mbsr-ouverture",
+      "fichier": "mbsr-ouverture.jpg",
+      "page": "mbsr",
+      "emplacement": "Ouverture de la page MBSR",
+      "role": "ouverture",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "lieu",
+      "pieges": [
+        "paysage qui dérive"
+      ],
+      "consigne": "A wide calm lake at dawn seen from the shore, perfectly still water, thin mist on the surface, the far bank of trees barely visible, vast quiet sky in the upper part. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. The green eastern edge of a European city landscape only, described by its real features: no tea plantation, no rice terraces, no high mountains, no tropical vegetation, no power lines, no pylons, no modern buildings. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "mbsr-profondeur",
+      "fichier": "mbsr-profondeur.jpg",
+      "page": "mbsr",
+      "emplacement": "Scène des huit semaines (plongée)",
+      "role": "section-fond",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "section-fond",
+      "pieges": [],
+      "consigne": "Underwater view just below the calm surface of a clear lake, soft light rays descending into deep blue-green water, tiny suspended particles, gradient from bright surface to deep calm blue. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, quiet uncluttered area in the upper half for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "mbsr-pratique",
+      "fichier": "mbsr-pratique.jpg",
+      "page": "mbsr",
+      "emplacement": "Section Pratique entre les séances",
+      "role": "galerie",
+      "format": "4:3",
+      "grok": "1168×784",
+      "priorite": "Conseillée",
+      "gabarit": "scene-metier",
+      "pieges": [
+        "écrans"
+      ],
+      "consigne": "A simple practice corner at home in the morning: a folded blanket and a round cushion on a wooden floor, a pair of headphones resting on the cushion, a glass of water, light through a linen curtain, nobody around. Horizontal composition, aspect ratio 4:3, main subject well inside the central area with generous margins on every side, so the image can be cropped. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. Screen turned away from the camera, or showing only a soft abstract glow with no interface; plain unbranded devices. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "agenda-feuilles",
+      "fichier": "agenda-feuilles.jpg",
+      "page": "agenda",
+      "emplacement": "Ouverture de la page Agenda",
+      "role": "ouverture",
+      "format": "2:1",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "texture",
+      "pieges": [],
+      "consigne": "Top view of autumn leaves laid out in a long single row on pale handmade paper, each leaf a different color from green to yellow to orange to deep red, soft daylight, large calm empty area above. Panoramic composition, aspect ratio 2:1, main subject well inside the central area with generous margins on every side, so the image can be cropped, quiet uncluttered area in the upper half for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "contact-banc",
+      "fichier": "contact-banc.jpg",
+      "page": "contact",
+      "emplacement": "Ouverture de la page Contact",
+      "role": "ouverture",
+      "format": "21:9",
+      "grok": "1168×784",
+      "priorite": "Indispensable",
+      "gabarit": "lieu",
+      "pieges": [],
+      "consigne": "An empty wooden bench under a large old tree at the edge of a lawn in a park, soft early morning light and light mist, calm and welcoming. Panoramic composition, aspect ratio 21:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    },
+    {
+      "nom": "404-brume",
+      "fichier": "404-brume.jpg",
+      "page": "404",
+      "emplacement": "Page 404",
+      "role": "404",
+      "format": "16:9",
+      "grok": "1168×784",
+      "priorite": "Conseillée",
+      "gabarit": "404",
+      "pieges": [],
+      "consigne": "A forest path disappearing into thick white fog, trees fading into the mist, the trail ending softly in white. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, quiet uncluttered area in the upper half for a title. Soft natural documentary photography, calm, quiet and luminous mood, palette of warm washi off-white, soft ink black, aged bronze and deep blue-green water, soft natural light, tactile raw linen, pale wood, wool and aged bronze, set in the green eastern edge of a European city on a quiet autumn day, gentle mist, fine film grain, calm and hopeful, realistic. No religious or spiritual symbols (no buddha, no mandala, no incense, no dreamcatcher), no violet or neon light, no therapy session, no face, no extra hands, no power lines, no pylons. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark."
+    }
+  ]
+}

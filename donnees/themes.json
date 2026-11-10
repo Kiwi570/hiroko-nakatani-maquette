@@ -1,0 +1,53 @@
+[
+ {
+  "num": "1",
+  "titre": "La pleine conscience",
+  "mois": "2026-09"
+ },
+ {
+  "num": "2",
+  "titre": "Corps et monde",
+  "mois": "2026-10"
+ },
+ {
+  "num": "3",
+  "titre": "Respirer, observer",
+  "mois": "2026-11"
+ },
+ {
+  "num": "✦",
+  "titre": "Thème spécial de fin d’année",
+  "mois": "2026-12",
+  "enLigneSeul": true
+ },
+ {
+  "num": "4",
+  "titre": "Le stress ?",
+  "mois": "2027-01"
+ },
+ {
+  "num": "5",
+  "titre": "Du réflexe à la conscience",
+  "mois": "2027-02"
+ },
+ {
+  "num": "6",
+  "titre": "Présence à soi et aux autres",
+  "mois": "2027-03"
+ },
+ {
+  "num": "6,5",
+  "titre": "Vivre sans parole",
+  "mois": "2027-04"
+ },
+ {
+  "num": "7",
+  "titre": "Prendre soin de soi",
+  "mois": "2027-05"
+ },
+ {
+  "num": "8",
+  "titre": "Intégrer et poursuivre",
+  "mois": "2027-06"
+ }
+]

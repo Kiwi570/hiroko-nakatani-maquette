@@ -1,0 +1,41 @@
+{
+ "unite": [
+  {
+   "libelle": "La séance de marche ou d’atelier",
+   "prix": "20 €",
+   "detail": "sur place, sur demande par e-mail ; 20,50 € en paiement en ligne"
+  },
+  {
+   "libelle": "Le mois de méditation en ligne",
+   "prix": "20,50 €",
+   "detail": "quatre mardis soir, réservation en ligne"
+  },
+  {
+   "libelle": "Offre duo",
+   "prix": "38 €",
+   "detail": "venir à deux à une même séance"
+  }
+ ],
+ "formules": [
+  {
+   "libelle": "Formule Complète",
+   "detail": "Un an d’accès à toutes les activités : en ligne, marches et ateliers."
+  },
+  {
+   "libelle": "Formule Nature",
+   "detail": "Un an de marches du dimanche matin dans le bois, de mars à novembre."
+  },
+  {
+   "libelle": "Formule En ligne",
+   "detail": "Un an de méditation du soir en ligne, quatre mardis par mois, sauf juillet et août."
+  },
+  {
+   "libelle": "Cartes 5 et 10 séances",
+   "detail": "Valables un an, au choix entre marche, atelier et en ligne (un mois en ligne compte pour une séance). Carte remise à la première séance sur place."
+  }
+ ],
+ "mbsr": {
+  "seance": "45 €",
+  "total": "450 €"
+ }
+}
